@@ -23,8 +23,6 @@ class App extends Component {
     return ( 
       <Router>
         <Switch>
-         {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <div className="App">
             <CustomNavbar />
             <Route exact path='/' component={Home} />
