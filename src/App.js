@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
 import Home from './containers/Home'
+import Login from './components/Login'
+import Signup from './components/Signup'
+import Logout from './components/Logout'
+import About from './components/About'
 import CustomNavbar from './components/CustomNavbar'
-
-
 
 
 class App extends Component {
@@ -23,7 +25,11 @@ class App extends Component {
             renders the first one that matches the current URL. */}
           <div className="App">
             <CustomNavbar />
-            <Route path='/' component={Home} />
+            <Route exact path='/' component={Home} />
+            <Route path='/login' component={Login} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/logout' component={Logout} />
+            <Route path='/about' component={About} />
           </div>
         </Switch>
       </Router>

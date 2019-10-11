@@ -8,8 +8,6 @@ class Home extends Component {
         return ( 
             <div className = "container">
                 <h1>Home Page</h1>
-                <Signup />
-                <Login />
             </div> 
         );
     }
