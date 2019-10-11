@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
 import Home from './containers/Home'
+import CustomNavbar from './components/CustomNavbar'
+
+
 
 
 class App extends Component {
@@ -19,6 +22,7 @@ class App extends Component {
          {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <div className="App">
+            <CustomNavbar />
             <Route path='/' component={Home} />
           </div>
         </Switch>
