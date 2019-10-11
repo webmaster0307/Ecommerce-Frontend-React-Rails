@@ -19,8 +19,11 @@ class Signup extends Component {
     }
    
     handleChange = (e) => {
-        console.log("handle change", e)
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
+
     render() { 
         return ( 
             <div className="container">
@@ -42,7 +45,7 @@ class Signup extends Component {
                 </Form.Group>
                 
                 <Button variant="primary" type="submit">
-                    Submit
+                    Sign Up
                 </Button>
                 </Form>
             </div>
