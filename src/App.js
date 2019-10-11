@@ -5,6 +5,8 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Logout from './components/Logout'
 import About from './components/About'
+import Wishlist from './components/Wishlist'
+import Cart from './components/Cart'
 import CustomNavbar from './components/CustomNavbar'
 
 
@@ -30,6 +32,8 @@ class App extends Component {
             <Route path='/signup' component={Signup} />
             <Route path='/logout' component={Logout} />
             <Route path='/about' component={About} />
+            <Route path='/wishlist' component={Wishlist} />
+            <Route path='/cart' component={Cart} />
           </div>
         </Switch>
       </Router>

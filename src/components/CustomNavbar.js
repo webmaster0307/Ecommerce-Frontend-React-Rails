@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, NavLink} from 'react-router-dom'
-import {Navbar, Nav, NavItem, Form, FormControl, Button, NavDropdown } from 'react-bootstrap'
+import {Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 
 const CustomNavbar = () =>  {
