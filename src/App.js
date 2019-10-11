@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
+import Home from './containers/Home'
 
 
 class App extends Component {
-  state = {  }
+
 
   componentDidMount() {
     fetch('http://localhost:3001/api/v1/users')
@@ -12,13 +14,16 @@ class App extends Component {
 
   render() { 
     return ( 
-
-      <div className="App">
-
-        My APP
-      
-      </div>
-     );
+      <Router>
+        <Switch>
+         {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+          <div className="App">
+            <Route path='/' component={Home} />
+          </div>
+        </Switch>
+      </Router>
+    );
   }
 }
  
