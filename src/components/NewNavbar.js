@@ -9,6 +9,7 @@ class NewNavBar extends Component {
 
 
     handleOnClick = (e) => {
+        e.preventDefault();
         let mainNav= document.getElementById('js-menu')
         let NavBarToggle = document.getElementById('js-navbar-toggle')
         mainNav.classList.toggle('active')
@@ -24,14 +25,18 @@ class NewNavBar extends Component {
             <ul class="main-nav" id="js-menu">
                 <li><Link to="/About" class="nav-links">About</Link></li>
                 <li><Link to="/Categories" class="nav-links">Categories</Link></li>
-                <li>
-                <Link to="#!" class="nav-links">My Account</Link>
+                <li><Link to="/Signup" class="nav-links">Signup</Link></li>
+                <li><Link to="/Login" class="nav-links">Login</Link></li>
+                <li><Link to="/Logout" class="nav-links">Logout</Link></li>
+             
+                {/* <li>
+                <Link to="#" class="nav-links">My Account</Link>
                     <ul class="nav-dropdown">
                         <li><Link to="/Signup" class="nav-links">Signup</Link></li>
                         <li><Link to="/Login" class="nav-links">Login</Link></li>
                         <li><Link to="/Logout" class="nav-links">Logout</Link></li>
                     </ul>
-                </li>
+                </li> */}
             </ul>
         </nav>
          );
