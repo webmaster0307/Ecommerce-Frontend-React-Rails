@@ -1,4 +1,42 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+ /* Nav Bar  */
+.navbar {
+  font-size: 18px;
+  border: 1px solid black;
+  padding-bottom: 10px;
+  background-color:red;
+}
+
+.main-nav {
+  list-style-type: none;
+}
+
+.nav-links, .logo {
+  text-decoration: none;
+  color: black;
+}
+
+.main-nav li {
+  text-align: center;
+  margin: 15px auto; 
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
 }
 

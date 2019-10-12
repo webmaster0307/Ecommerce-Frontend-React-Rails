@@ -8,6 +8,7 @@ import About from './components/About'
 import Wishlist from './components/Wishlist'
 import Cart from './components/Cart'
 import CustomNavbar from './components/CustomNavbar'
+import NewNavbar from './components/NewNavbar'
 
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
       <Router>
         <Switch>
           <div className="App">
-            <CustomNavbar />
+            <NewNavbar />
             <Route exact path='/' component={Home} />
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
