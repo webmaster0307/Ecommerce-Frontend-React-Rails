@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Form, Button} from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
+import { Link, NavLink} from 'react-router-dom'
 
 class Signup extends Component {
     constructor(props){
@@ -26,27 +27,25 @@ class Signup extends Component {
 
     render() { 
         return ( 
-            <div className="container">
-                <Form onSubmit={this.handleSubmit}>
-
-                <Form.Group controlId="formBasicUsername">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control type="username" placeholder="Enter username" onChange={this.handleChange} required/>
-                </Form.Group>
-
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" onChange={this.handleChange} required />
-                </Form.Group>
-
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" onChange={this.handleChange} required/>
-                </Form.Group>
+            <div className="">
+                <h1>Register</h1>
+                <p>Please fill in this form to create an account.</p>
                 
-                <Button variant="primary" type="submit">
-                    Sign Up
-                </Button>
+                <Form onSubmit={this.handleSubmit}>
+                <label for="username">Username:  </label>
+                <input type="text" name="username" placeholder="Enter username" onChange={this.handleChange} required/>
+
+                <label for="email">Email:  </label>
+                <input type="text" name="email" placeholder="Enter email" onChange={this.handleChange} required/>
+
+                <label for="password">Password:  </label>
+                <input type="text" name="password" placeholder="Enter Password" onChange={this.handleChange} required/>
+               
+                <input type="submit" value="Register"></input>
+
+                <div class="container signin">
+                    <p>Already have an account? <Link to="/login">Sign in</Link>.</p>
+                </div>
                 </Form>
             </div>
          );

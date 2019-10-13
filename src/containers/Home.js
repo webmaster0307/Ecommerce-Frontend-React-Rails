@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Search from '../components/Search';
 
 class Home extends Component {
     state = {  }
     render() { 
         return ( 
             <div className = "container">
-                <h1>Home Page</h1>
+                <Search />
                 <h2>Will show Categories - carosel?</h2>
             </div> 
         );
