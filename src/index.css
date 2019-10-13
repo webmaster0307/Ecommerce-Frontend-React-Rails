@@ -15,7 +15,7 @@ body {
   font-size: 18px;
   border: 1px solid black;
   padding-bottom: 20px;
-  background-color:red;
+  background-color: red;
 }
 
 .main-nav {
@@ -50,3 +50,22 @@ body {
 }
 
 
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  padding: 8px;
+}
+
+.main-nav a:hover {
+  background-color: white;
+  padding: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ADD HOVER TO HAMBURGER ICON */

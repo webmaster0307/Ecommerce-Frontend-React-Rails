@@ -7,7 +7,6 @@ import Logout from './components/Logout'
 import About from './components/About'
 import Wishlist from './components/Wishlist'
 import Cart from './components/Cart'
-import CustomNavbar from './components/CustomNavbar'
 import NewNavbar from './components/NewNavbar'
 
 
