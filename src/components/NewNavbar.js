@@ -23,8 +23,7 @@ class NewNavBar extends Component {
                 </span>
                 <Link to="/" class="logo">Company Logo</Link>
                 <ul class="main-nav" id="js-menu">
-                    <li><Link to="/About" class="nav-links">About</Link></li>
-                    <li><Link to="/Categories" class="nav-links">Categories</Link></li>
+                    
 
                     <div class="dropdown">
                         <li class="dropdown-color">My Account <FontAwesomeIcon icon={faCaretDown}/></li>
@@ -35,8 +34,17 @@ class NewNavBar extends Component {
                         </div>
                     </div>
 
-                    <li><Link to="#" class="nav-links">Wish List</Link></li>
-                    <li><Link to="#" class="nav-links">Cart</Link></li>
+                    <div class="dropdown">
+                        <li class="dropdown-color">Sell <FontAwesomeIcon icon={faCaretDown}/></li>
+                        <div class="dropdown-content">
+                            <li><Link to="/Business/new" class="nav-links">New Business</Link></li>
+                            <li><Link to="/Business" class="nav-links">Existing Business</Link></li>
+                            
+                        </div>
+                    </div>
+                    <li><Link to="/About" class="nav-links">About</Link></li>
+                    <li><Link to="/Wishlist" class="nav-links">Wish List</Link></li>
+                    <li><Link to="/Cart" class="nav-links">Cart</Link></li>
                 </ul>
              </nav>
 

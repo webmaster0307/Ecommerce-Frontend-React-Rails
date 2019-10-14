@@ -8,6 +8,8 @@ import About from './components/About'
 import Wishlist from './components/Wishlist'
 import Cart from './components/Cart'
 import NewNavbar from './components/NewNavbar'
+import NewBusiness from './components/NewBusiness'
+import Businesses from './components/Businesses'
 
 
 class App extends Component {
@@ -32,6 +34,8 @@ class App extends Component {
             <Route path='/about' component={About} />
             <Route path='/wishlist' component={Wishlist} />
             <Route path='/cart' component={Cart} />
+            <Route exact path='/business/new' component={NewBusiness} />
+            <Route exact path='/business' component={Businesses} />
           </div>
         </Switch>
       </Router>

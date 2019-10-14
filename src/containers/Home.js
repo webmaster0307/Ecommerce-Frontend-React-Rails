@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Search from '../components/Search';
+import Categories from '../components/Categories'
+import Carosel from '../components/Carosel'
 
 class Home extends Component {
     state = {  }
@@ -7,7 +9,8 @@ class Home extends Component {
         return ( 
             <div className = "container">
                 <Search />
-                <h2>Will show Categories - carosel?</h2>
+                <Carosel />
+                <Categories />    
             </div> 
         );
     }

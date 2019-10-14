@@ -25,7 +25,7 @@ body {
 
 .nav-links, .logo, .dropdown-color {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .main-nav li {
@@ -59,15 +59,15 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: white;
+  /* background-color: white; */
   padding: 8px;
-  color: black;
+  color: white;
 }
 
 .main-nav a:hover {
-  background-color: white;
+  /* background-color: white; */
   padding: 8px;
-  color: black;
+  color: white;
 }
 
 .dropdown:hover .dropdown-content {
@@ -75,16 +75,15 @@ body {
 }
 
 .navbar-toggle {
-  color: white;
+  color: black;
 }
 
 .navbar-toggle:hover {
-  color: black;
+  color: white;
 }
 
 .logo:hover {
-  color: black;
-  background-color: white;
+  color: white;
 }
 
 /* ADD HOVER TO HAMBURGER ICON */
