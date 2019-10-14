@@ -27,7 +27,7 @@ class App extends Component {
         <Switch>
           <div className="App">
             <NewNavbar />
-            <Home />
+            <Route exact path='/' component={Home} />
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
             <Route path='/logout' component={Logout} />
@@ -36,7 +36,6 @@ class App extends Component {
             <Route path='/cart' component={Cart} />
             <Route exact path='/business/new' component={NewBusiness} />
             <Route exact path='/business' component={Businesses} />
-            
           </div>
         </Switch>
       </Router>
