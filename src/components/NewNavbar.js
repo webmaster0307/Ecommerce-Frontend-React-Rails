@@ -27,7 +27,7 @@ class NewNavBar extends Component {
                     <li><Link to="/Categories" class="nav-links">Categories</Link></li>
 
                     <div class="dropdown">
-                        <li>My Account <FontAwesomeIcon icon={faCaretDown}/></li>
+                        <li class="dropdown-color">My Account <FontAwesomeIcon icon={faCaretDown}/></li>
                         <div class="dropdown-content">
                             <li><Link to="/Signup" class="nav-links">Signup</Link></li>
                             <li><Link to="/Login" class="nav-links">Login</Link></li>

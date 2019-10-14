@@ -16,16 +16,16 @@ body {
   font-size: 18px;
   border: 1px solid black;
   padding-bottom: 20px;
-  background-color: red;
+  background-color: maroon;
 }
 
 .main-nav {
   list-style-type: none;
 }
 
-.nav-links, .logo {
+.nav-links, .logo, .dropdown-color {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .main-nav li {
@@ -33,6 +33,9 @@ body {
   margin: 15px auto; 
 }
 
+.logo {
+  font-size: 1.5rem;
+}
 .navbar-toggle {
   position: absolute;
   top: 10px;
@@ -58,15 +61,30 @@ body {
 .dropdown-content a:hover {
   background-color: white;
   padding: 8px;
+  color: black;
 }
 
 .main-nav a:hover {
   background-color: white;
   padding: 8px;
+  color: black;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.navbar-toggle {
+  color: white;
+}
+
+.navbar-toggle:hover {
+  color: black;
+}
+
+.logo:hover {
+  color: black;
+  background-color: white;
 }
 
 /* ADD HOVER TO HAMBURGER ICON */
