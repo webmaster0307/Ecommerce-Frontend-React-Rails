@@ -9,72 +9,52 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  margin: 0;
 }
 
  /* Nav Bar  */
+
 .navbar {
   font-size: 18px;
   border: 1px solid black;
-  padding-bottom: 20px;
-  background-color: maroon;
+  padding: 12px 16px;
+  background-color: RGB(0, 179, 171)
 }
 
-.main-nav {
-  list-style-type: none;
-}
-
-.nav-links, .logo, .dropdown-color {
+.nav-links {
   text-decoration: none;
   color: black;
 }
 
+.logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
+.logo:hover {
+  color: black;
+}
+
+.main-nav {
+  list-style-type: none;
+  display: none;
+}
 .main-nav li {
-  text-align: center;
+  text-align: left;
   margin: 15px auto; 
 }
 
-.logo {
-  font-size: 1.5rem;
+.main-nav a:hover {
+  padding: 8px;
+  color: white;
 }
+
 .navbar-toggle {
   position: absolute;
   top: 10px;
   right: 20px;
   cursor: pointer;
   font-size: 24px;
-}
-
-.main-nav {
-  list-style-type: none;
-  display: none;
-}
-
-.active {
-  display: block;
-}
-
-
-.dropdown-content {
-  display: none;
-}
-
-.dropdown-content a:hover {
-  /* background-color: white; */
-  padding: 8px;
-  color: white;
-}
-
-.main-nav a:hover {
-  /* background-color: white; */
-  padding: 8px;
-  color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.navbar-toggle {
   color: black;
 }
 
@@ -82,8 +62,93 @@ body {
   color: white;
 }
 
-.logo:hover {
-  color: white;
+
+.active {
+  display: block;
 }
 
-/* ADD HOVER TO HAMBURGER ICON */
+.dropdown .dropbtn {
+  font-size: 18px;    
+  border: none;
+  outline: none;
+  color: black;
+  background-color: inherit;
+  font-family: inherit;
+  margin-top: 20px;
+
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content li:hover {
+  padding: 8px;
+  color: white;
+  background-color:black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+@media screen and (min-width: 768px) {
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+
+  .main-nav {
+    display: flex;
+    margin-right :30px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .nav-links {
+    margin-left: 40px;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+  
+  
+  .dropdown .dropbtn { 
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content li {
+    text-align: left;
+  }
+  
+  .dropbtn:hover {
+    color: white;
+  }
+
+  .dropdown-content li:hover {
+    color: black ;
+    background-color: black;
+  }
+
+  
+
+}

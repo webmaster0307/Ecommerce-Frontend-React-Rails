@@ -26,7 +26,7 @@ class NewNavBar extends Component {
                     
 
                     <div class="dropdown">
-                        <li class="dropdown-color">My Account <FontAwesomeIcon icon={faCaretDown}/></li>
+                        <button class="dropbtn">My Account <FontAwesomeIcon icon={faCaretDown}/></button>
                         <div class="dropdown-content">
                             <li><Link to="/Signup" class="nav-links">Signup</Link></li>
                             <li><Link to="/Login" class="nav-links">Login</Link></li>
@@ -35,7 +35,7 @@ class NewNavBar extends Component {
                     </div>
 
                     <div class="dropdown">
-                        <li class="dropdown-color">Sell <FontAwesomeIcon icon={faCaretDown}/></li>
+                        <button class="dropbtn">Sell <FontAwesomeIcon icon={faCaretDown}/></button>
                         <div class="dropdown-content">
                             <li><Link to="/Business/new" class="nav-links">New Business</Link></li>
                             <li><Link to="/Business" class="nav-links">Existing Business</Link></li>
