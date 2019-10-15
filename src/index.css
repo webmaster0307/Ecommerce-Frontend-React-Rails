@@ -85,7 +85,7 @@ body {
 .dropdown-content li:hover {
   padding: 8px;
   color: white;
-  background-color:black;
+  background-color: RGB(0, 179, 171)
 }
 
 .dropdown:hover .dropdown-content {
@@ -157,7 +157,7 @@ body {
 
   .dropdown-content li:hover {
     color: black ;
-    background-color: black;
+    background-color: RGB(0, 179, 171)
   }
 
 
