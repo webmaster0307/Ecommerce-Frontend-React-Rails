@@ -6,7 +6,7 @@ class Search extends Component {
     state = {  }
     render() { 
         return ( 
-            <div>
+            <div clas="container">
                 <form onSubmit={this.handleSubmit}>
                 <FontAwesomeIcon icon={faSearch}/>
                 

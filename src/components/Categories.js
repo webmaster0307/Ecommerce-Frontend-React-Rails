@@ -2,7 +2,7 @@ import React from 'react';
 
 const Categories = () => {
     return (
-        <div>
+        <div class="container">
             <ul>
                <li>Category 1</li>
                <li>Category 2</li>
