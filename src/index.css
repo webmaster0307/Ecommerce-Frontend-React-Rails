@@ -29,10 +29,10 @@ body {
 .logo {
   text-decoration: none;
   font-size: 1.5rem;
-  color: white;
+  color: black;
 }
 .logo:hover {
-  color: black;
+  color: white;
 }
 
 .main-nav {
