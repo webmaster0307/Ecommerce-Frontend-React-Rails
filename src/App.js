@@ -24,20 +24,21 @@ class App extends Component {
   render() { 
     return ( 
       <Router>
-        <Switch>
           <div className="App">
             <NewNavbar />
-            <Route exact path='/' component={Home} />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Register} />
-            <Route path='/logout' component={Logout} />
-            <Route path='/about' component={About} />
-            <Route path='/wishlist' component={Wishlist} />
-            <Route path='/cart' component={Cart} />
-            <Route exact path='/business/new' component={NewBusiness} />
-            <Route exact path='/business' component={Businesses} />
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/login' component={Login} />
+              <Route path='/signup' component={Register} />
+              <Route path='/logout' component={Logout} />
+              <Route path='/about' component={About} />
+              <Route path='/wishlist' component={Wishlist} />
+              <Route path='/cart' component={Cart} />
+              <Route exact path='/business/new' component={NewBusiness} />
+              <Route exact path='/business' component={Businesses} />
+            </Switch>
           </div>
-        </Switch>
+        
       </Router>
     );
   }
