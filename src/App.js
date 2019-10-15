@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
 import Home from './containers/Home'
 import Login from './components/Login'
-import Signup from './components/Signup'
+import Register from './components/Register'
 import Logout from './components/Logout'
 import About from './components/About'
 import Wishlist from './components/Wishlist'
@@ -29,7 +29,7 @@ class App extends Component {
             <NewNavbar />
             <Route exact path='/' component={Home} />
             <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
+            <Route path='/signup' component={Register} />
             <Route path='/logout' component={Logout} />
             <Route path='/about' component={About} />
             <Route path='/wishlist' component={Wishlist} />

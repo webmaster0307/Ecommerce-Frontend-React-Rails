@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -17,34 +17,34 @@ class NewNavBar extends Component {
 
     render() { 
         return ( 
-            <nav class="navbar">
-                <span class="navbar-toggle" id="js-navbar-toggle">
+            <nav className="navbar">
+                <span className="navbar-toggle" id="js-navbar-toggle">
                     <FontAwesomeIcon icon={faBars} onClick={this.handleOnClick} />
                 </span>
-                <Link to="/" class="logo">E-Comm Site</Link>
-                <ul class="main-nav" id="js-menu">
+                <Link to="/" className="logo">E-Comm Site</Link>
+                <ul className="main-nav" id="js-menu">
                     
 
-                    <div class="dropdown">
-                        <button class="dropbtn">My Account <FontAwesomeIcon icon={faCaretDown}/></button>
-                        <div class="dropdown-content">
-                            <li><Link to="/Signup" class="nav-links">Signup</Link></li>
-                            <li><Link to="/Login" class="nav-links">Login</Link></li>
-                            <li><Link to="/Logout" class="nav-links">Logout</Link></li>
+                    <div className="dropdown">
+                        <button className="dropbtn">My Account <FontAwesomeIcon icon={faCaretDown}/></button>
+                        <div className="dropdown-content">
+                            <li><Link to="/Signup" className="nav-links">Signup</Link></li>
+                            <li><Link to="/Login" className="nav-links">Login</Link></li>
+                            <li><Link to="/Logout" className="nav-links">Logout</Link></li>
                         </div>
                     </div>
 
-                    <div class="dropdown">
-                        <button class="dropbtn">Sell <FontAwesomeIcon icon={faCaretDown}/></button>
-                        <div class="dropdown-content">
-                            <li><Link to="/Business/new" class="nav-links">New Business</Link></li>
-                            <li><Link to="/Business" class="nav-links">Existing Business</Link></li>
+                    <div className="dropdown">
+                        <button className="dropbtn">Sell <FontAwesomeIcon icon={faCaretDown}/></button>
+                        <div className="dropdown-content">
+                            <li><Link to="/Business/new" className="nav-links">New Business</Link></li>
+                            <li><Link to="/Business" className="nav-links">Existing Business</Link></li>
                             
                         </div>
                     </div>
-                    <li><Link to="/About" class="nav-links">About</Link></li>
-                    <li><Link to="/Wishlist" class="nav-links">Wish List</Link></li>
-                    <li><Link to="/Cart" class="nav-links">Cart</Link></li>
+                    <li><Link to="/About" className="nav-links">About</Link></li>
+                    <li><Link to="/Wishlist" className="nav-links">Wish List</Link></li>
+                    <li><Link to="/Cart" className="nav-links">Cart</Link></li>
                 </ul>
              </nav>
 
