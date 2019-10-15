@@ -33,15 +33,15 @@ class Register extends Component {
                 <form onSubmit={this.handleSubmit}>
                     
                     <label htmlFor="username">Username:  </label>
-                    <input type="text" name="username" placeholder="Enter username" onChange={this.handleChange} required/>
+                    <input type="text" name="username" id="username" placeholder="Enter username" onChange={this.handleChange} required/>
     
                     <label htmlFor="email">Email:  </label>
-                    <input type="text" name="email" placeholder="Enter Email" onChange={this.handleChange} required/>
+                    <input type="text" name="email" id="email"placeholder="Enter Email" onChange={this.handleChange} required/>
 
                     <label htmlFor="password">Password:  </label>
-                    <input type="text" name="password" placeholder="Enter Password" onChange={this.handleChange} required/>
+                    <input type="text" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
                    
-                    <input type="submit" value="Login"></input>
+                    <input type="submit" value="Register"></input>
 
                     <div className="">
                         <p>Already have an account? <Link to="/login">Sign in</Link> </p>
