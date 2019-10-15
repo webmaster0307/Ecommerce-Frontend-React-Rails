@@ -21,7 +21,7 @@ class NewNavBar extends Component {
                 <span class="navbar-toggle" id="js-navbar-toggle">
                     <FontAwesomeIcon icon={faBars} onClick={this.handleOnClick} />
                 </span>
-                <Link to="/" class="logo">Company Logo</Link>
+                <Link to="/" class="logo">E-Comm Site</Link>
                 <ul class="main-nav" id="js-menu">
                     
 
