@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 
 class Login extends Component {
-    constructor(props){
-        super(props);
 
-        this.state = {
-            username: "",
-            password: "",
-        }
-    }
-
-    handleSubmit = (e) => {
-        console.log("form submitted")
-        e.preventDefault()
-    }
+    state = {
+        username: '',
+        password: '',
+     }
 
 
     handleChange = (e) => {
+        console.log(e.target.value)
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.id]: e.target.value
         })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(this.state)
     }
 
 
@@ -30,11 +28,11 @@ class Login extends Component {
 
                 <form onSubmit={this.handleSubmit}>
                     
-                <label for="username">Username:  </label>
-                <input type="text" name="username" placeholder="Enter username" onChange={this.handleChange} required/>
+                <label htmlFor="username">Username:  </label>
+                <input type="username" name="username" id="username" placeholder="Enter username" onChange={this.handleChange} required/>
 
-                <label for="password">Password:  </label>
-                <input type="text" name="password" placeholder="Enter Password" onChange={this.handleChange} required/>
+                <label htmlFor="password">Password:  </label>
+                <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
                
                 <input type="submit" value="Login"></input>
 
