@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 class Login extends Component {
-
-    state = {
-        username: '',
-        password: '',
-     }
+    constructor(){
+        super()
+        this.state = {
+            username: '',
+            password: '',
+         }
+    }
+    
 
 
     handleChange = (e) => {
@@ -18,7 +22,35 @@ class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         console.log(this.state)
-    }
+        const headers = {
+            method: 'POST',
+            credientals: "include",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                user: this.state
+            })
+        }
+        fetch("http://localhost:3001/api/v1/login", headers)
+        .then(r => r.json())
+        .then(resp => {
+            // console.log(resp)
+            console.log(resp.user)
+            if (resp.error) {
+                alert("invalid credentials")
+            }
+            else {
+
+                this.setState({
+                    // currentUser: resp.user,
+                    username: "",
+                    password: ""
+                })
+            }
+        })
+        .catch(console.log)
+}
 
 
     render() { 
@@ -42,5 +74,11 @@ class Login extends Component {
           );
     }
 }
+
+const mapStateToProps = ({ currentUser }) => {
+    return {
+        currentUser
+    }
+}
  
-export default Login;
+export default connect(mapStateToProps)(Login);
