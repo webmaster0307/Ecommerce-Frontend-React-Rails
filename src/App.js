@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
 import Home from './containers/Home'
 import Login from './components/auth/Login'
@@ -44,5 +45,5 @@ class App extends Component {
   }
 }
  
-export default App;
+export default (connect(null)(App));
 
