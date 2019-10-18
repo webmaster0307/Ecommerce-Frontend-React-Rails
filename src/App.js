@@ -8,7 +8,7 @@ import Logout from './components/Logout'
 import About from './components/About'
 import Wishlist from './components/Wishlist'
 import Cart from './components/Cart'
-import NewNavbar from './components/NewNavbar'
+import Navbar from './components/layout/Navbar'
 import NewBusiness from './components/NewBusiness'
 import Businesses from './components/Businesses'
 import Search from './components/Search'
@@ -33,7 +33,7 @@ class App extends Component {
     return ( 
       <Router>
           <div className="App">
-            <NewNavbar />
+            <Navbar />
             <Logout />
             <Search />
             <Switch>           

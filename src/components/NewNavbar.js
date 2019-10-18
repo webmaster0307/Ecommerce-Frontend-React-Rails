@@ -6,7 +6,6 @@ import { faBars, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 
 class NewNavBar extends Component {
-    state = {  }
 
 
     handleOnClick = (e) => {
