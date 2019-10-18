@@ -30,7 +30,7 @@ class NewNavBar extends Component {
                         <div className="dropdown-content">
                             <li><Link to="/Signup" className="nav-links">Signup</Link></li>
                             <li><Link to="/Login" className="nav-links">Login</Link></li>
-                            <li><Link to="/Logout" className="nav-links">Logout</Link></li>
+                            {/* <li><Link to="/Logout" className="nav-links">Logout</Link></li> */}
                         </div>
                     </div>
 

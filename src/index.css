@@ -12,3 +12,35 @@ body {
   margin: 0;
 }
 
+  .container {
+    width: auto;
+    border: black solid 1px;
+  }
+
+  .subheader {
+    background-color: RGB(11, 165, 161);
+    height: 40px;
+  }
+
+
+  .wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: auto;
+  }
+
+
+  @media screen and (min-width: 768px) {
+  .wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 100px auto;
+    max-width: 90%;
+    padding: 2.25%; /* 18px / 800px */
+
+  }
+
+  }

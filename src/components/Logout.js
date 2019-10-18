@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux'
 
-class Logout extends Component {
-    state = {  }
-    render() { 
+const Logout = ({loggedIn, currentUser}) => {
+  
         return (
-            <div>
-                <button>Logout</button>
+            <div className="container subheader">
+            { loggedIn ? <><p>Logged in as {currentUser.username}</p></> : null}
+            <button>Logout</button>
             </div>
           );
-    }
 }
+
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
+  
  
-export default Logout;
+export default (connect(mapStateToProps)(Logout));

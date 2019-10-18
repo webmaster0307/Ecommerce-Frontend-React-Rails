@@ -11,6 +11,7 @@ import Cart from './components/Cart'
 import NewNavbar from './components/NewNavbar'
 import NewBusiness from './components/NewBusiness'
 import Businesses from './components/Businesses'
+import Search from './components/Search'
 import { getCurrentUser } from "./actions/currentUser.js"
 
 
@@ -28,12 +29,15 @@ class App extends Component {
   // }
 
   render() { 
+    const { loggedIn, currentUser } = this.props
     return ( 
       <Router>
           <div className="App">
             <NewNavbar />
+            <Logout />
+            <Search />
             <Switch>
-              <Route path='/logout' component={Logout} />
+              {/* <Route path='/logout' component={Logout} /> */}
               <Route exact path='/' component={Home} />
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Register} />
@@ -50,10 +54,11 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return ({
-    loggedIn: !!state.currentUser,
-  })
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser,
+    loggedIn: !!currentUser
+  }
 }
  
 export default (connect(mapStateToProps, {getCurrentUser})(App));

@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 const Carosel = () => {
     return (
         <div className="container">
-            <li>Imgage 1</li>
-            <li>Imgage 2</li>
-            <li>Imgage 3</li>
+            <li>Carosel Imgage 1</li>
+            <li>Carosel Image 2</li>
+            <li>Carosel Image 3</li>
         </div>
     )
 }
