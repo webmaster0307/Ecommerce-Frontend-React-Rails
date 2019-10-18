@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
-import Home from './containers/Home'
+import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/auth/Register'
 import Logout from './components/Logout'
@@ -36,6 +36,7 @@ class App extends Component {
             <Navbar />
             <Logout />
             <Search />
+            
             <Switch>           
               {/* <Route path='/logout' component={Logout} /> */}
               <Route exact path='/' component={Home} />

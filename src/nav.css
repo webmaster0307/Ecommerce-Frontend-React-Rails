@@ -1,6 +1,6 @@
 
 .navbar {
-  font-size: 18px;
+  font-size: 16px;
   border: 1px solid black;
   padding: 12px 16px;
   background-color: RGB(31, 39, 52);
@@ -48,13 +48,12 @@
   color: white;
 }
 
-
 .active {
   display: block;
 }
 
 .dropdown .dropbtn {
-  font-size: 18px;    
+  font-size: 16px;    
   border: none;
   outline: none;
   color: RGB(0, 255, 242);

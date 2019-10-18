@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import SignInLinks from './SignInLinks'
 import SignOutLinks from './SignOutLinks'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 
 class NavBar extends Component {
@@ -15,24 +16,29 @@ class NavBar extends Component {
     }
 
     render() { 
+        const { loggedIn, currentUser } = this.props
+        // console.log(loggedIn)
+
+        const links = loggedIn ? <SignInLinks/> : <SignOutLinks />;
         return ( 
             <nav className="navbar">
                 <span className="navbar-toggle" id="js-navbar-toggle">
                     <FontAwesomeIcon icon={faBars} onClick={this.handleOnClick} />
                 </span>
-                <Link to="/" className="logo">E-Comm Site</Link>
-                <SignInLinks />
-                <SignOutLinks />
-
-                <ul className="main-nav" id="js-menu">
-                    <li><Link to="/About" className="nav-links">About</Link></li>
-                </ul>
+                <NavLink to="/" className="logo">E-Comm Site</NavLink>
+                { links }
              </nav>
-
          );
     }
 }
 
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
+   
+  export default (connect(mapStateToProps)(NavBar));
+  
 
-
-export default NavBar;

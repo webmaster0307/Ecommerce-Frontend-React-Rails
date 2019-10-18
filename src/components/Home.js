@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import Categories from '../components/Categories'
-import Carosel from '../components/Carosel'
+import Categories from './Categories'
+import Carosel from './Carosel'
+
 
 
 const Home = () => {
