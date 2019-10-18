@@ -5,7 +5,7 @@ class Logout extends Component {
     render() { 
         return (
             <div>
-                Logout Form
+                <button>Logout</button>
             </div>
           );
     }

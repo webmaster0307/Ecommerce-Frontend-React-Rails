@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { login } from '../actions/currentUser.js'
 
 class Login extends Component {
     constructor(){
@@ -11,7 +12,6 @@ class Login extends Component {
     }
     
 
-
     handleChange = (e) => {
         console.log(e.target.value)
         this.setState({
@@ -21,36 +21,13 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
-        const headers = {
-            method: 'POST',
-            credientals: "include",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                user: this.state
-            })
-        }
-        fetch("http://localhost:3001/api/v1/login", headers)
-        .then(r => r.json())
-        .then(resp => {
-            // console.log(resp)
-            console.log(resp.user)
-            if (resp.error) {
-                alert("invalid credentials")
-            }
-            else {
-
+        // console.log(this.state)
+            this.props.login(this.state)
                 this.setState({
-                    // currentUser: resp.user,
                     username: "",
                     password: ""
                 })
-            }
-        })
-        .catch(console.log)
-}
+     }
 
 
     render() { 
@@ -75,10 +52,5 @@ class Login extends Component {
     }
 }
 
-const mapStateToProps = ({ currentUser }) => {
-    return {
-        currentUser
-    }
-}
  
-export default connect(mapStateToProps)(Login);
+export default connect(null, { login } )(Login);
