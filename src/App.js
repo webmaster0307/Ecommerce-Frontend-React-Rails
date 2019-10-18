@@ -36,7 +36,7 @@ class App extends Component {
             <NewNavbar />
             <Logout />
             <Search />
-            <Switch>
+            <Switch>           
               {/* <Route path='/logout' component={Logout} /> */}
               <Route exact path='/' component={Home} />
               <Route path='/login' component={Login} />
