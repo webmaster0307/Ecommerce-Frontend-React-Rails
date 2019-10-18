@@ -30,11 +30,14 @@ class App extends Component {
 
   render() { 
     const { loggedIn, currentUser } = this.props
+
+    const links = loggedIn ? <Logout /> : null ;
+
     return ( 
       <Router>
           <div className="App">
             <Navbar />
-            <Logout />
+            { links }
             <Search />
             
             <Switch>           

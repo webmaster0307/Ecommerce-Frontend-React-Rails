@@ -14,7 +14,7 @@ body {
 
   .container {
     width: auto;
-    border: black solid 1px;
+    /* border: black solid 1px; */
   }
 
   .subheader {
