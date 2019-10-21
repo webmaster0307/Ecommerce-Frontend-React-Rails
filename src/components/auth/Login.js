@@ -36,28 +36,28 @@ class Login extends Component {
         return (
       
             <div className="container-form">
-                <h1>Login in</h1>
+                <h1>Login</h1>
 
                 <form onSubmit={this.handleSubmit}>
-                <div class="row"> 
-                    <div class="col-3">    
+                <div className="row"> 
+                    <div className="col-3">    
                         <label htmlFor="username">Username:  </label>
                     </div>  
-                    <div class="col-9"> 
-                        <input type="username" name="username" id="username" placeholder="Enter username" onChange={this.handleChange} required/>
+                    <div className="col-9"> 
+                        <input type="username" name="username" id="username" placeholder="Enter Username" onChange={this.handleChange} required/>
                     </div>  
                 </div>
 
-                <div class="row"> 
-                    <div class="col-3">  
+                <div className="row"> 
+                    <div className="col-3">  
                         <label htmlFor="password">Password:  </label>
                     </div>  
-                    <div class="col-9"> 
+                    <div className="col-9"> 
                         <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
                     </div>  
                 </div>
 
-                <div class="row">
+                <div className="row">
                   <input type="submit" value="Login"></input>
                 </div>
 
