@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 class Register extends Component {
 
@@ -27,6 +29,9 @@ class Register extends Component {
     }
 
     render() { 
+        const { loggedIn } = this.props;
+        if (loggedIn) return <Redirect to='/' />
+        
         return ( 
             <div className="container-form">
                 <h1>Register</h1>
@@ -75,4 +80,11 @@ class Register extends Component {
     }
 }
  
-export default Register;
+
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
+  export default connect(mapStateToProps)(Register);
