@@ -12,7 +12,8 @@ body {
   margin: 0;
 }
 
-h1 {
+h1, p {
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
@@ -46,17 +47,20 @@ h1 {
   height: 900px;
 }
 
-input[type=username], input[type=password], select, textarea {
+input[type=username], input[type=password], input[type=email], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+  font-size: 1rem;
 }
 
 input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
+  /* background-color: #4CAF50; */
+  background-color: RGB(0, 255, 244);
+  color: black;
+  font-size: 1rem;
   padding: 12px 20px;
   margin-top: 20px;
   width: 100%;
@@ -64,7 +68,8 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: RGB(11, 165, 161);
+  /* background-color: #45a049; */
 }
 
 .subheader {
@@ -108,6 +113,12 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
   float: right;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 

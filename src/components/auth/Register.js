@@ -28,26 +28,47 @@ class Register extends Component {
 
     render() { 
         return ( 
-            <div className="container">
+            <div className="container-form">
                 <h1>Register</h1>
                 <p>Please fill in this form to create an account</p>
 
                 <form onSubmit={this.handleSubmit}>
                     
-                    <label htmlFor="username">Username:  </label>
-                    <input type="username" name="username" id="username" placeholder="Enter username" onChange={this.handleChange} required/>
-    
-                    <label htmlFor="email">Email:  </label>
-                    <input type="email" name="email" id="email"placeholder="Enter Email" onChange={this.handleChange} required/>
+                <div class="row"> 
+                    <div class="col-3">    
+                        <label htmlFor="username">Username:  </label>
+                    </div>  
+                    <div class="col-9"> 
+                        <input type="username" name="username" id="username" placeholder="Enter username" onChange={this.handleChange} required/>
+                    </div>  
+                </div>  
 
-                    <label htmlFor="password">Password:  </label>
-                    <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
+                    <div class="row"> 
+                    <div class="col-3">    
+                        <label htmlFor="email">Email:  </label>
+                    </div>  
+                    <div class="col-9"> 
+                        <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
+                    </div>  
+                </div>  
+
+                <div class="row"> 
+                    <div class="col-3">  
+                        <label htmlFor="password">Password:  </label>
+                    </div>  
+                    <div class="col-9"> 
+                        <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
+                    </div>  
+                </div>
+
                    
-                    <input type="submit" value="Register"></input>
+                <div class="row">
+                  <input type="submit" value="Login"></input>
+                </div>
 
-                    <div className="">
-                        <p>Already have an account? <Link to="/login">Sign in</Link> </p>
-                    </div>
+                <div className="">
+                    <p>Already have an account? <Link to="/login">Sign in</Link> </p>
+                </div>
                 </form>
             </div>
          );
