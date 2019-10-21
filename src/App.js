@@ -28,18 +28,13 @@ class App extends Component {
   //   .then(data => console.log(data))
   // }
 
-  render() { 
-    const { loggedIn, currentUser } = this.props
-
-    const links = loggedIn ? <Logout /> : null ;
+  render() {
 
     return ( 
       <Router>
           <div className="App">
             <Navbar />
-            { links }
             <Search />
-            
             <Switch>           
               {/* <Route path='/logout' component={Logout} /> */}
               <Route exact path='/' component={Home} />
@@ -58,12 +53,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ currentUser }) => {
-  return {
-    currentUser,
-    loggedIn: !!currentUser
-  }
-}
+
  
-export default (connect(mapStateToProps, {getCurrentUser})(App));
+export default (connect(null, {getCurrentUser})(App));
 

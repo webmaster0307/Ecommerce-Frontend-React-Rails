@@ -18,8 +18,8 @@ class NavBar extends Component {
     render() { 
         const { loggedIn, currentUser } = this.props
         // console.log(loggedIn)
-
         const links = loggedIn ? <SignInLinks/> : <SignOutLinks />;
+        
         return ( 
             <nav className="navbar">
                 <span className="navbar-toggle" id="js-navbar-toggle">
