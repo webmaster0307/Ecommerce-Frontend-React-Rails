@@ -36,7 +36,7 @@ class App extends Component {
             <Navbar />
             <Search />
             <Switch>           
-              {/* <Route path='/logout' component={Logout} /> */}
+              <Route path='/logout' component={Logout} />
               <Route exact path='/' component={Home} />
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Register} />
@@ -55,5 +55,5 @@ class App extends Component {
 
 
  
-export default (connect(null, {getCurrentUser})(App));
+export default connect(null, {getCurrentUser})(App);
 

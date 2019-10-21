@@ -18,7 +18,7 @@ class NavBar extends Component {
     render() { 
         const { loggedIn, currentUser } = this.props
         // console.log(loggedIn)
-        const links = loggedIn ? <SignInLinks/> : <SignOutLinks />;
+        const links = loggedIn ? <SignInLinks currentUser={currentUser}/> : <SignOutLinks />;
         
         return ( 
             <nav className="navbar">

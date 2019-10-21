@@ -6,7 +6,6 @@ const Logout = ({loggedIn, currentUser, logout}) => {
 
         return (
             <div className="container subheader">
-            { loggedIn ? <><p>Logged in as {currentUser.username}</p></> : null}
             
             <button onClick={(event) => {
               event.preventDefault()
