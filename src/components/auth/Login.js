@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { login } from '../actions/currentUser.js'
+import { login } from '../../actions/currentUser.js'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
     constructor(){
@@ -10,7 +11,6 @@ class Login extends Component {
             password: '',
          }
     }
-    
 
     handleChange = (e) => {
         console.log(e.target.value)
@@ -22,7 +22,7 @@ class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         // console.log(this.state)
-            this.props.login(this.state)
+            this.props.login(this.state);
                 this.setState({
                     username: "",
                     password: ""
@@ -31,6 +31,8 @@ class Login extends Component {
 
 
     render() { 
+        const { loggedIn } = this.props;
+        if (loggedIn) return <Redirect to='/' />
         return (
             <div className="main">
                 <div className="container">
@@ -54,5 +56,12 @@ class Login extends Component {
     }
 }
 
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
+
  
-export default connect(null, { login } )(Login);
+export default connect(mapStateToProps, { login } )(Login);

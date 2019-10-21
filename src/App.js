@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
 import Home from './components/Home'
-import Login from './components/Login'
+import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import About from './components/About'
 import Wishlist from './components/Wishlist'
@@ -33,7 +33,7 @@ class App extends Component {
       <Router>
           <div className="App">
             <Navbar />
-            <Search />
+            {/* <Search /> */}
             <Switch>           
               <Route exact path='/' component={Home} />
               <Route path='/login' component={Login} />
