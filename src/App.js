@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
-import Home from './components/Home'
+import Home from './components/dashboard/Home'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import About from './components/About'
@@ -10,7 +10,7 @@ import Cart from './components/Cart'
 import Navbar from './components/layout/Navbar'
 import NewBusiness from './components/NewBusiness'
 import Businesses from './components/Businesses'
-import Search from './components/Search'
+import Search from './components/dashboard/Search'
 import { getCurrentUser } from "./actions/currentUser.js"
 
 

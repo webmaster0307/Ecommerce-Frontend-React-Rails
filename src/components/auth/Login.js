@@ -34,23 +34,34 @@ class Login extends Component {
         const { loggedIn } = this.props;
         if (loggedIn) return <Redirect to='/' />
         return (
-            <div className="main">
-                <div className="container">
-                    <h1>Login in</h1>
+      
+            <div className="container-form">
+                <h1>Login in</h1>
 
-                    <form onSubmit={this.handleSubmit}>
-                        
-                    <label htmlFor="username">Username:  </label>
-                    <input type="username" name="username" id="username" placeholder="Enter username" onChange={this.handleChange} required/>
-
-                    <label htmlFor="password">Password:  </label>
-                    <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
-                
-                    <input type="submit" value="Login"></input>
-
-                    </form>
-
+                <form onSubmit={this.handleSubmit}>
+                <div class="row"> 
+                    <div class="col-3">    
+                        <label htmlFor="username">Username:  </label>
+                    </div>  
+                    <div class="col-9"> 
+                        <input type="username" name="username" id="username" placeholder="Enter username" onChange={this.handleChange} required/>
+                    </div>  
                 </div>
+
+                <div class="row"> 
+                    <div class="col-3">  
+                        <label htmlFor="password">Password:  </label>
+                    </div>  
+                    <div class="col-9"> 
+                        <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
+                    </div>  
+                </div>
+
+                <div class="row">
+                  <input type="submit" value="Login"></input>
+                </div>
+
+                </form>
             </div>
           );
     }

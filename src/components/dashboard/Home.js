@@ -1,6 +1,6 @@
 import React from 'react';
-import Categories from './Categories'
-import Carosel from './Carosel'
+import Categories from '../Categories'
+import Carosel from '../Carosel'
 
 
 
