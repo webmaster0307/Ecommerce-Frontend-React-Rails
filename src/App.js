@@ -19,10 +19,11 @@ class App extends Component {
   
   componentDidMount() {
     this.props.getCurrentUser()
+    // this.fetchUsers()
   }
 
-  // componentDidMount() {
-  //   fetch('http://localhost:3001/api/v1/users')
+  // fetchUsers = () => {
+  //   fetch('http://localhost:3001/api/v1/categories')
   //   .then(response => response.json())
   //   .then(data => console.log(data))
   // }

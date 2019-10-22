@@ -1,6 +1,6 @@
 import React from 'react';
-import Categories from '../Categories'
 import Carosel from '../Carosel'
+import CategoryContainer from '../../containers/CategoryContainer'
 
 
 
@@ -10,7 +10,7 @@ const Home = () => {
                 <br></br>
                 <Carosel />
                 <br></br>
-                <Categories />    
+                <CategoryContainer />  
             </div> 
         );
 }

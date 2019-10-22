@@ -63,6 +63,7 @@ input[type=submit] {
   font-size: 1rem;
   padding: 12px 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 100%;
   border-radius: 4px;
 }
@@ -70,6 +71,14 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: RGB(11, 165, 161);
   /* background-color: #45a049; */
+}
+
+.row {
+  margin-top: 20px;
+}
+
+.label {
+  margin-bottom: 15px;
 }
 
 .subheader {

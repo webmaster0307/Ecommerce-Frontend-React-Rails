@@ -40,19 +40,19 @@ class Login extends Component {
 
                 <form onSubmit={this.handleSubmit}>
                 <div className="row"> 
-                    <div className="col-3">    
+                    <div className="label">    
                         <label htmlFor="username">Username:  </label>
                     </div>  
-                    <div className="col-9"> 
+                    <div className=""> 
                         <input type="username" name="username" id="username" placeholder="Enter Username" onChange={this.handleChange} required/>
                     </div>  
                 </div>
 
                 <div className="row"> 
-                    <div className="col-3">  
+                    <div className="label">  
                         <label htmlFor="password">Password:  </label>
                     </div>  
-                    <div className="col-9"> 
+                    <div className=""> 
                         <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
                     </div>  
                 </div>
