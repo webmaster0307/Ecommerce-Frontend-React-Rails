@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import SignInLinks from './SignInLinks'
 import SignOutLinks from './SignOutLinks'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,7 +25,7 @@ class NavBar extends Component {
                 <span className="navbar-toggle" id="js-navbar-toggle">
                     <FontAwesomeIcon icon={faBars} onClick={this.handleOnClick} />
                 </span>
-                <NavLink to="/" className="logo">E-Comm Site</NavLink>
+                <Link to="/" className="logo">E-Comm Site</Link>
                 { links }
              </nav>
          );

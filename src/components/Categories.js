@@ -1,16 +1,16 @@
 import React from 'react';
 
-const Categories = category => {
-
-    console.log("this is show", category);
-
+const Categories = (props) => {
+    console.log("categories props", props)
     return (
-        <div className="">
-            Show Category Page
- 
-
+        <div>
+            {props.categoriesList.categories.map(category => 
+                <div key={category.id}>
+                    { category.name }
+                </div>
+                )}
         </div>
     )
 }
 
-export default Categories
+export default Categories;
