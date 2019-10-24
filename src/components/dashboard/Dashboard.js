@@ -15,6 +15,8 @@ class Dashboard extends Component {
 
         // const { categories } = this.props
         // console.log("pass", categories)
+        // debugger;
+      
         return ( 
             <div className = "wrapper">
                 <br></br>
@@ -33,6 +35,7 @@ class Dashboard extends Component {
           return {
             categories: state.categoryReducer
           };
+      
     }
  
 export default connect(mapStateToProps, { fetchCategories })(Dashboard);
