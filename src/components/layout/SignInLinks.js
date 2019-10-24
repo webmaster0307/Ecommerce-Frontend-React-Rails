@@ -15,11 +15,13 @@ import { logout } from "../../actions/currentUser.js"
 
         render() { 
             const {currentUser} = this.props
+
+            console.log("signin", currentUser)
             return (
                 <nav className="navbar">
                     <ul className="main-nav" id="js-menu">
                         <div className="dropdown">
-                            <button className="dropbtn">hello {currentUser.username}! <FontAwesomeIcon icon={faCaretDown}/></button>
+                            <button className="dropbtn">hello {currentUser.data.attributes.username}! <FontAwesomeIcon icon={faCaretDown}/></button>
                             <div className="dropdown-content">
                                 <li><NavLink to="/Business/new" className="nav-links">New Business</NavLink></li>
                                 <li><NavLink to="/Business" className="nav-links">Existing Business</NavLink></li> 
