@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchCategories } from "../../actions/category.js"
 import Carosel from '../Carosel'
-import Categories from '../Categories.js'
+import Categories from '../products/Categories.js'
 
 
 class Dashboard extends Component {
