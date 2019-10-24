@@ -10,6 +10,7 @@ import Cart from './components/Cart'
 import Navbar from './components/layout/Navbar'
 import NewBusiness from './components/NewBusiness'
 import Businesses from './components/Businesses'
+import CategoryProducts from './components/products/CategoryProducts'
 import Search from './components/dashboard/Search'
 import { getCurrentUser } from "./actions/currentUser.js"
 // import { fetchCategories } from "./actions/category.js"
@@ -38,6 +39,7 @@ class App extends Component {
           <Route path='/cart' component={Cart} />
           <Route exact path='/business/new' component={NewBusiness} />
           <Route exact path='/business' component={Businesses} />
+          <Route exact path='/category/:id' component={CategoryProducts} />
         </Switch>
       </div>
     );
