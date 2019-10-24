@@ -7,12 +7,15 @@ const Categories = (props) => {
     console.log("categories props", props)
     // console.log("categories list", props.categoriesList.categories.data)
     
+    console.log("categoriesList.categories is", props.categoriesList.categories)
         return (
         <div>
             {props.categoriesList.categories.map(category => 
             <div key={category.id}>
                 <Link to={`/category/${category.id}` }>
-                    { category.attributes.name } </Link>
+                    { category.attributes.name } 
+                    <CategoryProducts category={props} />
+                    </Link>
                 </div>
             )}
     </div>
