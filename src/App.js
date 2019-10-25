@@ -12,14 +12,13 @@ import NewBusiness from './components/NewBusiness'
 import Businesses from './components/Businesses'
 import CategoryProducts from './components/products/CategoryProducts'
 import Search from './components/dashboard/Search'
+import Footer from './components/layout/Footer'
 import { getCurrentUser } from "./actions/currentUser.js"
-// import { fetchCategories } from "./actions/category.js"
 
 class App extends Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
-    // this.props.fetchCategories()
   }
 
 
@@ -28,7 +27,8 @@ class App extends Component {
     return ( 
       <div className="App">
         <Navbar />
-        {/* <Search /> */}
+        {/* <Search /> */} 
+        {/* <Footer /> */}
         
         <Switch>           
           <Route exact path='/' component={Dashboard} />
@@ -46,13 +46,6 @@ class App extends Component {
   }
 
 }
-
-// const mapStateToProps = state => {
-//   console.log("App", state);
-//     return {
-//       categories: state.categoryReducer
-//     };
-// }
  
 export default connect(null, { getCurrentUser } )(App);
 

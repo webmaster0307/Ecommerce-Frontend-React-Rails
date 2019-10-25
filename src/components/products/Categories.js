@@ -9,12 +9,11 @@ const Categories = (props) => {
     
     console.log("categoriesList.categories is", props.categoriesList.categories)
         return (
-        <div>
+        <div className="categories">
             {props.categoriesList.categories.map(category => 
             <div key={category.id}>
                 <Link to={`/category/${category.id}` }>
-                    { category.attributes.name } 
-                    <CategoryProducts category={props} />
+                    <li>{ category.attributes.name } </li>
                     </Link>
                 </div>
             )}
@@ -22,28 +21,5 @@ const Categories = (props) => {
     )
 }
 
-
-
-
-
-
-//     return (
-//         <div>
-//             {/* {props.categoriesList.categories.map(category => 
-//             <div key={category.id}>
-//                 <Link to={`/category/${category.id}` }>
-//                     { category.name } </Link>
-//                 </div>
-//             )} */}
-//     </div>
-//     )
-// }
-
 export default Categories;
 
-// <div key={category.id}>
-//             <Link to={`/category/${category.id}` }>
-//                 { category.attributes.name } </Link>
-//             </div>
-
-// state.categoryReducer.categories.data.map(c => c.attributes.name)
