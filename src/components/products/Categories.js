@@ -13,7 +13,8 @@ const Categories = (props) => {
             {props.categoriesList.categories.map(category => 
             <div key={category.id}>
                 <Link to={`/category/${category.id}` }>
-                    <li>{ category.attributes.name } </li>
+                    <li className="categories-text">{ category.attributes.name } </li>
+                    <li className="categories-image">image</li>
                     </Link>
                 </div>
             )}
