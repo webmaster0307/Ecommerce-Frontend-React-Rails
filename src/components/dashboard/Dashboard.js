@@ -10,25 +10,24 @@ class Dashboard extends Component {
     componentDidMount() {
         this.props.fetchCategories()
       }
-    
+ 
     render() { 
-
         // const { categories } = this.props
         // console.log("pass", categories)
         // debugger;
       
         return ( 
-            <div className = "wrapper">
-                <br></br>
-                <Carosel />
-                <br></br>
+          <div className="main">
+            <div className="carosel">
+               <Carosel />
+            </div>
+              <div className = "wrapper">
                 <Categories categoriesList={this.props.categories} />
-            </div> 
-
-           
+              </div> 
+            </div>
          );
-    }
-}
+      }
+  }
 
     const mapStateToProps = state => {
         console.log("mapStateToProps", state);
