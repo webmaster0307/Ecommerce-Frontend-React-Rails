@@ -10,7 +10,10 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   margin: 0;
+  background-color: #f2f2f2;
+  /* background-color: RGB(11, 165, 161) */
 }
+
 
 h1, p {
   padding-top: 10px;
@@ -86,10 +89,38 @@ input[type=submit]:hover {
   height: 40px;
 }
 
+/* Categories Container */
+
+.categories {
+  padding: 0px;
+}
+
+.categories li {
+  list-style-type: none;
+  color: black;
+  padding: 20px;
+  border: black solid .5px;
+  background-color: white;
+}
+
+.categories li:hover {
+  background-color: RGB(11, 165, 161);
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.carosel {
+  display: none
+}
+
+
+
 
 
 
 @media screen and (min-width: 768px) {
+
+/* Main */
 .wrapper {
   background: #fff;
   -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -128,6 +159,25 @@ input[type=submit] {
   content: "";
   clear: both;
   display: table;
+}
+
+
+/* Categories Container */
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.categories li {
+  height: 200px;
+  width: 200px;
+  padding-top: 40px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  text-align: center;
 }
 
 
