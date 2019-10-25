@@ -33,8 +33,7 @@ class Dashboard extends Component {
         // console.log("mapStateToProps", state);
           return {
             categories: state.categoryReducer
-          };
-      
+          };    
     }
  
 export default connect(mapStateToProps, { fetchCategories })(Dashboard);
