@@ -8,7 +8,7 @@
   export const fetchCategories = () => {
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/categories", {
-        credentials: "include",
+        // credentials: "include",
         method: "GET",
         headers: {
           "Content-Type": "application/json"
