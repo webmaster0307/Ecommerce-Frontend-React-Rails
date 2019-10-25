@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import CategoryProducts from './CategoryProducts.js'
 
 const Categories = (props) => {
     
@@ -11,11 +10,11 @@ const Categories = (props) => {
         <div className="categories">
             {props.categoriesList.categories.map(category => 
             <div key={category.id}>
-                <Link to={`/category/${category.id}` }>
-                    <li className="categories-image">image</li>
-                    <li className="categories-text">{ category.attributes.name } </li>
-                    </Link>
-                </div>
+             <Link to={`/category/${category.id}` }>
+                <li className="categories-image">image</li>
+                <li className="categories-text">{ category.attributes.name } </li>
+             </Link>
+            </div>
             )}
          </div>
      )
