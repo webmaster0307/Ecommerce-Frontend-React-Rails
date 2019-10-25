@@ -13,7 +13,7 @@ class ProductsContainer extends Component {
     render() { 
         return ( 
             <div>
-                <Products products={this.props.products} />
+                <Products productsList={this.props.products} />
             </div>
             
          );
@@ -21,7 +21,7 @@ class ProductsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("mapStateToProps products", state);
+    // console.log("mapStateToProps products", state);
       return {
         products: state.productReducer
       };    
