@@ -1,32 +1,27 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import ProductsContainer from '../../containers/ProductsContainer.js'
 
 const CategoryProducts = (props) => {
 
-    // const { categories } = this.props
-    // console.log("CategoryProducts" , props )
 
-    let category = props.categories.categories.filter(category => category.id == props.match.params.id)[0]
+    console.log("categoryProducts", props)
+    // console.log(props.products.match.params.id[0])
+    // console.log(props.products.categories.categories.products)
 
-    console.log(category)
-    
+    let productList = props.products.categories.categories.filter(category => category.id == props.products.match.params.id)[0]
+
+    console.log("products", productList);
+
     return (
         <div className="">
-            <h2>
-                {category ? category.attributes.name : null} 
-            </h2>
-            <ProductsContainer />
-         </div>
-     )
+            {productList ? productList.attributes.products.map(product => 
+            <div>
+                <li> { product.name } </li>
+            </div>
+            )
+            : null}
+        
+       </div>
+    )
 }
 
-const mapStateToProps = state => {
-    // console.log("mapStateToProps", state);
-      return {
-        categories: state.categoryReducer
-      };    
-}
-
-
-export default connect(mapStateToProps)(CategoryProducts);
+export default CategoryProducts;
