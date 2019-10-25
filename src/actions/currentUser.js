@@ -34,7 +34,7 @@ export const setCurrentUser = user => {
             if (response.error) {
               alert(response.error)
             } else {
-              dispatch(setCurrentUser(response))
+              dispatch(setCurrentUser(response.data))
             }
           })
           .catch(console.log)
@@ -55,7 +55,7 @@ export const setCurrentUser = user => {
             if (response.error) {
               alert(response.error)
             } else {
-              dispatch(setCurrentUser(response))
+              dispatch(setCurrentUser(response.data))
             }
           })
           .catch(console.log)
