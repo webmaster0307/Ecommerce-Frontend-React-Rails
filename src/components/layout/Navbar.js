@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import SignInLinks from './SignInLinks'
 import SignOutLinks from './SignOutLinks'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
