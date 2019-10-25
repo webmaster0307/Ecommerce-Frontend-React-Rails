@@ -16,6 +16,7 @@ const CategoryProducts = (props) => {
             <h2>
                 {category ? category.attributes.name : null} 
             </h2>
+            <ProductsContainer />
          </div>
      )
 }
