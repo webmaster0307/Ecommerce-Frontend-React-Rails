@@ -5,7 +5,7 @@ import ProductsContainer from '../../containers/ProductsContainer.js'
 const CategoryProducts = (props) => {
 
     // const { categories } = this.props
-    console.log("CategoryProducts" , props )
+    // console.log("CategoryProducts" , props )
 
     let category = props.categories.categories.filter(category => category.id == props.match.params.id)[0]
 
