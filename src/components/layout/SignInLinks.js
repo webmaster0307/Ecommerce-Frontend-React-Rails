@@ -16,7 +16,7 @@ import { logout } from "../../actions/currentUser.js"
         render() { 
             const {currentUser} = this.props
 
-            console.log("signin", currentUser)
+            // console.log("signin", currentUser)
             return (
                 <nav className="navbar">
                     <ul className="main-nav" id="js-menu">
