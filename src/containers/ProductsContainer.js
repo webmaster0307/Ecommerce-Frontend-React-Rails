@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchProducts } from "../actions/product.js"
+import Products from '../components/products/Products.js'
 
 
 class ProductsContainer extends Component {
@@ -11,10 +12,20 @@ class ProductsContainer extends Component {
 
     render() { 
         return ( 
-            <div>Products Container</div>
+            <div>
+                <Products products={this.props.products} />
+            </div>
+            
          );
-    }
+    } 
+}
+
+const mapStateToProps = state => {
+    console.log("mapStateToProps products", state);
+      return {
+        products: state.productReducer
+      };    
 }
  
-export default connect(null, { fetchProducts})(ProductsContainer);
+export default connect(mapStateToProps, { fetchProducts})(ProductsContainer);
 
