@@ -4,11 +4,10 @@ import CategoryProducts from './CategoryProducts.js'
 
 const Categories = (props) => {
     
-    console.log("categories props", props)
-    // console.log("categories list", props.categoriesList.categories.data)
-    
-    console.log("categoriesList.categories is", props.categoriesList.categories)
-        return (
+    // console.log("categories props", props)
+    // console.log("categoriesList.categories is", props.categoriesList.categories)
+       
+    return (
         <div className="categories">
             {props.categoriesList.categories.map(category => 
             <div key={category.id}>

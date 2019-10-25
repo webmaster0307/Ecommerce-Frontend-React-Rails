@@ -30,7 +30,7 @@ class Dashboard extends Component {
   }
 
     const mapStateToProps = state => {
-        console.log("mapStateToProps", state);
+        // console.log("mapStateToProps", state);
           return {
             categories: state.categoryReducer
           };
