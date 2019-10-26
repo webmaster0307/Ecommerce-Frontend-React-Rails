@@ -12,7 +12,7 @@ const Categories = (props) => {
             <div key={category.id}>
              <Link to={`/category/${category.id}` }>
                 <li className="categories-image">image</li>
-                <li className="categories-text">{ category.attributes.name } </li>
+                <li className="categories-image">{ category.attributes.name } </li>
              </Link>
             </div>
             )

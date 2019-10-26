@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchCategories } from "../actions/category.js"
-import Carosel from '../components/Carosel'
+import Carosel from '../components/dashboard/Carosel'
 import Categories from '../components/categories/Categories.js'
 
 

@@ -13,16 +13,17 @@ const CategoryProducts = (props) => {
     console.log("products", productList);
 
     return (
-        <div className="">
-            {productList ? productList.attributes.products.map(product => 
-            <div>
-                <Link to={`/category/${categoryId}/product/${product.id}` }>
-                <li> { product.name } </li>
-                </Link>
+        <div className="wrapper">
+            <div className="product-list">
+                {productList ? productList.attributes.products.map(product => 
+                <div>
+                    <Link to={`/category/${categoryId}/product/${product.id}` }>
+                    <li className="product"> { product.name } </li>
+                    </Link>
+                </div>
+                )
+                : null}
             </div>
-            )
-            : null}
-        
        </div>
     )
 }
