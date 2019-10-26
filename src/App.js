@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Route, Switch } from 'react-router-dom' 
-import Dashboard from './components/dashboard/Dashboard'
+import DashboardProductsContainer from './containers/DashboardProductsContainer'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import About from './components/About'
@@ -33,7 +33,7 @@ class App extends Component {
         {/* <Footer /> */}
         
         <Switch>           
-          <Route exact path='/' component={Dashboard} />
+          <Route exact path='/' component={DashboardProductsContainer} />
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Register} />
           <Route path='/about' component={About} />
