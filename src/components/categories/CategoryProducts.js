@@ -19,6 +19,10 @@ const CategoryProducts = (props) => {
     return (
         <div className="wrapper">
             <h1 className="product">{categoryName}</h1>
+            <h2>LINK TO CATEGORIES</h2>
+            <h2>LINK TO SUBCATEGORIES</h2>
+            <h2>HEART IMAGE FOR WISHLIST</h2>
+            
             <div className="product">
                 {productList ? productList.attributes.products.map(product => 
                 <div key={categoryId}>
