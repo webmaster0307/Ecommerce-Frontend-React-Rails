@@ -5,26 +5,28 @@ import { connect } from 'react-redux'
 
 const CategoryProducts = (props) => {
 
-    console.log("categoryProducts", props)
-    console.log(props.match.params.id[0])
-    console.log(props.categories.categories)
+    // console.log("categoryProducts", props)
+    // console.log(props.match.params.id[0])
+    // console.log(props.categories.categories)
 
     let productList = props.categories.categories.filter(category => category.id == props.match.params.id)[0]
     const categoryId = props.match.params.id[0]
     const categoryName= productList ? productList.attributes.name : null
     
     console.log("products", productList);
-    console.log("category is", categoryName)
+    // console.log("category is", categoryName)
 
     return (
         <div className="wrapper">
-            <h1>{categoryName}</h1>
-            <div className="product-list">
+            <h1 className="product">{categoryName}</h1>
+            <div className="product">
                 {productList ? productList.attributes.products.map(product => 
                 <div key={categoryId}>
                     <Link to={`/category/${categoryId}/product/${product.id}` }>
-                    <li className="product"> { product.name } </li>
+                    <li className="product-image"> <img src={ product.image } ></img></li>
+                    <li className="product-text"> { product.name } </li> 
                     </Link>
+                    <li className="product-text"> ${ product.price } </li>
                 </div>
                 )
                 : null}
