@@ -50,12 +50,18 @@ h1, p {
   padding: 20px;
 }
 .categories-text {
-  border: black solid .5px;
+  /* border: black solid .5px; */
   background-color: white;
 }
 .categories-image {
-  display: none;
+  /* display: none; */
   list-style-type: none;
+  padding: 20px;
+}
+
+.categories img {
+  height: 250px;
+  width: 100%;
 }
 .categories-text:hover {
   background-color: RGB(11, 165, 161);
@@ -108,26 +114,28 @@ h1, p {
   flex-wrap: wrap;
 }
 .categories-text {
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    text-align: center;
-    padding: 5px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+  padding: 5px;
 }
-
 
 .categories-text {
   border: none;
 }
-  .categories-image {
-    display: block;
-    /* height: 200px;
-    width: 200px; */
-    margin: 20px;
-    /* border: black solid .5px;
-    background-color: #f2f2f2;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+.categories img {
+    height: 200px;
+    width: 300px;
+}
+.categories-image {
+  display: block;
+  margin: 20px;
+  /* border: black solid .5px;
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .categories-image:hover {
@@ -135,7 +143,6 @@ h1, p {
   background-color: #f2f2f2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 .carosel {
   display: flex;

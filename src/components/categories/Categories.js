@@ -13,7 +13,7 @@ const Categories = (props) => {
            
             <Link to={`/category/${category.id}` }>
                 {/* <li className="categories-image">{ category.attributes.image }</li> */}
-                <li className="categories-image"> <img src={ category.attributes.image } width="300" height="200"></img></li>
+                <li className="categories-image"> <img src={ category.attributes.image } ></img></li>
                 <li className="categories-text">{ category.attributes.name } </li>
              </Link>
             </div>
