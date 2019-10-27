@@ -14,6 +14,7 @@ body {
   /* background-color: RGB(11, 165, 161) */
 }
 
+
 h1, p {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -147,8 +148,6 @@ h1, p {
   display: flex;
   justify-content: center;
 }
-
-
 
 
 

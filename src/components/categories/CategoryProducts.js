@@ -24,9 +24,9 @@ const CategoryProducts = (props) => {
                 <div key={categoryId}>
                     <Link to={`/category/${categoryId}/product/${product.id}` }>
                     <li className="product-image"> <img src={ product.image } ></img></li>
-                    <li className="product-text"> { product.name } </li> 
+                    <li className="product-text"> { product.name } <br></br></li> 
                     </Link>
-                    <li className="product-text"> ${ product.price } </li>
+                    <li className="product-price"> ${ product.price }</li>
                 </div>
                 )
                 : null}
