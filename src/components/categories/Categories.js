@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Categories = (props) => {
     
-    console.log("categories props", props)
+    // console.log("categories props", props)
     // console.log("categoriesList.categories is", props.categoriesList.categories)
        
     return (

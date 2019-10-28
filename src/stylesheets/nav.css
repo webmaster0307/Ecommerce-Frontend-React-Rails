@@ -5,6 +5,9 @@
   padding: 12px 16px;
   background-color: RGB(31, 39, 52);
   /* background-color: RGB(11, 11, 16) */
+  /* position: fixed;  */
+  /* top: 0; 
+  width: 100%; */
 }
 
 .nav-links {

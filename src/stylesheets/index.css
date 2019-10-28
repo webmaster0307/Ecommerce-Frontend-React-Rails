@@ -13,8 +13,11 @@ body {
   margin: 0;
   background-color: #f2f2f2;
   /* background-color: RGB(11, 165, 161) */
-  
 }
+
+/* .main {
+  margin-top: 30px;
+} */
 
 
 h1, p {
@@ -25,6 +28,7 @@ h1, p {
 .container {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .wrapper {
