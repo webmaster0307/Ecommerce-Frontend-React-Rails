@@ -2,17 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-
-const SubCategoryNav = (props) => {
-
-    console.log(props);
+const CategoryNav = (props) => {
 
     return (
-        <div className="">
-            SubCategory Nav Bar
-        </div>
+        <div>Category Nav Bar is here.....</div>
     )
-
 
 }
 
@@ -23,4 +17,4 @@ const mapStateToProps = state => {
       };    
 }
 
-export default connect(mapStateToProps)(SubCategoryNav);
+export default connect(mapStateToProps)(CategoryNav);
