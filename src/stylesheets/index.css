@@ -15,9 +15,14 @@ body {
   /* background-color: RGB(11, 165, 161) */
 }
 
-/* .main {
-  margin-top: 30px;
-} */
+.col-3 {
+ border: black solid 1px;
+}
+
+.col-9 {
+  border: black solid 1px;
+ }
+
 
 
 h1, p {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import CategoriesNav from './CategoriesNav.js'
 
 
 const CategoryProducts = (props) => {
@@ -17,23 +18,24 @@ const CategoryProducts = (props) => {
     // console.log("category is", categoryName)
 
     return (
-        <div className="wrapper">
+        
+        <div className="row">
             <h1 className="product">{categoryName}</h1>
-            <h2>LINK TO CATEGORIES</h2>
-            <h2>LINK TO SUBCATEGORIES</h2>
-            <h2>HEART IMAGE FOR WISHLIST</h2>
-            
-            <div className="product">
-                {productList ? productList.attributes.products.map(product => 
-                <div key={categoryId}>
-                    <Link to={`/category/${categoryId}/product/${product.id}` }>
-                    <li className="product-image"> <img src={ product.image } ></img></li>
-                    <li className="product-text"> { product.name } <br></br></li> 
-                    </Link>
-                    <li className="product-price"> ${ product.price }</li>
-                </div>
-                )
-                : null}
+                <div className="col-3"><CategoriesNav /> </div>
+                
+                <div className="col-9">
+                    <div className="wrapper, product">
+                        {productList ? productList.attributes.products.map(product => 
+                        <div key={categoryId}>
+                            <Link to={`/category/${categoryId}/product/${product.id}` }>
+                            <li className="product-image"> <img src={ product.image } ></img></li>
+                            <li className="product-text"> { product.name } <br></br></li> 
+                            </Link>
+                            <li className="product-price"> ${ product.price }</li>
+                        </div>
+                        )
+                        : null}
+                    </div>
             </div>
        </div>
     )
