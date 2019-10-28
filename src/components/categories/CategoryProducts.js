@@ -14,7 +14,7 @@ const CategoryProducts = (props) => {
     const categoryId = props.match.params.id[0]
     const categoryName= productList ? productList.attributes.name : null
     
-    console.log("products", productList);
+    // console.log("products", productList);
     // console.log("category is", categoryName)
 
 
