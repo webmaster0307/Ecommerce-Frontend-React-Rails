@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 const CategoriesNav = (props) => {
 
     return (
-        <div className="col-3">
+        <div className="">
             Category Nav Bar
         </div>
     )
