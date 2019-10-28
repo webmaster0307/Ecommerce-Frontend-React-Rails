@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import CategoriesNav from './CategoriesNav.js'
+import CategoryNav from './CategoryNav.js'
 
 
 const CategoryProducts = (props) => {
@@ -17,26 +17,29 @@ const CategoryProducts = (props) => {
     console.log("products", productList);
     // console.log("category is", categoryName)
 
+
+    let categoryProducts = productList ? productList.attributes.products.map(product => 
+        <div key={categoryId}>
+            <Link to={`/category/${categoryId}/product/${product.id}` }>
+            <li className="product-image"> <img src={ product.image } ></img></li>
+            <li className="product-text"> { product.name } <br></br></li> 
+            </Link>
+            <li className="product-price"> ${ product.price }</li>
+        </div>
+        )
+        : null
+
     return (
         
         <div className="row">
             <h1 className="product">{categoryName}</h1>
-                <div className="col-3"><CategoriesNav /> </div>
-                
+                <div className="col-3"><CategoryNav /> </div>
+                    
                 <div className="col-9">
                     <div className="wrapper, product">
-                        {productList ? productList.attributes.products.map(product => 
-                        <div key={categoryId}>
-                            <Link to={`/category/${categoryId}/product/${product.id}` }>
-                            <li className="product-image"> <img src={ product.image } ></img></li>
-                            <li className="product-text"> { product.name } <br></br></li> 
-                            </Link>
-                            <li className="product-price"> ${ product.price }</li>
-                        </div>
-                        )
-                        : null}
+                       {categoryProducts}
                     </div>
-            </div>
+                </div>
        </div>
     )
 }

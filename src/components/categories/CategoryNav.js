@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
-const CategoriesNav = (props) => {
+const CategoryNav = (props) => {
 
     return (
         <div className="">
@@ -21,4 +21,4 @@ const mapStateToProps = state => {
       };    
 }
 
-export default connect(mapStateToProps)(CategoriesNav);
+export default connect(mapStateToProps)(CategoryNav);
