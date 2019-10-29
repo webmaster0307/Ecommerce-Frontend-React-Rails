@@ -29,11 +29,11 @@ const CategoryNav = (props) => {
 
 
             return (
-        <div className="subcategories">
+        <div className="categoriesNav">
             <h2>SubCategories</h2>
             <br></br>
             <Link to={`/category/${CategoryIdforLink}/subcategory` }>
-                <div className="subcategory">
+                <div className="categoryNav">
                 {subCategoryName }
                 </div>
             </Link>

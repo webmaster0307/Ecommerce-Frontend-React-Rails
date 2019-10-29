@@ -103,12 +103,12 @@ h1, p {
 
 /* SUBCATEGORIES CONTAINER */
 
-.subcategories {
+.categoriesNav {
   height: 100%;
   /* flex-wrap: wrap; */
 }
 
-.subcategory {
+.categoryNav {
   list-style: none;
 }
 
