@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import { fetchProducts } from "../actions/product.js"
-import Products from '../components/products/Products.js'
+// import { fetchProducts } from "../actions/product.js"
+import Categories from '../components/categories/Categories.js'
 
 
 class ProductsContainer extends Component {
    
     componentDidMount() {
-        this.props.fetchProducts()
+        // this.props.fetchProducts()
       }
 
     render() { 
         return ( 
             <div>
-                <Products productsList={this.props.products} />
+                <Categories productsList={this.props.products} />
             </div>
             
          );
@@ -27,5 +27,5 @@ const mapStateToProps = state => {
       };    
 }
  
-export default connect(mapStateToProps, { fetchProducts})(ProductsContainer);
+export default connect(mapStateToProps)(ProductsContainer);
 

@@ -5,37 +5,61 @@ import { Link } from 'react-router-dom'
 
 const SubCategoryNav = (props) => {
 
-    console.log("subCategoryNav props",props);
+    // console.log("subCategoryNav props",props);
 
-    const categoryIdforLink = props.products.match.params.id[0]
+    const CategoryIdforLink = props.products.match.params.id[0]
+    // console.log("categoryIdforLink", categoryIdforLink)
 
     // let subcategoryName = props.categories.categories.filter(category => category.id === props.match.params.id)[0]
-    console.log("subcategories", props.products.categories.categories.filter(category => category.id === props.products.match.params.id)[0])
+    // console.log("subcategories", props.products.categories.categories.filter(category => category.id === props.products.match.params.id)[0])
 
     let currentCategory = props.products ? props.products.categories.categories.filter(category => category.id === props.products.match.params.id)[0] : null
-    console.log("currentCategory is", currentCategory)
+    // console.log("currentCategory is", currentCategory)
+  
+    // let subcategoryIdforLink = currentCategory ? currentCategory.attributes.subcategories.map(subcategory => 
+    //     <div>
+    //         <li>{subcategory.subcategory_id}</li>
+    //     </div>
+       
+    //     ) : null
+
+// let subcat = props.subcategories.subcategories
+// console.log("subcat is", subcat)
+
+//     let subcatProducts = props.subcategories.subcategories.map(products => 
+//         products)
+//          console.log("subcatProducts", subcatProducts)
+    
+//     let subcatMap = subcatProducts.map(product => product)
+//     console.log("subcatMap", subcatMap)
+
 
 
     let subcategoryList = currentCategory ? currentCategory.attributes.subcategories.map(subcategory => 
         <div>
+        {/* <Link to={`/category/${categoryIdforLink}/subcategory/${subcategoryIdforLink}` }> */}
+
             <li>{subcategory.subcategory_name}</li>
+         {/* </Link> */}
+
         </div>
         ) : null
 
-    console.log("subcategoryList", subcategoryList)
+    // console.log("subcategoryList", subcategoryList)
 
+        
 
-            return (
-        <div className="categoriesNav">
-            <h2>SubCategories</h2>
-            <br></br>
-            {/* <Link to={`/category/${CategoryIdforLink}/subcategory` }> */}
-                <div className="categoryNav">
-                {subcategoryList }
-                </div>
-            {/* </Link> */}
-        </div>
-    )
+    // console.log("SubcategoryIdforLink", SubcategoryIdforLink)
+
+        return (
+            <div className="">
+                <h2>SubCategories</h2>
+                <br></br>
+                    <div className="">
+                    {subcategoryList}
+                    </div> 
+            </div>
+      )
 
 
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Route, Switch } from 'react-router-dom' 
 import DashboardProductsContainer from './containers/DashboardProductsContainer'
+// import ProductsContainer from './containers/ProductsContainer'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import About from './components/About'
@@ -17,6 +18,8 @@ import Footer from './components/layout/Footer'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { fetchCategories } from "./actions/category.js"
 import { fetchSubcategories } from "./actions/subcategory.js"
+import { fetchProducts } from "./actions/product.js"
+
 
 class App extends Component {
 
@@ -24,6 +27,7 @@ class App extends Component {
     this.props.getCurrentUser()
     this.props.fetchCategories()
     this.props.fetchSubcategories()
+    this.props.fetchProducts()
   }
 
 
@@ -45,7 +49,7 @@ class App extends Component {
           <Route exact path='/business/new' component={NewBusiness} />
           <Route exact path='/business' component={Businesses} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
-          <Route exact path='/subcategory/:id/products' component={SubCategoryProducts} />
+          <Route exact path='/category/:id/subcategory/:id' component={SubCategoryProducts} />
         </Switch>
       </div>
     );
@@ -53,5 +57,5 @@ class App extends Component {
 
 }
  
-export default connect(null, { getCurrentUser, fetchCategories, fetchSubcategories } )(App);
+export default connect(null, { getCurrentUser, fetchCategories, fetchSubcategories, fetchProducts } )(App);
 

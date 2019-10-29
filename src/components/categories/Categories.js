@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Categories = (props) => {
     
     // console.log("categories props", props)
-    // console.log("categoriesList.categories is", props.categoriesList.categories)
+    console.log("categoriesList.categories is", props.categoriesList.categories)
     
     let categories = props.categoriesList.categories ? props.categoriesList.categories.map(category => 
         <div key={category.id}>
