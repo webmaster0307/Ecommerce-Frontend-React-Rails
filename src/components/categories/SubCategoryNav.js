@@ -16,12 +16,11 @@ const SubCategoryNav = (props) => {
     let currentCategory = props.products ? props.products.categories.categories.filter(category => category.id === props.products.match.params.id)[0] : null
     // console.log("currentCategory is", currentCategory)
   
-    // let subcategoryIdforLink = currentCategory ? currentCategory.attributes.subcategories.map(subcategory => 
-    //     <div>
-    //         <li>{subcategory.subcategory_id}</li>
-    //     </div>
-       
-    //     ) : null
+    let subcategoryIdforLink = currentCategory ? currentCategory.attributes.subcategories.map(subcategory => 
+        <div>
+            <li>{subcategory.subcategory_id}</li>
+        </div>
+        ) : null
 
 // let subcat = props.subcategories.subcategories
 // console.log("subcat is", subcat)
@@ -37,11 +36,9 @@ const SubCategoryNav = (props) => {
 
     let subcategoryList = currentCategory ? currentCategory.attributes.subcategories.map(subcategory => 
         <div>
-        {/* <Link to={`/category/${categoryIdforLink}/subcategory/${subcategoryIdforLink}` }> */}
-
+        <Link to={`/category/${CategoryIdforLink}/subcategory/${subcategoryIdforLink}` }>
             <li>{subcategory.subcategory_name}</li>
-         {/* </Link> */}
-
+         </Link>
         </div>
         ) : null
 
