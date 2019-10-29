@@ -5,11 +5,11 @@ import { connect } from 'react-redux'
 const CategoryNav = (props) => {
 
   return (
-    <div className="subcategories">
+    <div className="categoriesNav">
         <h2>Categories</h2>
         <br></br>
         {/* <Link to={`/category/${CategoryIdforLink}/subcategory` }> */}
-            <div className="subcategory">
+            <div className="categoryNav">
        
             </div>
         {/* </Link> */}
