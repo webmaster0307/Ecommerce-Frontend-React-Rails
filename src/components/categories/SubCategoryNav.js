@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
@@ -8,34 +9,32 @@ const SubCategoryNav = (props) => {
 
     const categoryIdforLink = props.products.match.params.id[0]
 
-    let subCategoryName = props.products ? props.products.subcategories.subcategories.map(product => 
-        <li>{product.attributes.name}</li>
-        
+    // let subcategoryName = props.categories.categories.filter(category => category.id === props.match.params.id)[0]
+    console.log("subcategories", props.products.categories.categories.filter(category => category.id === props.products.match.params.id)[0])
+
+    let currentCategory = props.products ? props.products.categories.categories.filter(category => category.id === props.products.match.params.id)[0] : null
+    console.log("currentCategory is", currentCategory)
+
+
+    let subcategoryList = currentCategory ? currentCategory.attributes.subcategories.map(subcategory => 
+        <div>
+            <li>{subcategory.subcategory_name}</li>
+        </div>
         ) : null
-    console.log("subCategoryName", subCategoryName)
+
+    console.log("subcategoryList", subcategoryList)
 
 
+    // console.log("subcateories", props.subcategories.subcategories)
 
-    // let productCategoryList = props.products.categories.categories.filter(category => category.id == props.products.match.params.id)[0]
-    // // console.log("product category list is", productCategoryList)
+    // let SubCategoryFilter = props.products ? props.products.subcategories.subcategories.filter(product => product.attributes.products.category_id == props.products.match.params.id)[0]
+    // : null
+    // console.log("SubCategoryFilter", SubCategoryFilter)
 
-    // let productCategoryListProducts =  productCategoryList ? productCategoryList.attributes.products : null
-    // // console.log("productCategoryListProducts", productCategoryListProducts)
-
-    // let subCategoryName = productCategoryListProducts ? productCategoryListProducts.map(product => 
-    // <li>{product.subcategory_name}</li>
-    // ) : null
-    // // console.log("subCategoryName", subCategoryName)
-
-    // let subCategoryId = productCategoryListProducts ? productCategoryListProducts.map(product => 
-    //     <li>{product.subcategory_id}</li>
+    // let subCategoryName = props.products ? props.products.subcategories.subcategories.map(product => 
+    //     <li>{product.attributes.name}</li>
     //     ) : null
-    //     // console.log("subCategoryId", subCategoryId)
-
-        
-    // const CategoryIdforLink = productCategoryList ? productCategoryList.attributes.id : null
-    // // console.log("CategoryIdforLink", CategoryIdforLink)
-
+    // console.log("subCategoryName", subCategoryName)
 
 
             return (
@@ -44,7 +43,7 @@ const SubCategoryNav = (props) => {
             <br></br>
             {/* <Link to={`/category/${CategoryIdforLink}/subcategory` }> */}
                 <div className="categoryNav">
-                {subCategoryName }
+                {subcategoryList }
                 </div>
             {/* </Link> */}
         </div>
@@ -53,4 +52,12 @@ const SubCategoryNav = (props) => {
 
 }
 
-export default SubCategoryNav;
+const mapStateToProps = state => {
+    // console.log("mapStateToProps", state);
+      return {
+        // categories: state.categoryReducer,
+        subcategories: state.subcategoryReducer,
+      };    
+}
+
+export default connect(mapStateToProps)(SubCategoryNav);

@@ -8,7 +8,7 @@ const CategoryProducts = (props) => {
 
     // console.log("categoryProducts", props)
     // console.log(props.match.params.id[0])
-    // console.log(props.categories.categories)
+    // console.log("category props", props.categories.categories)
 
     let productList = props.categories.categories.filter(category => category.id === props.match.params.id)[0]
     const categoryId = props.match.params.id[0]
@@ -50,7 +50,7 @@ const mapStateToProps = state => {
     // console.log("mapStateToProps", state);
       return {
         categories: state.categoryReducer,
-        subcategories: state.subcategoryReducer,
+        // subcategories: state.subcategoryReducer,
       };    
 }
 
