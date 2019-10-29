@@ -31,18 +31,20 @@ const CategoryProducts = (props) => {
         : null
 
     return (
-        
+
         <div className="row">
-            <div><CategoryNav/></div>
             <h1 className="product">{categoryName}</h1>
-                <div className="col-3"><SubCategoryNav /> </div>
-                    
-                <div className="col-9">
-                    <div className="wrapper, product">
-                       {categoryProducts}
-                    </div>
+            <div className="col-3">
+                <CategoryNav products={props} />
+                <SubCategoryNav products={props} />
+            </div>
+            <div className="col-9">
+                <div className="wrapper, product">
+                    {categoryProducts}
                 </div>
+            </div>
        </div>
+    
     )
 }
 
