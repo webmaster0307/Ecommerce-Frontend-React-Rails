@@ -6,6 +6,16 @@ const SubCategoryNav = (props) => {
 
     console.log("subCategoryNav props",props);
 
+    const categoryIdforLink = props.products.match.params.id[0]
+
+    let subCategoryName = props.products ? props.products.subcategories.subcategories.map(product => 
+        <li>{product.attributes.name}</li>
+        
+        ) : null
+    console.log("subCategoryName", subCategoryName)
+
+
+
     // let productCategoryList = props.products.categories.categories.filter(category => category.id == props.products.match.params.id)[0]
     // // console.log("product category list is", productCategoryList)
 
@@ -34,7 +44,7 @@ const SubCategoryNav = (props) => {
             <br></br>
             {/* <Link to={`/category/${CategoryIdforLink}/subcategory` }> */}
                 <div className="categoryNav">
-                {/* {subCategoryName } */}
+                {subCategoryName }
                 </div>
             {/* </Link> */}
         </div>
