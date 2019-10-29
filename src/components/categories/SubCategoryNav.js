@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-const CategoryNav = (props) => {
+const SubCategoryNav = (props) => {
 
     // console.log("subCategoryNav props",props);
 
@@ -43,4 +43,4 @@ const CategoryNav = (props) => {
 
 }
 
-export default CategoryNav;
+export default SubCategoryNav;

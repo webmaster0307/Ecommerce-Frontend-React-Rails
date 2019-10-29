@@ -3,12 +3,14 @@ import thunk from 'redux-thunk'
 import currentUser from './reducers/currentUser'
 import categoryReducer from './reducers/categoryReducer'
 import productReducer from './reducers/productReducer'
+import subcategoryReducer from './reducers/subcategoryReducer'
 
 
 const reducer = combineReducers ({
     currentUser,
     categoryReducer,
-    productReducer
+    productReducer,
+    subcategoryReducer,
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

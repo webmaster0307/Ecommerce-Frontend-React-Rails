@@ -16,12 +16,14 @@ import Search from './components/dashboard/Search'
 import Footer from './components/layout/Footer'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { fetchCategories } from "./actions/category.js"
+import { fetchSubcategories } from "./actions/subcategory.js"
 
 class App extends Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
     this.props.fetchCategories()
+    this.props.fetchSubcategories()
   }
 
 
@@ -51,5 +53,5 @@ class App extends Component {
 
 }
  
-export default connect(null, { getCurrentUser, fetchCategories } )(App);
+export default connect(null, { getCurrentUser, fetchCategories, fetchSubcategories } )(App);
 
