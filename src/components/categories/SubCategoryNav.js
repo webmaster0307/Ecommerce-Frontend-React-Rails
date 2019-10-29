@@ -25,18 +25,6 @@ const SubCategoryNav = (props) => {
     console.log("subcategoryList", subcategoryList)
 
 
-    // console.log("subcateories", props.subcategories.subcategories)
-
-    // let SubCategoryFilter = props.products ? props.products.subcategories.subcategories.filter(product => product.attributes.products.category_id == props.products.match.params.id)[0]
-    // : null
-    // console.log("SubCategoryFilter", SubCategoryFilter)
-
-    // let subCategoryName = props.products ? props.products.subcategories.subcategories.map(product => 
-    //     <li>{product.attributes.name}</li>
-    //     ) : null
-    // console.log("subCategoryName", subCategoryName)
-
-
             return (
         <div className="categoriesNav">
             <h2>SubCategories</h2>
