@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import SubCategoryNav from './SubCategoryNav.js'
-import CategoryNav from './CategoryNav.js'
 
 
 const CategoryProducts = (props) => {
@@ -35,7 +34,6 @@ const CategoryProducts = (props) => {
         <div className="row">
             <h1 className="product">{categoryName}</h1>
             <div className="col-3">
-                <CategoryNav products={props} />
                 <SubCategoryNav products={props} />
             </div>
             <div className="col-9">

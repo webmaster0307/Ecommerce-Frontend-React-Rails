@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const CategoryNav = (props) => {
 
-    console.log("subCategoryNav props",props);
+    // console.log("subCategoryNav props",props);
 
     let productCategoryList = props.products.categories.categories.filter(category => category.id == props.products.match.params.id)[0]
     // console.log("product category list is", productCategoryList)
