@@ -14,6 +14,7 @@ import CategoryProducts from './components/categories/CategoryProducts'
 import Search from './components/dashboard/Search'
 import Footer from './components/layout/Footer'
 import { getCurrentUser } from "./actions/currentUser.js"
+import { fetchProducts } from "./actions/product.js"
 import Product from './components/categories/Product'
 
 
@@ -21,6 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.fetchProducts()
   }
 
 
@@ -51,5 +53,5 @@ class App extends Component {
 
 }
  
-export default connect(null, { getCurrentUser } )(App);
+export default connect(null, { getCurrentUser, fetchProducts } )(App);
 

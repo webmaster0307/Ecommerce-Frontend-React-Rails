@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-// import { fetchProducts } from "../actions/product.js"
-import Categories from '../components/categories/Categories.js'
+import { fetchProducts } from "../actions/product.js"
+import Product from '../components/categories/Product.js'
 
 
 class ProductsContainer extends Component {
@@ -13,7 +13,7 @@ class ProductsContainer extends Component {
     render() { 
         return ( 
             <div>
-                <Categories productsList={this.props.products} />
+                <Product products={this.props} />
             </div>
             
          );
