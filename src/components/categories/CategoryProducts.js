@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
+
 const CategoryProducts = (props) => {
 
     console.log("categoryProducts", props)
