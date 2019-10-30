@@ -22,10 +22,10 @@ const CategoryProducts = (props) => {
     let categoryProducts = productList ? productList.attributes.products.map(product => 
         <div key={product.id}>
             <Link to={`/category/${CategoryId}/products/${product.id}` }>
-            <li className="product-image"> <img src={ product.image } alt="product" ></img></li>
-            <li className="product-text"> { product.name } <br></br></li> 
+            <li className="products-image"> <img src={ product.image } alt="product" ></img></li>
+            <li className="products-text"> { product.name } <br></br></li> 
             </Link>
-            <li className="product-price"> ${ product.price }</li>
+            <li className="products-price"> ${ product.price }</li>
         </div>
         )
         : null
@@ -44,9 +44,9 @@ const CategoryProducts = (props) => {
 
     return (
       <div className="">
-          <h1 className="product">{CategoryName}</h1>
-          <div className="wrapper, product">
-            {sortedProducts}
+          <h1 className="products">{CategoryName}</h1>
+          <div className="products">
+            {categoryProducts}
           </div>     
       </div>
     )
