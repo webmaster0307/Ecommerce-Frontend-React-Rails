@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const SubCategoryNav = (props) => {
 
-    console.log("subCategoryNav props",props);
+    // console.log("subCategoryNav props",props);
 
     const CategoryIdforLink = props.products.match.params.id[0]
     // console.log("categoryIdforLink", categoryIdforLink)

@@ -22,7 +22,7 @@ class DashboardProductsContainer extends Component {
                <Carosel />
             </div>
               <div className = "wrapper">
-                <Categories categoriesList={this.props.categories} />
+                <Categories categoriesList={this.props} />
               </div> 
             </div>
          );
@@ -32,7 +32,8 @@ class DashboardProductsContainer extends Component {
     const mapStateToProps = state => {
         // console.log("mapStateToProps", state);
           return {
-            categories: state.categoryReducer
+            categories: state.categoryReducer,
+            subcategories: state.subcategoryReducer,
           };    
     }
  

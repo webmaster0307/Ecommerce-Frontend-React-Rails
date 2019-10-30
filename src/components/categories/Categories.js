@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 const Categories = (props) => {
     
-    // console.log("categories props", props)
-    console.log("categoriesList.categories is", props.categoriesList.categories)
+    console.log("categories props", props)
+    console.log("categoriesList.categories.categories is", props.categoriesList.categories.categories)
     
-    let categories = props.categoriesList.categories ? props.categoriesList.categories.map(category => 
+    let categories = props.categoriesList.categories.categories ? props.categoriesList.categories.categories.map(category => 
         <div key={category.id}>
         <Link to={`/category/${category.id}/products` }>
             <br></br>
