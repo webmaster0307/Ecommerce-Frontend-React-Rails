@@ -47,7 +47,7 @@ const CategoryProducts = (props) => {
         <div className="row">
             <h1 className="product">{CategoryName}</h1>
             <div className="col-3">
-                <SubCategoryNav products={props} />
+                {/* <SubCategoryNav products={props} /> */}
             </div>
             <div className="col-9">
                 <div className="wrapper, product">
