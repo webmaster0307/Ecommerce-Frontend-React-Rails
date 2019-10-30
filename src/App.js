@@ -14,6 +14,7 @@ import CategoryProducts from './components/categories/CategoryProducts'
 import Search from './components/dashboard/Search'
 import Footer from './components/layout/Footer'
 import { getCurrentUser } from "./actions/currentUser.js"
+import Product from './components/categories/Product'
 
 
 class App extends Component {
@@ -41,6 +42,8 @@ class App extends Component {
           <Route exact path='/business/new' component={NewBusiness} />
           <Route exact path='/business' component={Businesses} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
+          <Route exact path='/category/:id/products/:id' component={Product} />
+
         </Switch>
       </div>
     );

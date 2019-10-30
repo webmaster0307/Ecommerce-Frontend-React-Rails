@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Product from './Product.js'
 
 
 
 const CategoryProducts = (props) => {
 
-    console.log("categoryProducts", props)
-    console.log(props.match ? props.match.params.id[0]: null)
-    console.log("category props", props.categories.categories)
+    // console.log("categoryProducts", props)
+    // console.log(props.match ? props.match.params.id[0]: null)
+    // console.log("category props", props.categories.categories)
 
     let productList = props.match ? props.categories.categories.filter(category => category.id === props.match.params.id)[0] : null
     const CategoryId = props.match ? props.match.params.id[0] : null
@@ -20,7 +21,7 @@ const CategoryProducts = (props) => {
 
     let categoryProducts = productList ? productList.attributes.products.map(product => 
         <div key={product.id}>
-            <Link to={`/category/${CategoryId}/product/${product.id}` }>
+            <Link to={`/category/${CategoryId}/products/${product.id}` }>
             <li className="product-image"> <img src={ product.image } alt="product" ></img></li>
             <li className="product-text"> { product.name } <br></br></li> 
             </Link>
@@ -42,11 +43,11 @@ const CategoryProducts = (props) => {
 
 
     return (
-      <div className="row">
+      <div className="">
           <h1 className="product">{CategoryName}</h1>
           <div className="wrapper, product">
             {sortedProducts}
-          </div>
+          </div>     
       </div>
     )
 }
