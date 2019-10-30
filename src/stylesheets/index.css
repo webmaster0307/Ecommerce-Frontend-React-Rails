@@ -68,6 +68,7 @@ h1, p {
 }
 
 .categories-image {
+  display: none;
   list-style-type: none;
   padding: 15px;
  
@@ -157,8 +158,9 @@ h1, p {
 }
 
 .categories img {
-   height: 200px;
-   width: 300px;
+  display: none;
+   height: 75px;
+   width: 100px;
 }
 /* .categories-image {
   margin: 10px;

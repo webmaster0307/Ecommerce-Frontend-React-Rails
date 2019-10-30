@@ -25,7 +25,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
-    this.props.fetchCategories()
+    // this.props.fetchCategories()
     this.props.fetchSubcategories()
     this.props.fetchProducts()
   }
@@ -38,9 +38,9 @@ class App extends Component {
         <Navbar />
         {/* <Search /> */} 
         {/* <Footer /> */}
-        
+        <DashboardProductsContainer />
         <Switch>           
-          <Route exact path='/' component={DashboardProductsContainer} />
+          {/* <Route exact path='/' component={DashboardProductsContainer} /> */}
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Register} />
           <Route path='/about' component={About} />
@@ -57,5 +57,5 @@ class App extends Component {
 
 }
  
-export default connect(null, { getCurrentUser, fetchCategories, fetchSubcategories, fetchProducts } )(App);
+export default connect(null, { getCurrentUser, fetchSubcategories, fetchProducts } )(App);
 

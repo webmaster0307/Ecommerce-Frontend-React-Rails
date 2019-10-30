@@ -8,7 +8,7 @@ import Categories from '../components/categories/Categories.js'
 class DashboardProductsContainer extends Component {
 
     componentDidMount() {
-        // this.props.fetchCategories()
+        this.props.fetchCategories()
       }
  
     render() { 
