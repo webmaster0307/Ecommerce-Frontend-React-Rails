@@ -1,21 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import SubCategoryNav from './SubCategoryNav.js'
 
 
 const CategoryProducts = (props) => {
 
-    // console.log("categoryProducts", props)
-    // console.log(props.match.params.id[0])
-    // console.log("category props", props.categories.categories)
+    console.log("categoryProducts", props)
+    console.log(props.match ? props.match.params.id[0]: null)
+    console.log("category props", props.categories.categories)
 
-    let productList = props.categories.categories.filter(category => category.id === props.match.params.id)[0]
-    const CategoryId = props.match.params.id[0]
-    const CategoryName= productList ? productList.attributes.name : null
+    let productList = props.match ? props.categories.categories.filter(category => category.id === props.match.params.id)[0] : null
+    const CategoryId = props.match ? props.match.params.id[0] : null
+    const CategoryName = productList ? productList.attributes.name : null
     
     // console.log("products", productList);
-    // console.log("category is", categoryName)
+    // console.log("category is", CategoryName)
 
 
     let categoryProducts = productList ? productList.attributes.products.map(product => 
@@ -41,29 +40,19 @@ const CategoryProducts = (props) => {
       // console.log("sortedProducts", sortedProducts)
 
 
-
     return (
-
-        <div className="row">
-            <h1 className="product">{CategoryName}</h1>
-            <div className="col-3">
-                {/* <SubCategoryNav products={props} /> */}
-            </div>
-            <div className="col-9">
-                <div className="wrapper, product">
-                    {sortedProducts}
-                </div>
-            </div>
-       </div>
-    
+      <div className="row">
+          <h1 className="product">{CategoryName}</h1>
+          <div className="wrapper, product">
+            {sortedProducts}
+          </div>
+      </div>
     )
 }
 
 const mapStateToProps = state => {
-    // console.log("mapStateToProps", state);
       return {
         categories: state.categoryReducer,
-        // subcategories: state.subcategoryReducer,
       };    
 }
 

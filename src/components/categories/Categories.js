@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import CategoryProducts from './CategoryProducts.js'
 
 const Categories = (props) => {
     
-    console.log("categories props", props)
-    console.log("categoriesList.categories.categories is", props.categoriesList.categories.categories)
+    // console.log("categories props", props)
+    // console.log("categoriesList.categories.categories is", props.categoriesList.categories.categories)
     
     let categories = props.categoriesList.categories.categories ? props.categoriesList.categories.categories.map(category => 
         <div key={category.id}>
@@ -20,6 +21,7 @@ const Categories = (props) => {
     return (
         <div className="categories">
             {categories}
+            <CategoryProducts categories={props} />
        </div>
      )
 }
