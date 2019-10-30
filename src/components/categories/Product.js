@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
 const Product = (props) => {
 
@@ -12,4 +13,10 @@ const Product = (props) => {
 
 }
 
-export default Product;
+const mapStateToProps = state => {
+    return {
+      products: state.productReducer,
+    };    
+}
+
+export default connect(mapStateToProps)(Product);
