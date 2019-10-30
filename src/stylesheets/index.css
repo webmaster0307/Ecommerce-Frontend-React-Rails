@@ -63,7 +63,7 @@ h1, p {
   list-style-type: none;
   color: black;
   background-color: white;
-  padding: 5px;
+  padding: 10px;
   text-align: center; 
 }
 
@@ -133,14 +133,6 @@ h1, p {
 
 /* CATEGORIES CONTAINER */
 
-.categories-text {
-  /* margin-left: 16px;
-  margin-right: 16px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  */
-
-}
 
 .categories-text {
   border: none;
@@ -151,6 +143,7 @@ h1, p {
    height: 75px;
    width: 100px;
 }
+
 /* .categories-image {
   margin: 10px;
 } */
