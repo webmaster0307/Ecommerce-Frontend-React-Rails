@@ -18,10 +18,10 @@ const Product = (props) => {
             </div>
 
             <div className="col-6">
-                <h3 className="product-text">Style#: {product ? product.attributes.item_number : null}</h3>
-                <h3 className="product-text">Name: {product ? product.attributes.name : null}</h3>
-                <h3 className="product-text">Description: {product ? product.attributes.description : null}</h3>
-                <h3 className="product-text">Price: ${product ? product.attributes.price : null}</h3>
+                <li className="product-text bold">Style#: {product ? product.attributes.item_number : null}</li>
+                <li className="product-text bold">Name: {product ? product.attributes.name : null}</li>
+                <li className="product-text">Description: {product ? product.attributes.description : null}</li>
+                <li className="product-text">Price: ${product ? product.attributes.price : null}</li>
             </div>            
         </div>
     )

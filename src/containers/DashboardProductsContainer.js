@@ -18,9 +18,6 @@ class DashboardProductsContainer extends Component {
       
         return ( 
           <div className="main">
-            <div className="carosel">
-               <Carosel />
-            </div>
               <div className = "wrapper">
                 <Categories categoriesList={this.props} />
               </div> 
