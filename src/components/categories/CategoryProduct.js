@@ -7,7 +7,7 @@ const CategoryProduct = (props) => {
     // console.log(props.match.params.id[0])
 
     let product = props.products.products.filter(product => product.id === props.match.params.id)[0]
-    console.log("product is", product)
+    // console.log("product is", product)
 
     let productColors = product ? product.attributes.colors.map(color => 
         <div key={color.color_id}>

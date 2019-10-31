@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-// import Product from './Product.js'
-
 
 
 const CategoryProducts = (props) => {
@@ -17,9 +15,15 @@ const CategoryProducts = (props) => {
     
     // console.log("products", productList);
     // console.log("category is", CategoryName)
+    
+    let sortedProducts = productList ? productList.attributes.products.sort(function(a,b){
+      return a.subcategory_id - b.subcategory_id;
+    })   
+    : null
+    //  console.log("sortedProducts", sortedProducts)
+    
 
-
-    let categoryProducts = productList ? productList.attributes.products.map(product => 
+    let categoryProducts = productList ? sortedProducts.map(product => 
         <div key={product.id}>
             <Link to={`/category/${CategoryId}/products/${product.id}` }>
             <li className="products-image"> <img src={ product.image } alt="product" ></img></li>
@@ -31,15 +35,6 @@ const CategoryProducts = (props) => {
         : null
 
         // console.log(productList.attributes.products)
-
-
-        // NOT SURE IF WORKING...ADD MORE PRODUCTS
-
-      let sortedProducts = categoryProducts ? categoryProducts.sort(function(a,b){
-        return a.Subcategory_id - b.Subcategory_id;
-      })  
-      : null
-      // console.log("sortedProducts", sortedProducts)
 
 
     return (
