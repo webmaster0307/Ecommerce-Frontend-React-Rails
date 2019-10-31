@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchCategories } from "../actions/category.js"
-import Carosel from '../components/dashboard/Carosel'
 import Categories from '../components/categories/Categories.js'
 
 
@@ -18,10 +17,8 @@ class DashboardProductsContainer extends Component {
       
         return ( 
           <div className="main">
-              <div className = "wrapper">
-                <Categories categoriesList={this.props} />
-              </div> 
-            </div>
+             <Categories categoriesList={this.props} />
+          </div>
          );
       }
   }
