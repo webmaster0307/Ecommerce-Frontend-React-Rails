@@ -17,14 +17,14 @@ const Product = (props) => {
         
 
     return(
-        <div className="">
+        <div className="product-main">
             <div className="product-flex">
-                <div className="col-6">
+                <div className="product col-5">
                     <li className="product-image">{product ? <img src={ product.attributes.image } alt="product" ></img> : null}</li>
                 </div>
             </div>
 
-            <div className="col-6">
+            <div className="product-info col-7">
                 <li className="product-text">Product Name: {product ? product.attributes.name : null}</li>
                 <li className="product-text">Description: {product ? product.attributes.description : null}</li>
                 <li className="product-text">Item Number: {product ? product.attributes.item_number : null}</li>
@@ -38,13 +38,13 @@ const Product = (props) => {
 
                 <br></br>
 
-                <li className="product-text">Select Qty: </li>
+                {/* <li className="product-qty">Select Qty: </li>
                 <select>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                </select>
+                </select> */}
   
                 <button>Add to Cart</button>
             </div>     
