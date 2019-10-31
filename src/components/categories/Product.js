@@ -37,6 +37,7 @@ const Product = (props) => {
                 <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
 
                 <br></br>
+                <br></br>
 
                 {/* <li className="product-qty">Select Qty: </li>
                 <select>
@@ -45,8 +46,10 @@ const Product = (props) => {
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select> */}
-  
-                <button className="product-button">Add to Cart</button>
+    
+                <button className="product-button">Add to Wish List</button>
+                <br></br>
+                {/* <button className="product-button">Add to Cart</button> */}
             </div>     
         </div>
     )
