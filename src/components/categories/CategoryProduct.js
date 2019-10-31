@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-const Product = (props) => {
+const CategoryProduct = (props) => {
 
     // console.log("product props", props);
     // console.log(props.match.params.id[0])
@@ -61,4 +61,4 @@ const mapStateToProps = state => {
     };    
 }
 
-export default connect(mapStateToProps)(Product);
+export default connect(mapStateToProps)(CategoryProduct);

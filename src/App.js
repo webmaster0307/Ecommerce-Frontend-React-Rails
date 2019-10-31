@@ -14,7 +14,7 @@ import CategoryProducts from './components/categories/CategoryProducts'
 import Home from './components/dashboard/Home'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { fetchProducts } from "./actions/product.js"
-import Product from './components/categories/Product'
+import CategoryProduct from './components/categories/CategoryProduct'
 
 
 class App extends Component {
@@ -43,7 +43,7 @@ class App extends Component {
           <Route exact path='/business/new' component={NewBusiness} />
           <Route exact path='/business' component={Businesses} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
-          <Route exact path='/category/:id/products/:id' component={Product} />
+          <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
 
         </Switch>
       </div>
