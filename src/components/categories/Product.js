@@ -17,7 +17,7 @@ const Product = (props) => {
         
 
     return(
-        <div className="product-container">
+        <div className="">
             <div className="product-flex">
                 <div className="col-6">
                     <li className="product-image">{product ? <img src={ product.attributes.image } alt="product" ></img> : null}</li>
