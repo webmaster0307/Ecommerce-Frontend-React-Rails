@@ -29,6 +29,11 @@
     flex-wrap: wrap;
 }
 
+.category-name {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
 .products-image {
     /* display: none; */
     list-style-type: none;

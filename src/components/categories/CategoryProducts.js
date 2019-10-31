@@ -13,7 +13,7 @@ const CategoryProducts = (props) => {
 
     let productList = props.match ? props.categories.categories.filter(category => category.id === props.match.params.id)[0] : null
     const CategoryId = props.match ? props.match.params.id[0] : null
-    const CategoryName = productList ? productList.attributes.name : null
+    const CategoryName = productList ? <li className="category-name">{productList.attributes.name}</li> : null
     
     // console.log("products", productList);
     // console.log("category is", CategoryName)
@@ -43,7 +43,7 @@ const CategoryProducts = (props) => {
 
 
     return (
-      <div className="">
+      <div className="products">
           <h1 className="products">{CategoryName}</h1>
           <div className="products">
             {categoryProducts}

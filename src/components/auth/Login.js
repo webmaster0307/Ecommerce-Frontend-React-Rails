@@ -36,32 +36,30 @@ class Login extends Component {
         return (
       
             <div className="container-form">
-                <h1>Login</h1>
+                <div className="middle-container">
+                    <h1>Login</h1>
 
-                <form onSubmit={this.handleSubmit}>
-                <div className="row"> 
-                    <div className="label">    
-                        <label htmlFor="username">Username:  </label>
-                    </div>  
-                    <div className=""> 
-                        <input type="username" name="username" id="username" placeholder="Enter Username" onChange={this.handleChange} required/>
-                    </div>  
+                    <form onSubmit={this.handleSubmit}>
+                    <div className="row"> 
+                        <div className="label">    
+                            <label htmlFor="username">Username:  </label>
+                        </div>  
+                            <input type="username" name="username" id="username" placeholder="Enter Username" onChange={this.handleChange} required/>
+                    </div>
+
+                    <div className="row"> 
+                        <div className="label">  
+                            <label htmlFor="password">Password:  </label>
+                        </div>  
+                            <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
+                    </div>
+
+                    <div className="row">
+                         <input type="submit" value="Login"></input>
+                    </div>
+                    </form>
+                    
                 </div>
-
-                <div className="row"> 
-                    <div className="label">  
-                        <label htmlFor="password">Password:  </label>
-                    </div>  
-                    <div className=""> 
-                        <input type="password" name="password" id="password" placeholder="Enter Password" onChange={this.handleChange} required/>
-                    </div>  
-                </div>
-
-                <div className="row">
-                  <input type="submit" value="Login"></input>
-                </div>
-
-                </form>
             </div>
           );
     }
