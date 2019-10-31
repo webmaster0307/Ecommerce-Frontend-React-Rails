@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 const CategoryProducts = (props) => {
 
     // console.log("categoryProducts", props)
-    // console.log(props.match ? props.match.params.id[0]: null)
     // console.log("category props", props.categories.categories)
 
     let productList = props.match ? props.categories.categories.filter(category => category.id === props.match.params.id)[0] : null
@@ -14,7 +13,6 @@ const CategoryProducts = (props) => {
     const CategoryName = productList ? <li className="category-name">{productList.attributes.name}</li> : null
     
     // console.log("products", productList);
-    // console.log("category is", CategoryName)
     
     let sortedProducts = productList ? productList.attributes.products.sort(function(a,b){
       return a.subcategory_id - b.subcategory_id;
@@ -33,8 +31,6 @@ const CategoryProducts = (props) => {
         </div>
         )
         : null
-
-        // console.log(productList.attributes.products)
 
 
     return (
