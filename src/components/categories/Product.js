@@ -25,16 +25,16 @@ const Product = (props) => {
             </div>
 
             <div className="product-info col-7">
-                <li className="product-text">Product Name: {product ? product.attributes.name : null}</li>
-                <li className="product-text">Description: {product ? product.attributes.description : null}</li>
-                <li className="product-text">Item Number: {product ? product.attributes.item_number : null}</li>
+                <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
+                <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.attributes.description : null}</li>
+                <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.attributes.item_number : null}</li>
 
                 <br></br>
-                <li className="product-text">Colors: </li>
+                <li className="product-text"><b className="titlespacing">Colors:</b> </li>
                 { productColors }
                 
                 <br></br>
-                <li className="product-text">Price: ${product ? product.attributes.price : null}</li>
+                <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
 
                 <br></br>
 
@@ -46,7 +46,7 @@ const Product = (props) => {
                     <option value="4">4</option>
                 </select> */}
   
-                <button>Add to Cart</button>
+                <button className="product-button">Add to Cart</button>
             </div>     
         </div>
     )

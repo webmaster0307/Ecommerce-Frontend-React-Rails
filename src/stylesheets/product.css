@@ -1,9 +1,20 @@
 .product-main {
     margin-top: 30px;
-    padding: 40px;
+    padding: 50px;
     list-style: none;
 }
 
+.product-button {
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: RGB(0, 255, 242);
+    width: 150px;
+}
+
+.product-button:hover {
+    background-color: RGB(11, 165, 161);
+}
 
 .product-flex .product-image {
     display: flex;
@@ -11,13 +22,20 @@
     justify-content: center; 
 }
 
-
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: right; 
+}
 
 
 .product-text.bold {
     font-weight: bold;
 }
 
+.titlespacing {
+    padding-right: 10px;
+}
 
 .product-image img {
     height: 200px;
