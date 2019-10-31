@@ -10,7 +10,7 @@ const Categories = (props) => {
     let categories = props.categoriesList.categories.categories ? props.categoriesList.categories.categories.map(category => 
         <div key={category.id}>
         <Link to={`/category/${category.id}/products` }>
-            <h3 className="categories-text">{ category.attributes.name } </h3>
+            <li className="categories-text">{ category.attributes.name } </li>
             <li className="categories-image"> <img src={ category.attributes.image } alt="category"></img></li>
          </Link>
         </div>
