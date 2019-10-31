@@ -16,7 +16,6 @@ import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
 import CategoryProduct from './components/categories/CategoryProduct'
 
-
 class App extends Component {
 
   componentDidMount() {
@@ -33,6 +32,7 @@ class App extends Component {
         {/* <Search /> */} 
         {/* <Footer /> */}
         <DashboardProductsContainer />
+        
         <Switch>           
           <Route exact path='/' component={Home} />
           <Route path='/login' component={Login} />
