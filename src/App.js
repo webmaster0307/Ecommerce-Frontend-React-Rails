@@ -11,8 +11,7 @@ import Navbar from './components/layout/Navbar'
 import NewBusiness from './components/NewBusiness'
 import Businesses from './components/Businesses'
 import CategoryProducts from './components/categories/CategoryProducts'
-import Search from './components/dashboard/Search'
-import Footer from './components/layout/Footer'
+import Home from './components/dashboard/Home'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { fetchProducts } from "./actions/product.js"
 import Product from './components/categories/Product'
@@ -35,7 +34,7 @@ class App extends Component {
         {/* <Footer /> */}
         <DashboardProductsContainer />
         <Switch>           
-          {/* <Route exact path='/' component={DashboardProductsContainer} /> */}
+          <Route exact path='/' component={Home} />
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Register} />
           <Route path='/about' component={About} />

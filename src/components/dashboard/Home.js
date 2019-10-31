@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const Carosel = () => {
+const Home = () => {
     return (
         <div className="container">
             <li>Carosel Image 1</li>
@@ -10,4 +10,4 @@ const Carosel = () => {
     )
 }
 
-export default Carosel
+export default Home;
