@@ -10,7 +10,7 @@ const CategoryProduct = (props) => {
     console.log("product is", product)
 
     let productColors = product ? product.attributes.colors.map(color => 
-        <div key={color.id}>
+        <div key={color.color_id}>
             <li className="product-text">{color.color_name}</li> 
         </div>
     ) : null

@@ -12,8 +12,8 @@ import NewBusiness from './components/NewBusiness'
 import Businesses from './components/Businesses'
 import CategoryProducts from './components/categories/CategoryProducts'
 import Home from './components/dashboard/Home'
-import { getCurrentUser } from "./actions/currentUser.js"
-import { fetchProducts } from "./actions/product.js"
+import { getCurrentUser } from './actions/currentUser'
+import { fetchProducts } from './actions/product'
 import CategoryProduct from './components/categories/CategoryProduct'
 
 
