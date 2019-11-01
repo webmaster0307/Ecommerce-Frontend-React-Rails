@@ -23,7 +23,7 @@ const Businesses = (props) => {
             <div className="wrapper">
                 { currentUserBusinesses }
                 <br></br>
-                <p className="business-para">Create a new business? <Link to="/business/new">New Business</Link></p>
+                <p className="business-para">Create a new business? <Link to="/business/new">Click here</Link></p>
             </div>
         </div>
     )
