@@ -11,9 +11,11 @@ const Businesses = (props) => {
     let currentUserBusinesses = props ? props.currentUserBusinesses.businesses.businesses.map(business =>
        <div key={business.attributes.id}>
             <Link to={`/businesses/${business.attributes.id}`}>
-                <li className="business-name">Business Name: {business.attributes.name}</li>
+                <li className="business-name"><b className="titlespacing">Business Name:</b> {business.attributes.name}</li>
+                
             </Link>
-            <li className="business-id">Business Tax ID:  {business.attributes.tax_id}</li>
+            <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {business.attributes.tax_id}</li>
+            <br></br>
             <br></br>
         </div> 
         ) : null
@@ -22,7 +24,6 @@ const Businesses = (props) => {
         <div className="businesses">
             <div className="wrapper">
                 { currentUserBusinesses }
-                <br></br>
                 <p className="business-para">Create a new business? <Link to="/business/new">Click here</Link></p>
             </div>
         </div>
