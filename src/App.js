@@ -15,6 +15,7 @@ import Home from './components/dashboard/Home'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
 import CategoryProduct from './components/categories/CategoryProduct'
+import BusinessesContainer from './containers/BusinessesContainer';
 
 class App extends Component {
 
@@ -41,7 +42,7 @@ class App extends Component {
           <Route path='/wishlist' component={Wishlist} />
           <Route path='/cart' component={Cart} />
           <Route exact path='/business/new' component={NewBusiness} />
-          <Route exact path='/business' component={Businesses} />
+          <Route exact path='/business' component={BusinessesContainer} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
 

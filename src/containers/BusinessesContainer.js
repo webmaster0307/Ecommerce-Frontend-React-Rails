@@ -11,10 +11,13 @@ class BusinessesContainer extends Component {
         this.props.fetchBusinesses()
       }
 
+    // const { businesses } = this.props
+
+
     render() { 
         return ( 
             <div>
-              <Businesses />
+              <Businesses currentUserBusinesses = {this.props} />
             </div>
          );
     }
