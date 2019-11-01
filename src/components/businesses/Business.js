@@ -3,9 +3,25 @@ import {connect} from 'react-redux'
 
 const Business = (props) => {
     console.log("business", props)
+
+    // const BusinessId = props.match ? props.match.params.id[0] : null
+    // console.log("BusinessId", BusinessId)
+
+    // // NOTE: NEED TO FETCH BUSINESSES IN APP OR IMPORT INTO BUSINESS CONTAINER
+
+    // let currentBusiness = props.match ? props.businesses.businesses.filter(business => business.id === props.match.params.id)[0] : null
+    // console.log("currentBusiness", currentBusiness)
+    
+
+
+
+
+
     return (
         <div>
-            Business Page
+
+            SHOW PAGE
+            {/* <li>{currentBusiness.attributes.name}</li> */}
         </div>
     )
 }
