@@ -1,6 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux'
 
-const Business = () => {
+const Business = (props) => {
+    console.log("business", props)
     return (
         <div>
             Business Page
@@ -8,4 +10,10 @@ const Business = () => {
     )
 }
 
-export default Business;
+const mapStateToProps = state => {
+      return {
+        businesses: state.businessReducer
+      };    
+}
+
+export default connect(mapStateToProps)(Business);

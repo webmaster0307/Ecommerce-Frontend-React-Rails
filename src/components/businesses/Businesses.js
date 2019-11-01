@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+// import Business from './Business'
 
 const Businesses = (props) => {
 
-    console.log("business", props);
+    // console.log("business", props);
 
 
     console.log(props.currentUserBusinesses.businesses.businesses)
