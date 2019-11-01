@@ -4,8 +4,8 @@ import CategoryProducts from './CategoryProducts.js'
 
 const Categories = (props) => {
     
-    console.log("categories props", props)
-    console.log("categoriesList.categories.categories is", props.categoriesList.categories.categories)
+    // console.log("categories props", props)
+    // console.log("categoriesList.categories.categories is", props.categoriesList.categories.categories)
     
 
     let categories = props.categoriesList.categories.categories ? props.categoriesList.categories.categories.map(category => 
