@@ -6,7 +6,7 @@ export const setMyBusinesses = businesses => {
   }
 
   export const fetchBusinesses = () => {
-    console.log("HERE")
+    // console.log("HERE")
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/businesses", {
         // Need to allow credientals to get current user businesses.
