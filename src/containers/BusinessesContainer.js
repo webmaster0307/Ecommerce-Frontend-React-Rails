@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-// import { fetchBusinesses } from "../actions/userBusiness.js"
+import { fetchBusinesses } from "../actions/userBusiness.js"
 import Businesses from '../components/businesses/Businesses.js'
 
 
@@ -8,7 +8,7 @@ class BusinessesContainer extends Component {
     state = {  }
 
     componentDidMount() {
-        // this.props.fetchBusinesses()
+        this.props.fetchBusinesses()
       }
 
     render() { 
@@ -26,4 +26,4 @@ const mapStateToProps = state => {
       };    
 }
  
-export default connect(mapStateToProps)(BusinessesContainer);
+export default connect(mapStateToProps, { fetchBusinesses })(BusinessesContainer);
