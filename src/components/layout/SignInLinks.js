@@ -15,9 +15,8 @@ import { Redirect } from 'react-router-dom'
         }
 
         render() { 
-            const {currentUser} = this.props
-
-            // console.log("signin", currentUser)
+            const { loggedIn, currentUser } = this.props
+            // if (!loggedIn) return <Redirect to="." />
             return (
                 <nav className="navbar">
                     <ul className="main-nav" id="js-menu">
@@ -38,7 +37,14 @@ import { Redirect } from 'react-router-dom'
         }
     }
      
+    const mapStateToProps = ({ currentUser }) => {
+        // console.log("current user is", currentUser)
+        return {
+          currentUser,
+          loggedIn: !!currentUser
+        }
+      }
     
 
-export default (connect(null, { logout })(SignInLinks));
+export default (connect(mapStateToProps, { logout })(SignInLinks));
 

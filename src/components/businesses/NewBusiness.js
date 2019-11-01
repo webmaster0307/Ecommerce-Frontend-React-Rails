@@ -29,11 +29,8 @@ class NewBusiness extends Component {
             })
     }
 
-   
-    
     render() { 
         return ( 
-
             <div className="container-form">
                 <div className="middle-container">
                     <h1>Register Business</h1>
