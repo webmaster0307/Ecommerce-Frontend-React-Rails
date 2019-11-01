@@ -21,21 +21,49 @@ class NewBusiness extends Component {
     render() { 
         return ( 
 
-            <div>
-                <h1>Register Business</h1>
-                <p>Please fill in this form to register a buiness.</p>
+            <div className="container-form">
+                <div className="middle-container">
+                    <h1>Register Business</h1>
+                    <p>Please fill in this form to register a buiness.</p>
 
-                <form onSubmit={this.handleSubmit}>
-                    <label for="name">Username:  </label>
-                    <input type="text" name="name" placeholder="Enter Business name" onChange={this.handleChange} required/>
-          
-                    <label for="tax_id">Tax Id:  </label>
-                    <input type="text" name="tax_id" placeholder="Enter Tax Id" onChange={this.handleChange} required/>
+                    <form onSubmit={this.handleSubmit}>
+                    <div className="row"> 
+                        <div className="label">    
+                            <label htmlFor="name">Business name:  </label>
+                        </div>  
+                            <input type="name" name="name" id="name" placeholder="Enter Business Name" onChange={this.handleChange} required/>
+                    </div>
 
-                    <input type="submit" value="Submit"></input>
+                    <div className="row"> 
+                        <div className="label">  
+                            <label htmlFor="tax_id">Tax Id:  </label>
+                        </div>  
+                            <input type="tax_id" name="tax_id" id="tax_id" placeholder="Tax Id" onChange={this.handleChange} required/>
+                    </div>
 
-                </form>
+                    <div className="row">
+                         <input type="submit" value="Submit"></input>
+                    </div>
+                    </form>
+                    
+                </div>
             </div>
+
+            // <div>
+            //     <h1>Register Business</h1>
+            //     <p>Please fill in this form to register a buiness.</p>
+
+            //     <form onSubmit={this.handleSubmit}>
+            //         <label for="name">Business Name:  </label>
+            //         <input type="text" name="name" placeholder="Enter Business name" onChange={this.handleChange} required/>
+          
+            //         <label for="tax_id">Tax Id:  </label>
+            //         <input type="text" name="tax_id" placeholder="Enter Tax Id" onChange={this.handleChange} required/>
+
+            //         <input type="submit" value="Submit"></input>
+
+            //     </form>
+            // </div>
             
          );
     }
