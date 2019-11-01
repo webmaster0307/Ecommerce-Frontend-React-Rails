@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Route, Switch } from 'react-router-dom' 
 import DashboardProductsContainer from './containers/DashboardProductsContainer'
+import BusinessesContainer from './containers/BusinessesContainer';
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import About from './components/About'
@@ -9,13 +10,13 @@ import Wishlist from './components/Wishlist'
 import Cart from './components/Cart'
 import Navbar from './components/layout/Navbar'
 import NewBusiness from './components/NewBusiness'
-import Businesses from './components/businesses/Businesses'
+import Business from './components/businesses/Business'
 import CategoryProducts from './components/categories/CategoryProducts'
 import Home from './components/dashboard/Home'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
 import CategoryProduct from './components/categories/CategoryProduct'
-import BusinessesContainer from './containers/BusinessesContainer';
+
 
 class App extends Component {
 
@@ -45,6 +46,7 @@ class App extends Component {
           <Route exact path='/business' component={BusinessesContainer} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
+          <Route exact path='/businesses/:id' component={Business} />
 
         </Switch>
       </div>

@@ -6,6 +6,7 @@ import './stylesheets/form.css';
 import './stylesheets/products.css';
 import './stylesheets/product.css';
 import './stylesheets/categories.css';
+import './stylesheets/businesses.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
