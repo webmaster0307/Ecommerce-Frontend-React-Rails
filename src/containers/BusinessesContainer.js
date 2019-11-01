@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchBusinesses } from "../actions/userBusiness.js"
+import Businesses from '../components/businesses/Businesses.js'
 
 
 class BusinessesContainer extends Component {
@@ -12,7 +13,9 @@ class BusinessesContainer extends Component {
 
     render() { 
         return ( 
-            <div></div>
+            <div>
+              <Businesses />
+            </div>
          );
     }
 }
