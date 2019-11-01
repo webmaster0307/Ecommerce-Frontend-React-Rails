@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {Route, Switch } from 'react-router-dom' 
+import {Route, Switch, withRouter } from 'react-router-dom' 
 import DashboardProductsContainer from './containers/DashboardProductsContainer'
 import BusinessesContainer from './containers/BusinessesContainer';
 import Login from './components/auth/Login'

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { createBusiness } from '../../actions/userBusiness'
+import { Redirect } from 'react-router-dom'
 
 class NewBusiness extends Component {
     constructor(props){
@@ -10,13 +13,23 @@ class NewBusiness extends Component {
          }
     }
 
+    handleChange = (e) => {
+        console.log(e.target.value)
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
+        this.props.createBusiness(this.state);
+            this.setState({
+                name: "",
+                tax_id: "",
+            })
     }
 
-    handleChange = (e) => {
-
-    }
+   
     
     render() { 
         return ( 
@@ -69,4 +82,4 @@ class NewBusiness extends Component {
     }
 }
  
-export default NewBusiness;
+export default connect(null, { createBusiness })(NewBusiness);

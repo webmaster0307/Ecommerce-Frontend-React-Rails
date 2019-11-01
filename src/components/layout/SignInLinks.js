@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { connect } from 'react-redux'
 import { logout } from "../../actions/currentUser.js"
+import { Redirect } from 'react-router-dom'
 
 
     class SignInLinks extends Component {
@@ -37,7 +38,7 @@ import { logout } from "../../actions/currentUser.js"
         }
     }
      
-
+    
 
 export default (connect(null, { logout })(SignInLinks));
 

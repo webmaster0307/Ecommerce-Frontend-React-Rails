@@ -62,7 +62,7 @@ export const setCurrentUser = user => {
       }
     }
 
-    export const logout = event => {
+    export const logout = (event) => {
       return dispatch => {
         return fetch('http://localhost:3001/api/v1/logout', {
           credentials: "include",
