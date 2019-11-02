@@ -20,7 +20,7 @@ const Business = (props) => {
         <div>
             {/* NEED TO REDIRECT IF NOT CURRENT BUSINESS */}
             <li>{currentBusiness ? currentBusiness.attributes.name : null}
-            <button onClick={() => this.handleOnClick()}> X </button>
+            {/* <button onClick={() => this.handleOnClick()}> X </button> */}
             </li>
             
         </div>
