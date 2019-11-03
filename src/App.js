@@ -46,7 +46,7 @@ class App extends Component {
           <Route path='/wishlist' component={Wishlist} />
           <Route path='/cart' component={Cart} />
           <Route exact path='/businesses/new' component={NewBusiness} />
-          <Route exact path='/businesses/home' component={BusinessHome} />
+          <Route exact path='/businesses/home' component={BusinessesContainer} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
           <Route exact path='/businesses/:id' component={Business} />

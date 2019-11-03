@@ -14,7 +14,7 @@ class BusinessesContainer extends Component {
     render() { 
         return ( 
             <div>
-              <NewBusiness />
+              {/* <NewBusiness /> */}
               <Businesses currentUserBusinesses = {this.props} />
             </div>
          );

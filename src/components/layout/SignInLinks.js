@@ -23,9 +23,9 @@ import { Redirect } from 'react-router-dom'
                         <div className="dropdown">
                             <button className="dropbtn">hello {currentUser.attributes.username}! <FontAwesomeIcon icon={faCaretDown}/></button>
                             <div className="dropdown-content">
-                                {/* <li><NavLink to="/Businesses/new" className="nav-links">New Business</NavLink></li> */}
-                                <li><NavLink to="/Businesses/Home" className="nav-links">Business</NavLink></li> 
-                                <li><NavLink to="/Logout" onClick={this.handleOnClick} className="nav-links">Logout</NavLink></li>
+                                <li><NavLink to="/businesses/new" className="nav-links">New Business</NavLink></li>
+                                <li><NavLink to="/businesses/home" className="nav-links">Existing Business</NavLink></li> 
+                                <li><NavLink to="/logout" onClick={this.handleOnClick} className="nav-links">Logout</NavLink></li>
                             </div>
                         </div>
                         <li><NavLink to="/Wishlist" className="nav-links">Wish List</NavLink></li>

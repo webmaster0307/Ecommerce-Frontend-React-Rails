@@ -24,7 +24,7 @@ class NewBusiness extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.createBusiness(this.state);
-        // this.props.history.push('/');
+        this.props.history.push('/businesses/home');
             this.setState({
                 name: "",
                 tax_id: "",
