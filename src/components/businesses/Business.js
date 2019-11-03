@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 
 const Business = (props) => {
-    console.log("business", props)
+    // console.log("business", props)
 
     const BusinessId = props.match ? props.match.params.id[0] : null
     console.log("BusinessId", BusinessId)

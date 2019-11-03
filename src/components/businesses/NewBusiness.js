@@ -13,6 +13,7 @@ class NewBusiness extends Component {
          }
     }
 
+
     handleChange = (e) => {
         console.log(e.target.value)
         this.setState({
@@ -23,6 +24,7 @@ class NewBusiness extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.createBusiness(this.state);
+        // this.props.history.push('/');
             this.setState({
                 name: "",
                 tax_id: "",

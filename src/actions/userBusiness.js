@@ -38,26 +38,24 @@ export const setMyBusinesses = businesses => {
 
 
 export const createBusiness = (data) => {
-  return (dispatch) => {
-    fetch('http://localhost:3001/api/v1/businesses', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
+  return dispatch => {
+    return fetch("http://localhost:3001/api/v1/businesses", {
       credentials: "include",
-      method: 'POST',
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(data)
     })
-
-    .then(r => r.json())
-    .then(response => {
-      if (response.error) {
-        alert(response.error)
-      } else {
-        dispatch(addBusiness(response.data))
-      }
-    })
-    .catch(console.log)
+      .then(r => r.json())
+      .then(response => {
+        console.log("Response" , response);
+        if (response.error) {
+          alert(response.error)
+        } else {
+          dispatch(addBusiness(response.data))
+        }
+      })
+      .catch(console.log)
   }
 }
-  

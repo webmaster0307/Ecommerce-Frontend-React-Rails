@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Businesses = (props) => {
 
-    // console.log("business", props);
+    console.log("business", props);
 
 
     console.log(props.currentUserBusinesses.businesses.businesses)
@@ -24,7 +24,7 @@ const Businesses = (props) => {
         <div className="businesses">
             <div className="wrapper">
                 { currentUserBusinesses }
-                <p className="business-para">Create a new business? <Link to="/business/new">Click here</Link></p>
+                <p className="business-para">Create a new business? <Link to="/businesses/new">Click here</Link></p>
             </div>
         </div>
     )
