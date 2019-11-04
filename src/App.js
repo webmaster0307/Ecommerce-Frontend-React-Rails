@@ -25,7 +25,7 @@ class App extends Component {
   componentDidMount() {
     this.props.getCurrentUser()
     this.props.fetchProducts()
-    // this.props.fetchBusinesses()
+    this.props.fetchBusinesses()
   }
 
 
@@ -49,7 +49,7 @@ class App extends Component {
           <Route exact path='/businesses/home' component={BusinessHome} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
-          <Route exact path='/businesses/:id' component={Business} />
+          <Route path='/businesses/:id' component={Business} />
 
         </Switch>
       </div>

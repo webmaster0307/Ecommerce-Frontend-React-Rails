@@ -3,24 +3,22 @@ import { Link } from 'react-router-dom'
 
 const Businesses = (props) => {
 
-    console.log("business", props);
-
-
+    // console.log("business", props);
     console.log(props.currentUserBusinesses.businesses.businesses)
 
     let currentUserBusinesses = props ? props.currentUserBusinesses.businesses.businesses.map(business =>
        <div key={business.attributes.id}>
             <Link to={`/businesses/${business.attributes.id}`}>
-                <li className="business-name"><b className="titlespacing">Business Name:</b> {business.attributes.name}</li>
-                
+                <li className="business-name"><b className="titlespacing">Business Name:</b> {business.attributes.name}</li>       
             </Link>
+
             <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {business.attributes.tax_id}</li>
             <li className="business-id"><b className="titlespacing">Created on:</b>  {business.attributes.created_at}</li>
-
             <br></br>
             <br></br>
         </div> 
-        ) : null
+        ) 
+        : null
 
     return (
         <div className="businesses">
