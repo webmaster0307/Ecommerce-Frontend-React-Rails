@@ -37,7 +37,7 @@
     margin-bottom: 20px;
 }
 
-.businesses .product-name, .product-text {
+.businesses .product-name, .product-text, .business-product-image {
     text-align: left;
     margin-left: 10px;
 }
