@@ -1,31 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { connect } from 'react-redux'
-import { logout } from "../../actions/currentUser.js"
-import { Redirect } from 'react-router-dom'
+import { logout } from '../../actions/currentUser'
+import { withRouter } from 'react-router'
 
 
-    class SignInLinks extends Component {
+    const SignInLinks = (props) => {
 
-        handleOnClick = (e) => {
-            e.preventDefault()
-            this.props.logout()
-        }
+        // console.log(props);
 
-        render() { 
-            const { loggedIn, currentUser } = this.props
-            // if (!loggedIn) return <Redirect to="." />
             return (
                 <nav className="navbar">
                     <ul className="main-nav" id="js-menu">
                         <div className="dropdown">
-                            <button className="dropbtn">hello {currentUser.attributes.username}! <FontAwesomeIcon icon={faCaretDown}/></button>
+                            <button className="dropbtn">hello {props.currentUser.attributes.username}! <FontAwesomeIcon icon={faCaretDown}/></button>
                             <div className="dropdown-content">
                                 <li><NavLink to="/businesses/new" className="nav-links">New Business</NavLink></li>
                                 <li><NavLink to="/businesses/home" className="nav-links">Existing Business</NavLink></li> 
-                                <li><NavLink to="/logout" onClick={this.handleOnClick} className="nav-links">Logout</NavLink></li>
+                                <li><a onClick={props.logOut}  className="nav-links">Logout</a></li>
                             </div>
                         </div>
                         <li><NavLink to="/Wishlist" className="nav-links">Wish List</NavLink></li>
@@ -33,18 +27,24 @@ import { Redirect } from 'react-router-dom'
                     </ul>
               </nav>
             )
-        
-        }
     }
-     
+
     const mapStateToProps = ({ currentUser }) => {
-        // console.log("current user is", currentUser)
         return {
           currentUser,
           loggedIn: !!currentUser
         }
       }
+     
+    const mapDispatchToProps = (dispatch, props) => {
+        return {
+            logOut: () => { dispatch(logout()) 
+            props.history.push('/');
+            }
+        }
+    }
+
     
 
-export default (connect(mapStateToProps, { logout })(SignInLinks));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignInLinks));
 
