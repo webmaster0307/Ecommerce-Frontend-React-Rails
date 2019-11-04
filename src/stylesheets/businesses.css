@@ -5,21 +5,41 @@
 
 .business-name {
     color: black;
+    font-size: 1.2rem;
+}
+
+.business-id {
+    color: black;
     font-size: 1rem;
 }
 
 .businesses, .business-home {
     text-align: center;
-    /* margin-top: 30px; */
+    margin-top: 20px;
 }
+
+.businesses .product-name {
+    color: black;
+}
+
 
 .business-home h2 {
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
+.businesses .product-name, .product-text {
+    text-align: left;
+    margin-left: 10px;
+}
+
 
 .business-name:hover {
+    background-color: RGB(11, 165, 161);
+    color: white;
+}
+
+.businesses .product-name:hover {
     background-color: RGB(11, 165, 161);
     color: white;
 }
@@ -34,5 +54,10 @@
 .business-home h2 {
     margin-bottom: -50px;
 }
+
+.businesses .product-name, .product-text {
+    margin-left: 0px;
+}
+
 
 }
