@@ -16,9 +16,8 @@ class NavBar extends Component {
     }
 
     render() { 
-        const { loggedIn, currentUser } = this.props
-        // console.log(loggedIn, currentUser)
-        const links = loggedIn ? <SignInLinks currentUser={currentUser}/> : <SignOutLinks />;
+        const { loggedIn } = this.props
+        const links = loggedIn ? <SignInLinks /> : <SignOutLinks />;
         
         return ( 
             <nav className="navbar">
@@ -33,7 +32,6 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = ({ currentUser }) => {
-    // console.log("current user is", currentUser)
     return {
       currentUser,
       loggedIn: !!currentUser
