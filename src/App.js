@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Route, Switch, withRouter } from 'react-router-dom' 
 import DashboardProductsContainer from './containers/DashboardProductsContainer'
-import BusinessesContainer from './containers/BusinessesContainer';
+// import BusinessesContainer from './containers/BusinessesContainer';
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
+import Home from './components/dashboard/Home'
 import About from './components/About'
 import Wishlist from './components/Wishlist'
 import Cart from './components/Cart'
@@ -12,12 +13,13 @@ import Navbar from './components/layout/Navbar'
 import NewBusiness from './components/businesses/NewBusiness'
 import Business from './components/businesses/Business'
 import BusinessHome from './components/businesses/BusinessHome'
+import BusinessProduct from './components/businesses/BusinessProduct'
 import CategoryProducts from './components/categories/CategoryProducts'
-import Home from './components/dashboard/Home'
+import CategoryProduct from './components/categories/CategoryProduct'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
 import { fetchBusinesses } from './actions/userBusiness'
-import CategoryProduct from './components/categories/CategoryProduct'
+
 
 
 class App extends Component {
@@ -45,11 +47,12 @@ class App extends Component {
           <Route path='/about' component={About} />
           <Route path='/wishlist' component={Wishlist} />
           <Route path='/cart' component={Cart} />
-          <Route exact path='/businesses/new' component={NewBusiness} />
-          <Route exact path='/businesses/home' component={BusinessHome} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
-          <Route path='/businesses/:id' component={Business} />
+          <Route exact path='/businesses/new' component={NewBusiness} />
+          <Route exact path='/businesses' component={BusinessHome} />
+          <Route exact path='/businesses/:id' component={Business} />
+          <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} />
 
         </Switch>
       </div>

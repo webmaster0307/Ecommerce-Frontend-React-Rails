@@ -18,7 +18,7 @@ import { withRouter } from 'react-router'
                             <button className="dropbtn">hello {props.currentUser.attributes.username}! <FontAwesomeIcon icon={faCaretDown}/></button>
                             <div className="dropdown-content">
                                 <li><NavLink to="/businesses/new" className="nav-links">New Business</NavLink></li>
-                                <li><NavLink to="/businesses/home" className="nav-links">Existing Business</NavLink></li> 
+                                <li><NavLink to="/businesses" className="nav-links">Existing Business</NavLink></li> 
                                 <li><a onClick={props.logOut}  className="nav-links">Logout</a></li>
                             </div>
                         </div>

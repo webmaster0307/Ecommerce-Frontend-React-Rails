@@ -3,8 +3,8 @@ import BusinessesContainer from '../../containers/BusinessesContainer';
 
 const BusinessHome = () => {
     return (
-        <div className="businesses">
-            <h2>Current Business</h2>
+        <div className="business-home">
+            <h2>Current Businesses</h2>
             <BusinessesContainer />
         </div>
     )
