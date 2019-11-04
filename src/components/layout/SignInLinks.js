@@ -23,7 +23,6 @@ import { withRouter } from 'react-router'
                             </div>
                         </div>
                         <li><NavLink to="/Wishlist" className="nav-links">Wish List</NavLink></li>
-                        <li><NavLink to="/Cart" className="nav-links">Cart</NavLink></li>
                     </ul>
               </nav>
             )
