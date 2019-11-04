@@ -19,7 +19,7 @@ import { withRouter } from 'react-router'
                             <div className="dropdown-content">
                                 <li><NavLink to="/businesses/new" className="nav-links">New Business</NavLink></li>
                                 <li><NavLink to="/businesses/home" className="nav-links">Existing Business</NavLink></li> 
-                                <li><a onClick={props.logOut}  className="nav-links">Logout</a></li>
+                                <li><a href onClick={props.logOut}  className="nav-links">Logout</a></li>
                             </div>
                         </div>
                         <li><NavLink to="/Wishlist" className="nav-links">Wish List</NavLink></li>
