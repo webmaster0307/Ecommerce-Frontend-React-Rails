@@ -10,6 +10,7 @@ class Business extends Component {
     
         let currentBusinessProducts = currentBusiness ? currentBusiness.attributes.products.map(product =>
             <div key={product.id}>
+                <li className="business-product-image"><img src={ product.image } alt="product" ></img></li>
                 <Link to={`/businesses/${product.business_id}/products/${product.id}`}>
                 
                 <br></br>

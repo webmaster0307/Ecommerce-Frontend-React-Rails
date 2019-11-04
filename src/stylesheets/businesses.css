@@ -22,6 +22,15 @@
     color: black;
 }
 
+.business-product-image {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.business-product-image img {
+    height: 100px;
+    width: 100px;
+}
 
 .business-home h2 {
     margin-top: 30px;
