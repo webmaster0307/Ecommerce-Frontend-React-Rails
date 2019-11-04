@@ -13,7 +13,7 @@ const Businesses = (props) => {
             </Link>
 
             <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {business.attributes.tax_id}</li>
-            <li className="business-id"><b className="titlespacing">Created on:</b>  {business.attributes.created_at}</li>
+            <li className="business-id"><b className="titlespacing">Created on:</b>  {new Date(`${business.attributes.created_at}`).toLocaleString().split(',')[0]}</li>
             <br></br>
             <br></br>
         </div> 
