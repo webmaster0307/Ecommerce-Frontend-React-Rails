@@ -15,6 +15,8 @@ const Businesses = (props) => {
                 
             </Link>
             <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {business.attributes.tax_id}</li>
+            <li className="business-id"><b className="titlespacing">Created on:</b>  {business.attributes.created_at}</li>
+
             <br></br>
             <br></br>
         </div> 

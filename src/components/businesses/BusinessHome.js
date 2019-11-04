@@ -7,7 +7,7 @@ const BusinessHome = () => {
         <br></br>
         <h2>Welcome to Business Section</h2>
 
-        {/* <BusinessesContainer /> */}
+        <BusinessesContainer />
         </div>
     )
 
