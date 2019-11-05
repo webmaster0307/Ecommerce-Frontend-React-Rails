@@ -28,6 +28,7 @@ class Business extends Component {
                         {/* NEED TO REDIRECT IF NOT CURRENT BUSINESS */}
                         <li className="business-name"><b className="titlespacing">Business Name:</b> {currentBusiness ? currentBusiness.attributes.name :null}</li>       
                         <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {currentBusiness ? currentBusiness.attributes.tax_id: null}</li>
+                        <button>Delete</button>
                         <h2>Products</h2>
                         <br></br>
                      </div>
