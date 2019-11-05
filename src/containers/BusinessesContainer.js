@@ -14,6 +14,7 @@ class BusinessesContainer extends Component {
     render() { 
         return ( 
             <div className="business-home"> 
+              <h1>Seller Account Section</h1>
               <h2>Current Businesses</h2>
               <Businesses currentUserBusinesses = {this.props} />
             </div>

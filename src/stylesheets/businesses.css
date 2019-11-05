@@ -13,34 +13,12 @@
     font-size: 1rem;
 }
 
-.businesses, .business-home {
+.businesses {
     text-align: center;
     margin-top: 20px;
 }
 
-.businesses .product-name {
-    color: black;
-}
 
-.business-product-image {
-    text-align: left;
-    margin-top: 50px;
-}
-
-.business-product-image img {
-    height: 100px;
-    width: 100px;
-}
-
-.business-home h2 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.businesses .product-name, .product-text, .business-product-image {
-    text-align: left;
-    margin-left: 10px;
-}
 
 
 .business-name:hover {
@@ -48,10 +26,6 @@
     color: white;
 }
 
-.businesses .product-name:hover {
-    background-color: RGB(11, 165, 161);
-    color: white;
-}
 
 
 @media screen and (min-width: 768px) {
@@ -60,13 +34,6 @@
     font-size: 1.5rem;
 }
 
-.business-home h2 {
-    margin-bottom: -50px;
-}
-
-.businesses .product-name, .product-text {
-    margin-left: 0px;
-}
 
 
 }
