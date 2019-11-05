@@ -19,6 +19,7 @@ import CategoryProduct from './components/categories/CategoryProduct'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
 import { fetchBusinesses } from './actions/userBusiness'
+import BusinessesContainer from './containers/BusinessesContainer';
 
 
 
@@ -49,7 +50,7 @@ class App extends Component {
           <Route exact path='/category/:id/products' component={CategoryProducts} />
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
           <Route exact path='/businesses/new' component={NewBusiness} />
-          <Route exact path='/businesses' component={BusinessHome} />
+          <Route exact path='/businesses' component={BusinessesContainer} />
           <Route exact path='/businesses/:id' component={Business} />
           <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} />
 

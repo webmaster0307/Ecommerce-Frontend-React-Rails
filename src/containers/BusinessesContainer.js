@@ -13,7 +13,8 @@ class BusinessesContainer extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div className="business-home"> 
+              <h2>Current Businesses</h2>
               <Businesses currentUserBusinesses = {this.props} />
             </div>
          );
