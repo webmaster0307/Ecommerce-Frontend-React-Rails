@@ -3,6 +3,12 @@
     list-style-type: none;
 }
 
+.business-home {
+    text-align: center;
+}
+
+
+
 .business-name {
     color: black;
     font-size: 1.2rem;
@@ -19,8 +25,6 @@
 }
 
 
-
-
 .business-name:hover {
     background-color: RGB(11, 165, 161);
     color: white;
@@ -34,6 +38,14 @@
     font-size: 1.5rem;
 }
 
+.business-home {
+    margin-top: 20px;
+    bottom-margin: 10px;
+}
+
+.businesses .wrapper {
+    margin-top: 0px;
+}
 
 
 }
