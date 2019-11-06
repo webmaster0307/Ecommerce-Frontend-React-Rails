@@ -12,6 +12,13 @@ export const setMyBusinesses = businesses => {
     }
   }
 
+  export const editBusiness = business => {
+    return {
+      type: "EDIT_BUSINESS",
+      business
+    }
+  }
+
   export const fetchBusinesses = () => {
     // console.log("HERE")
     return dispatch => {
@@ -59,6 +66,29 @@ export const createBusiness = (data) => {
       .catch(console.log)
   }
 }
+
+// export const editBusiness = (data) => {
+//   return dispatch => {
+//     return fetch("http://localhost:3001/api/v1/businesses", {
+//       credentials: "include",
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(data)
+//     })
+//       .then(r => r.json())
+//       .then(response => {
+//         console.log("Response" , response);
+//         if (response.error) {
+//           alert(response.error)
+//         } else {
+//           dispatch(editBusiness(response.data))
+//         }
+//       })
+//       .catch(console.log)
+//   }
+// }
 
 export const deleteBusiness = () => {
   console.log("HERE")

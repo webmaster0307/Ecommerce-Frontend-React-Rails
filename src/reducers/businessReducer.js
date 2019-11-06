@@ -4,7 +4,10 @@ export default (state = {businesses: []}, action) => {
         return {businesses: action.businesses}
         case 'ADD_BUSINESS':
           return {...state, businesses: [...state.businesses, action.business]}
-        default:
+        
+          // case 'EDIT_BUSINESS':
+        
+          default:
             return state
     }
   }
