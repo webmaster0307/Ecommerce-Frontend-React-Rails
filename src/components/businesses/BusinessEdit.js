@@ -8,13 +8,12 @@ class BusinessEdit extends Component {
         super(props);
 
         // console.log("edit form" , this.props)
-
+        
         this.state = { 
             name: `${this.props.business ? this.props.business.attributes.name : ""}` ,
             tax_id:`${this.props.business ? this.props.business.attributes.tax_id : ""}`,
          }
     }
-
 
     handleChange = (e) => {
         console.log(e.target.value)
@@ -38,8 +37,7 @@ class BusinessEdit extends Component {
 
     render() { 
 
-        // let currentBusiness = this.props.businesses.businesses.filter(business => business.id === this.props.match.params.id)[0]
-        // console.log(currentBusiness.attributes.tax_id)
+        // ADD IF NOT CURRENT USER THEN REDIRECT 
 
         return ( 
             <div className="container-form">
