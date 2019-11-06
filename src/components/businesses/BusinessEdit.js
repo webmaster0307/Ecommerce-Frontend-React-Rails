@@ -9,7 +9,6 @@ class BusinessEdit extends Component {
 
         console.log(this.props)
 
-
         this.state = { 
             name: "",
             tax_id: "",
@@ -36,9 +35,8 @@ class BusinessEdit extends Component {
 
     render() { 
 
-        let currentBusiness = this.props.businesses.businesses.filter(business => business.id === this.props.match.params.id)[0]
-        console.log("currentBusiness" , currentBusiness)
-
+        // let currentBusiness = this.props.businesses.businesses.filter(business => business.id === this.props.match.params.id)[0]
+        // console.log(currentBusiness.attributes.tax_id)
 
         return ( 
             <div className="container-form">
@@ -51,14 +49,14 @@ class BusinessEdit extends Component {
                         <div className="label">    
                             <label htmlFor="name">Business name:  </label>
                         </div>  
-                            <input type="name" name="name" id="name" value={currentBusiness ? currentBusiness.attributes.name :null} placeholder="Enter Business Name" onChange={this.handleChange} required/>
+                            <input type="name" name="name" id="name" value=""  onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row"> 
                         <div className="label">  
                             <label htmlFor="tax_id">Tax Id:  </label>
                         </div>  
-                            <input type="tax_id" name="tax_id" id="tax_id" value={currentBusiness ? currentBusiness.attributes.tax_id :null} placeholder="Tax Id" onChange={this.handleChange} required/>
+                            <input type="tax_id" name="tax_id" id="tax_id" value="" onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row">
@@ -73,10 +71,6 @@ class BusinessEdit extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-      businesses: state.businessReducer
-    };    
-}
+
  
-export default connect(mapStateToProps, { editBusiness })(BusinessEdit);
+export default connect(null, { editBusiness })(BusinessEdit);

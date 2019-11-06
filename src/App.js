@@ -34,7 +34,8 @@ class App extends Component {
 
 
   render() {
-
+    const { businesses } = this.props
+    console.log("app businesses", businesses)
     return ( 
       <div className="App">
         <Navbar />
@@ -53,7 +54,13 @@ class App extends Component {
           <Route exact path='/businesses/new' component={NewBusiness} />
           <Route exact path='/businesses' component={BusinessesContainer} />
           <Route exact path='/businesses/:id' component={Business} />
-          <Route exact path='/businesses/:id/edit' component={BusinessEdit} />
+          {/* <Route exact path='/businesses/:id/edit' component={BusinessEdit} /> */}
+          <Route exact path='/businesses/:id/edit' render={props => {
+            const business = businesses.businesses.find(business => business.id === props.match.params.id)
+            // console.log("business props", business)
+            return <BusinessEdit business={business} {...props} />
+           }
+          }/>
           <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} />
 
 
@@ -63,6 +70,12 @@ class App extends Component {
   }
 
 }
+
+const mapStateToProps = state => {
+  return {
+    businesses: state.businessReducer
+  };    
+}
  
-export default connect(null, { getCurrentUser, fetchProducts } )(App);
+export default connect(mapStateToProps, { getCurrentUser, fetchProducts } )(App);
 
