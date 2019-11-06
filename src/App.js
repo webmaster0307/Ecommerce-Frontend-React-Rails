@@ -14,6 +14,7 @@ import NewBusiness from './components/businesses/NewBusiness'
 import Business from './components/businesses/Business'
 import BusinessHome from './components/businesses/BusinessHome'
 import BusinessProduct from './components/businesses/BusinessProduct'
+import BusinessEdit from './components/businesses/BusinessEdit'
 import CategoryProducts from './components/categories/CategoryProducts'
 import CategoryProduct from './components/categories/CategoryProduct'
 import { getCurrentUser } from './actions/currentUser'
@@ -52,7 +53,9 @@ class App extends Component {
           <Route exact path='/businesses/new' component={NewBusiness} />
           <Route exact path='/businesses' component={BusinessesContainer} />
           <Route exact path='/businesses/:id' component={Business} />
+          <Route exact path='/businesses/:id/edit' component={BusinessEdit} />
           <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} />
+
 
         </Switch>
       </div>

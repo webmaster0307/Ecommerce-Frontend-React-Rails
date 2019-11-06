@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 
 class Business extends Component {
     state = {  }
+
+
+
+
     render() { 
         let currentBusiness = this.props.businesses.businesses.filter(business => business.id === this.props.match.params.id)[0]
         console.log("currentBusiness", currentBusiness)
@@ -29,10 +33,8 @@ class Business extends Component {
                         <li className="business-name"><b className="titlespacing">Business Name:</b> {currentBusiness ? currentBusiness.attributes.name :null}</li>       
                         <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {currentBusiness ? currentBusiness.attributes.tax_id: null}</li>
                         <br></br>
-                        <button className="button">Edit Business</button>
                         <br></br>
-                        <br></br>
-                        <button className="button">Delete Business</button>
+                        <button onClick={this.handleClickDelete} className="button">Delete Business</button>
                         <br></br>
                         <br></br>
                         <h2>Products</h2>
