@@ -53,7 +53,13 @@ class App extends Component {
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
           <Route exact path='/businesses/new' component={NewBusiness} />
           <Route exact path='/businesses' component={BusinessesContainer} />
-          <Route exact path='/businesses/:id' component={Business} />
+          <Route exact path='/businesses/:id' render={props => {
+            const business = businesses.businesses.find(business => business.id === props.match.params.id)
+            // console.log("business props", business)
+            return <Business business={business} {...props} />
+           }
+          }/>
+
           <Route exact path='/businesses/:id/edit' render={props => {
             const business = businesses.businesses.find(business => business.id === props.match.params.id)
             // console.log("business props", business)

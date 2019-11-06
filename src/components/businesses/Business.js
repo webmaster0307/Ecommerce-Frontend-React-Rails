@@ -3,13 +3,20 @@ import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 
 class Business extends Component {
-    state = {  }
+    constructor(props){
+        super(props);
 
 
+    console.log("business", this.props);
+    }
+
+    handleClickDelete = (e) => {
+        console.log("here")
+    }
 
 
     render() { 
-        let currentBusiness = this.props.businesses.businesses.filter(business => business.id === this.props.match.params.id)[0]
+        let currentBusiness = this.props.businesses.businesses.filter(bus => bus.id === this.props.match.params.id)[0]
         console.log("currentBusiness", currentBusiness)
     
         let currentBusinessProducts = currentBusiness ? currentBusiness.attributes.products.map(product =>
@@ -32,7 +39,6 @@ class Business extends Component {
                         {/* NEED TO REDIRECT IF NOT CURRENT BUSINESS */}
                         <li className="business-name"><b className="titlespacing">Business Name:</b> {currentBusiness ? currentBusiness.attributes.name :null}</li>       
                         <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {currentBusiness ? currentBusiness.attributes.tax_id: null}</li>
-                        <br></br>
                         <br></br>
                         <button onClick={this.handleClickDelete} className="button">Delete Business</button>
                         <br></br>
