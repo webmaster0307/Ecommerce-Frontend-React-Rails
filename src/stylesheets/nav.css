@@ -65,7 +65,7 @@
   margin-top: 20px;
 }
 
-.dropdown-content {
+.dropdown-content{
   display: none;
 }
 
@@ -77,6 +77,16 @@
   display: block;
 }
 
+.nav-button {
+  font-size: 18px;
+  border: none;
+  background-color: inherit;
+  color: RGB(0, 255, 242);
+}
+
+.nav-button:hover {
+  color: white;
+}
 
 
 
@@ -137,5 +147,9 @@
   background-color: RGB(197, 198, 200)
 }
 
+
+.nav-button {
+  margin-left: 40px;
+}
 
 }

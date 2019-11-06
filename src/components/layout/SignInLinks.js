@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { connect } from 'react-redux'
@@ -19,7 +19,7 @@ import { withRouter } from 'react-router'
                             <div className="dropdown-content">
                                 <li><NavLink to="/businesses/new" className="nav-links">New Business</NavLink></li>
                                 <li><NavLink to="/businesses" className="nav-links">Existing Business</NavLink></li> 
-                                <li><Link to="/logout" onClick={props.logOut}  className="nav-links">Logout</Link></li>
+                                <li><button onClick={props.logOut}  className="nav-button">Logout</button></li>
                             </div>
                         </div>
                         <li><NavLink to="/Wishlist" className="nav-links">Wish List</NavLink></li>
