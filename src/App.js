@@ -18,7 +18,7 @@ import CategoryProducts from './components/categories/CategoryProducts'
 import CategoryProduct from './components/categories/CategoryProduct'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
-import { fetchBusinesses } from './actions/userBusiness'
+// import { fetchBusinesses } from './actions/userBusiness'
 import BusinessesContainer from './containers/BusinessesContainer';
 
 
@@ -28,7 +28,7 @@ class App extends Component {
   componentDidMount() {
     this.props.getCurrentUser()
     this.props.fetchProducts()
-    this.props.fetchBusinesses()
+    // this.props.fetchBusinesses()
   }
 
 
@@ -61,5 +61,5 @@ class App extends Component {
 
 }
  
-export default connect(null, { getCurrentUser, fetchProducts, fetchBusinesses } )(App);
+export default connect(null, { getCurrentUser, fetchProducts } )(App);
 

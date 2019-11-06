@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-// import { fetchBusinesses } from "../actions/userBusiness.js"
+import { fetchBusinesses } from "../actions/userBusiness.js"
 import Businesses from '../components/businesses/Businesses.js'
 
 class BusinessesContainer extends Component {
     state = {  }
 
-    // FETCHING BUSINESSES IN APP.JS FILE.  IF NOT, BUSINESSES ARE EMPTY IF USER TYPES IN BUSINESSES/:ID IN URL.
-    // componentDidMount() {
-    //     this.props.fetchBusinesses()
-    //   }
+    componentDidMount() {
+        this.props.fetchBusinesses()
+      }
 
     render() { 
         return ( 
@@ -28,4 +27,4 @@ const mapStateToProps = state => {
       };    
 }
  
-export default connect(mapStateToProps)(BusinessesContainer);
+export default connect(mapStateToProps, {fetchBusinesses})(BusinessesContainer);
