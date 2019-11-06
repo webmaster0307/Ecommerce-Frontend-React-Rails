@@ -7,11 +7,11 @@ class BusinessEdit extends Component {
     constructor(props){
         super(props);
 
-        console.log(this.props)
+        // console.log("edit form" , this.props)
 
         this.state = { 
-            name: "",
-            tax_id: "",
+            name: `${this.props.business ? this.props.business.attributes.name : ""}` ,
+            tax_id:`${this.props.business ? this.props.business.attributes.tax_id : ""}`,
          }
     }
 
@@ -25,12 +25,15 @@ class BusinessEdit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // this.props.editBusiness(this.state);
-        // this.props.history.push('/businesses');
-            // this.setState({
-            //     name: "",
-            //     tax_id: "",
-            // })
+        let business = {...this.state, id: this.props.business.id }
+        // console.log("state is" , business)
+        this.props.editBusiness(business);
+        
+        this.props.history.push('/businesses');
+            this.setState({
+                name: "",
+                tax_id: "",
+            })
     }
 
     render() { 
@@ -49,14 +52,14 @@ class BusinessEdit extends Component {
                         <div className="label">    
                             <label htmlFor="name">Business name:  </label>
                         </div>  
-                            <input type="name" name="name" id="name" value=""  onChange={this.handleChange} required/>
+                            <input type="name" name="name" id="name" value={this.state.name}  onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row"> 
                         <div className="label">  
                             <label htmlFor="tax_id">Tax Id:  </label>
                         </div>  
-                            <input type="tax_id" name="tax_id" id="tax_id" value="" onChange={this.handleChange} required/>
+                            <input type="tax_id" name="tax_id" id="tax_id" value={this.state.tax_id} onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row">

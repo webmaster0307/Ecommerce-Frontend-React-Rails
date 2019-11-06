@@ -12,7 +12,7 @@ export const setMyBusinesses = businesses => {
     }
   }
 
-  export const editBusiness = business => {
+  export const editMyBusiness = business => {
     return {
       type: "EDIT_BUSINESS",
       business
@@ -56,7 +56,7 @@ export const createBusiness = (data) => {
     })
       .then(r => r.json())
       .then(response => {
-        console.log("Response" , response);
+        // console.log("Response" , response);
         if (response.error) {
           alert(response.error)
         } else {
@@ -67,31 +67,32 @@ export const createBusiness = (data) => {
   }
 }
 
-// export const editBusiness = (data) => {
-//   return dispatch => {
-//     return fetch("http://localhost:3001/api/v1/businesses", {
-//       credentials: "include",
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(data)
-//     })
-//       .then(r => r.json())
-//       .then(response => {
-//         console.log("Response" , response);
-//         if (response.error) {
-//           alert(response.error)
-//         } else {
-//           dispatch(editBusiness(response.data))
-//         }
-//       })
-//       .catch(console.log)
-//   }
-// }
+export const editBusiness = (data) => {
+  // console.log("HERE")
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/businesses/${data.id}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(r => r.json())
+      .then(response => {
+        console.log("Response" , response);
+        if (response.error) {
+          alert(response.error)
+        } else {
+          dispatch(editMyBusiness(response.data))
+        }
+      })
+      .catch(console.log)
+  }
+}
 
-export const deleteBusiness = () => {
-  console.log("HERE")
+// export const deleteBusiness = () => {
+//   console.log("HERE")
   // return dispatch => {
   //   return fetch("http://localhost:3001/api/v1/businesses", {
   //     credentials: "include",
@@ -112,4 +113,4 @@ export const deleteBusiness = () => {
   //     })
   //     .catch(console.log)
   // }
-}
+// }
