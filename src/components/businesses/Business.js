@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 
+
 class Business extends Component {
     constructor(props){
         super(props);
 
 
     console.log("business", this.props);
-    }
-
-    handleDelete = (e) => {
-        console.log(e)
-
     }
 
 
@@ -36,8 +32,6 @@ class Business extends Component {
                         {/* NEED TO REDIRECT IF NOT CURRENT BUSINESS */}
                         <li className="business-name"><b className="titlespacing">Business Name:</b> {this.props.business ? this.props.business.attributes.name :null}</li>       
                         <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {this.props.business ? this.props.business.attributes.tax_id: null}</li>
-                        <br></br>
-                        <button onClick={() => this.handleDelete(this.props.business)} className="button">Delete Business</button>
                         <br></br>
                         <br></br>
                         <h2>Products</h2>

@@ -19,10 +19,11 @@ export const setMyBusinesses = businesses => {
     }
   }
 
-  export const deleteMyBusiness = business => {
+  export const deleteMyBusiness = businessId => {
+    console.log("action creator", businessId)
     return {
       type: "DELETE_BUSINESS",
-      business
+      businessId
     }
   }
 
@@ -98,24 +99,23 @@ export const editBusiness = (data) => {
   }
 }
 
-export const deleteBusiness = (data) => {
-  console.log("HERE")
+export const deleteBusiness = (businessId) => {
+  // console.log("action", businessId)
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/businesses/${data.id}`, {
+    return fetch(`http://localhost:3001/api/v1/businesses/${businessId}`, {
       credentials: "include",
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
     })
       .then(r => r.json())
       .then(response => {
-        console.log("Response" , response);
+        // console.log("Response" , response);
         if (response.error) {
           alert(response.error)
         } else {
-          dispatch(deleteMyBusiness(response.data))
+          dispatch(deleteMyBusiness(businessId))
         }
       })
       .catch(console.log)
