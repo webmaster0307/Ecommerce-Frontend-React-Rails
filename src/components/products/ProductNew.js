@@ -15,6 +15,7 @@ class ProductNew extends Component {
             price: "",
             image: "",
             item_number: "",
+            category: "",
          }
     }
 
@@ -28,6 +29,7 @@ class ProductNew extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log(this.state)
         // this.props.createProduct(this.state);
         // this.props.history.push('/businesses');
             this.setState({
@@ -37,9 +39,9 @@ class ProductNew extends Component {
     }
 
     render() { 
-        const { loggedIn } = this.props;
-        console.log("loggedIn", loggedIn)
-        if (!loggedIn) return <Redirect to='/' />
+        // let categories = this.props.categories ? this.props.categories.categories.map(category => <div>{category.attributes.name}</div>) : null
+
+        // console.log(categories)
 
         return ( 
             <div className="container-form">
@@ -47,6 +49,14 @@ class ProductNew extends Component {
                     <h1>New Product Form</h1>
         
                     <form onSubmit={this.handleSubmit}>
+
+                    <div className="row"> 
+                    <select onChange={this.handleChange}>
+                        {this.props.categories.categories.map((category) => <option key={category.attributes.id} id={category.attributes.id} value={category.attributes.id}>{category.attributes.name}</option>) }
+                    </select>
+                    </div>
+                  
+
                     <div className="row"> 
                         <div className="label">    
                             <label htmlFor="name">Product name:  </label>
@@ -72,7 +82,7 @@ class ProductNew extends Component {
                         <div className="label">  
                             <label htmlFor="image">Image:  </label>
                         </div>  
-                            <input type="text" name="image" id="image" placeholder="image" onChange={this.handleChange} required/>
+                            <input type="text" name="image" id="image" placeholder="image" onChange={this.handleChange} />
                     </div>
 
                     <div className="row">
@@ -87,10 +97,11 @@ class ProductNew extends Component {
     }
 }
 
-const mapStateToProps = ({ currentUser }) => {
+const mapStateToProps = state => {
     return {
-      currentUser,
-      loggedIn: !!currentUser
+      categories: state.categoryReducer,
+      currentUser: state.currentUser,
+      loggedIn: !!state.currentUser
     }
   }
 
