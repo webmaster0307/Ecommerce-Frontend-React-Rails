@@ -13,6 +13,16 @@ export default (state = {businesses: []}, action) => {
               }
             })
            return {...state, businesses: business}
+
+         case 'DELETE_BUSINESS':
+          let businessTwo = state.businesses.map(business => {
+            if (business.id === action.business.id) {
+              return action.business
+              } else {
+                return business
+              }
+            })
+            return {...state, businesses: businessTwo}
         
           default:
             return state

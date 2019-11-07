@@ -10,8 +10,9 @@ class Business extends Component {
     console.log("business", this.props);
     }
 
-    handleClickDelete = (e) => {
-        console.log("here")
+    handleDelete = (e) => {
+        console.log(e)
+
     }
 
 
@@ -24,8 +25,6 @@ class Business extends Component {
                     <li className="products-image"><img src={ product.image } alt="product" ></img></li>
                 </Link>
                 <li className="products-text"> <b className="titlespacing">Product Name:</b> {product.name}</li>
-
-                    {/* <li className="product-text"><b className="titlespacing">Description:</b> {product.description}</li> */}
                 <li className="products-text"><b className="titlespacing">Item Number:</b> {product.item_number}</li>     
             </div>
             ) : null
@@ -38,7 +37,7 @@ class Business extends Component {
                         <li className="business-name"><b className="titlespacing">Business Name:</b> {this.props.business ? this.props.business.attributes.name :null}</li>       
                         <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {this.props.business ? this.props.business.attributes.tax_id: null}</li>
                         <br></br>
-                        <button onClick={this.handleClickDelete} className="button">Delete Business</button>
+                        <button onClick={() => this.handleDelete(this.props.business)} className="button">Delete Business</button>
                         <br></br>
                         <br></br>
                         <h2>Products</h2>
