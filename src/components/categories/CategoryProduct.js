@@ -39,17 +39,8 @@ const CategoryProduct = (props) => {
                 <br></br>
                 <br></br>
 
-                {/* <li className="product-qty">Select Qty: </li>
-                <select>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select> */}
-    
                 <button className="product-button">Add to Wish List</button>
                 <br></br>
-                {/* <button className="product-button">Add to Cart</button> */}
             </div>     
         </div>
     )

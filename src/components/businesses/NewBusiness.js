@@ -33,6 +33,7 @@ class NewBusiness extends Component {
 
     render() { 
         const { loggedIn } = this.props;
+        console.log("loggedIn", loggedIn)
         if (!loggedIn) return <Redirect to='/' />
         return ( 
             <div className="container-form">

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
 
 
-class Business extends Component {
+class BusinessProducts extends Component {
     constructor(props){
         super(props);
 
 
-    console.log("business", this.props);
+    // console.log("business", this.props);
     }
 
 
@@ -32,7 +32,6 @@ class Business extends Component {
             return (
                 <div>
                     <div className="businesses">
-                        {/* NEED TO REDIRECT IF NOT CURRENT BUSINESS */}
                         <li className="business-name"><b className="titlespacing">Business Name:</b> {this.props.business ? this.props.business.attributes.name :null}</li>       
                         <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {this.props.business ? this.props.business.attributes.tax_id: null}</li>
                         <br></br>
@@ -57,4 +56,4 @@ const mapStateToProps = ({ currentUser }) => {
     }
   }
 
-export default connect(mapStateToProps)(Business);
+export default connect(mapStateToProps)(BusinessProducts);

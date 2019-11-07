@@ -9,7 +9,7 @@ import About from './components/About'
 import Wishlist from './components/Wishlist'
 import Navbar from './components/layout/Navbar'
 import NewBusiness from './components/businesses/NewBusiness'
-import Business from './components/businesses/Business'
+import BusinessProducts from './components/businesses/BusinessProducts'
 import BusinessProduct from './components/businesses/BusinessProduct'
 import BusinessEdit from './components/businesses/BusinessEdit'
 import CategoryProducts from './components/categories/CategoryProducts'
@@ -51,7 +51,7 @@ class App extends Component {
           <Route exact path='/businesses/:id' render={props => {
             const business = businesses.businesses.find(business => business.id === props.match.params.id)
             // console.log("business props", business)
-            return <Business business={business} {...props} />
+            return <BusinessProducts business={business} {...props} />
            }
           }/>
 
