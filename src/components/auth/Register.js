@@ -50,7 +50,7 @@ class Register extends Component {
                         <label htmlFor="username">Username:  </label>
                     </div>  
                     <div className=""> 
-                        <input type="username" name="username" id="username" placeholder="Enter Username" onChange={this.handleChange} required/>
+                        <input type="text" name="username" id="username" placeholder="Enter Username" onChange={this.handleChange} required/>
                     </div>  
                 </div>  
 

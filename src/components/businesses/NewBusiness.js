@@ -46,14 +46,14 @@ class NewBusiness extends Component {
                         <div className="label">    
                             <label htmlFor="name">Business name:  </label>
                         </div>  
-                            <input type="name" name="name" id="name" placeholder="Enter Business Name" onChange={this.handleChange} required/>
+                            <input type="text" name="name" id="name" placeholder="Enter Business Name" onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row"> 
                         <div className="label">  
                             <label htmlFor="tax_id">Tax Id:  </label>
                         </div>  
-                            <input type="tax_id" name="tax_id" id="tax_id" placeholder="Tax Id" onChange={this.handleChange} required/>
+                            <input type="text" name="tax_id" id="tax_id" placeholder="Tax Id" onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row">

@@ -26,7 +26,6 @@ class BusinessProducts extends Component {
                 </Link>
                 <li className="products-text"> <b className="titlespacing"></b> {product.name}</li>
                 <li className="products-text"><b className="titlespacing">Item:</b> {product.item_number}</li>     
-                <Link to={`/products/${product.id}/edit`} className="edit-link">Edit Product</Link>
                 <br></br>
                 <br></br>
             </div>

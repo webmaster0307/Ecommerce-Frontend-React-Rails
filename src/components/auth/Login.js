@@ -44,7 +44,7 @@ class Login extends Component {
                         <div className="label">    
                             <label htmlFor="username">Username:  </label>
                         </div>  
-                            <input type="username" name="username" id="username" placeholder="Enter Username" onChange={this.handleChange} required/>
+                            <input type="text" name="username" id="username" placeholder="Enter Username" onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row"> 

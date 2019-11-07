@@ -47,7 +47,6 @@ class BusinessProduct extends Component {
                     <br></br>
 
                     <button className="product-button">Edit Product</button>
-                    <button className="product-button">Delete Product</button>
                     <br></br>
                 </div>     
             </div>

@@ -51,14 +51,14 @@ class BusinessEdit extends Component {
                         <div className="label">    
                             <label htmlFor="name">Business name:  </label>
                         </div>  
-                            <input type="name" name="name" id="name" value={this.state.name}  onChange={this.handleChange} required/>
+                            <input type="text" name="name" id="name" value={this.state.name}  onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row"> 
                         <div className="label">  
                             <label htmlFor="tax_id">Tax Id:  </label>
                         </div>  
-                            <input type="tax_id" name="tax_id" id="tax_id" value={this.state.tax_id} onChange={this.handleChange} required/>
+                            <input type="text" name="tax_id" id="tax_id" value={this.state.tax_id} onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row">
