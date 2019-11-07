@@ -15,6 +15,7 @@ class BusinessesContainer extends Component {
             <div className="business-home"> 
               <h1>Seller Account Section</h1>
               <h2>Current Businesses</h2>
+              <br></br>
               <Businesses currentUserBusinesses = {this.props} />
             </div>
          );

@@ -53,7 +53,7 @@ h1, p {
   background-color: RGB(0, 255, 244);
   border: none;
   color: black;
-  padding: 15px 32px;
+  padding: 6.5px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -61,13 +61,13 @@ h1, p {
   border-radius: 4px;
 }
 
+.red {
+  color: red;
+  font-size: 1rem;
+}
 
 .button:hover {
   background-color: RGB(11, 165, 161);
-}
-
-.edit-link {
-  
 }
 
 

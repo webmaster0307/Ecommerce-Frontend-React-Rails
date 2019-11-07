@@ -20,8 +20,7 @@ class Businesses extends Component {
 
     render() { 
 
-        console.log(this.props.currentUserBusinesses.businesses.businesses)
-
+        // console.log(this.props.currentUserBusinesses.businesses.businesses)
         let currentUserBusinesses = this.props ? this.props.currentUserBusinesses.businesses.businesses.map(business =>
            <div key={business.attributes.id}>
                 <Link to={`/businesses/${business.attributes.id}`}>
@@ -32,9 +31,9 @@ class Businesses extends Component {
                 <li className="business-id"><b className="titlespacing">Created on:</b>  {new Date(`${business.attributes.created_at}`).toLocaleString().split(',')[0]}</li>
                 <Link to={`/businesses/${business.attributes.id}/edit`} className="edit-link">Edit Business</Link>
                 <br></br>
+                <p className="red"> Warning: Deleting a business will also delete associated products</p>
                 <button onClick={() => this.handleDelete(`${business.attributes.id}`)} className="button">Delete Business</button>
-    
-               
+                <br></br>
                 <br></br>
                 <br></br>
             </div> 
