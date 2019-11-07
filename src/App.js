@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Route, Switch, withRouter } from 'react-router-dom' 
 import DashboardProductsContainer from './containers/DashboardProductsContainer'
-// import BusinessesContainer from './containers/BusinessesContainer';
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Home from './components/dashboard/Home'
@@ -12,14 +11,12 @@ import Cart from './components/Cart'
 import Navbar from './components/layout/Navbar'
 import NewBusiness from './components/businesses/NewBusiness'
 import Business from './components/businesses/Business'
-import BusinessHome from './components/businesses/BusinessHome'
 import BusinessProduct from './components/businesses/BusinessProduct'
 import BusinessEdit from './components/businesses/BusinessEdit'
 import CategoryProducts from './components/categories/CategoryProducts'
 import CategoryProduct from './components/categories/CategoryProduct'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
-// import { fetchBusinesses } from './actions/userBusiness'
 import BusinessesContainer from './containers/BusinessesContainer';
 
 
@@ -29,7 +26,6 @@ class App extends Component {
   componentDidMount() {
     this.props.getCurrentUser()
     this.props.fetchProducts()
-    // this.props.fetchBusinesses()
   }
 
 
