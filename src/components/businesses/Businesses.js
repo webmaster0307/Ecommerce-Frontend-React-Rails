@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import { deleteBusiness } from '../../actions/userBusiness'
+import { Redirect } from 'react-router-dom'
 
 class Businesses extends Component {
     constructor(props){
@@ -19,6 +20,8 @@ class Businesses extends Component {
 
 
     render() { 
+        const { loggedIn } = this.props;
+        if (!loggedIn) return <Redirect to='/' />
 
         // console.log(this.props.currentUserBusinesses.businesses.businesses)
         let currentUserBusinesses = this.props ? this.props.currentUserBusinesses.businesses.businesses.map(business =>
@@ -52,6 +55,14 @@ class Businesses extends Component {
     
     }
 }
+
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
+
  
 
-export default connect(null, { deleteBusiness })(Businesses);
+export default connect(mapStateToProps, { deleteBusiness })(Businesses);

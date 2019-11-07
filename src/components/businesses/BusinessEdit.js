@@ -37,7 +37,8 @@ class BusinessEdit extends Component {
 
     render() { 
 
-        // ADD IF NOT CURRENT USER THEN REDIRECT 
+        const { loggedIn } = this.props;
+        if (!loggedIn) return <Redirect to='/' />
 
         return ( 
             <div className="container-form">
@@ -72,6 +73,14 @@ class BusinessEdit extends Component {
     }
 }
 
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
+
+
 
  
-export default connect(null, { editBusiness })(BusinessEdit);
+export default connect(mapStateToProps, { editBusiness })(BusinessEdit);

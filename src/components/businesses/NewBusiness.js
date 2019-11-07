@@ -32,6 +32,8 @@ class NewBusiness extends Component {
     }
 
     render() { 
+        const { loggedIn } = this.props;
+        if (!loggedIn) return <Redirect to='/' />
         return ( 
             <div className="container-form">
                 <div className="middle-container">
@@ -64,5 +66,13 @@ class NewBusiness extends Component {
          );
     }
 }
+
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
+
  
-export default connect(null, { createBusiness })(NewBusiness);
+export default connect(mapStateToProps, { createBusiness })(NewBusiness);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 class Business extends Component {
@@ -13,6 +14,8 @@ class Business extends Component {
 
 
     render() { 
+        const { loggedIn } = this.props;
+        if (!loggedIn) return <Redirect to='/' />
  
         let currentBusinessProducts = this.props.business ? this.props.business.attributes.products.map(product =>
             <div key={product.id} className="">
@@ -47,5 +50,11 @@ class Business extends Component {
     }
 }
  
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
 
-export default connect(null)(Business);
+export default connect(mapStateToProps)(Business);
