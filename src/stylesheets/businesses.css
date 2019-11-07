@@ -25,7 +25,7 @@
 }
 
 
-.business-name:hover {
+.business-hover:hover {
     background-color: RGB(11, 165, 161);
     color: white;
 }

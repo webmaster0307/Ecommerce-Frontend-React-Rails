@@ -14,7 +14,7 @@ const Businesses = (props) => {
 
             <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {business.attributes.tax_id}</li>
             <li className="business-id"><b className="titlespacing">Created on:</b>  {new Date(`${business.attributes.created_at}`).toLocaleString().split(',')[0]}</li>
-            <Link to={`/businesses/${business.attributes.id}/edit`}>Edit Business</Link>
+            <Link to={`/businesses/${business.attributes.id}/edit`} className="edit-link">Edit Business</Link>
         
            
             <br></br>
