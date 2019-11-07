@@ -16,7 +16,8 @@ import CategoryProducts from './components/categories/CategoryProducts'
 import CategoryProduct from './components/categories/CategoryProduct'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
-import BusinessesContainer from './containers/BusinessesContainer';
+import BusinessesContainer from './containers/BusinessesContainer'
+import ProductNew from './components/products/ProductNew'
 
 
 
@@ -61,9 +62,10 @@ class App extends Component {
             return <BusinessEdit business={business} {...props} />
            }
           }/>
+          <Route exact path ='/businesses/:id/products/new' component={ProductNew} />
           <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} />
 
-
+          
         </Switch>
       </div>
     );

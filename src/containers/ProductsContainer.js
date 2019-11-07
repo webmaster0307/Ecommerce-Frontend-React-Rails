@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchProducts } from "../actions/product.js"
-import Product from '../components/categories/Product.js'
 
 
 class ProductsContainer extends Component {
@@ -13,7 +12,8 @@ class ProductsContainer extends Component {
     render() { 
         return ( 
             <div>
-                <Product products={this.props} />
+                {/* <ProductEdit products={this.props} /> */}
+                
             </div>
             
          );

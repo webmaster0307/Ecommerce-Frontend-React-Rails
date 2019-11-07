@@ -9,22 +9,26 @@ class BusinessProducts extends Component {
         super(props);
 
 
-    // console.log("business", this.props);
+    console.log("business", this.props);
     }
 
 
     render() { 
         const { loggedIn } = this.props;
         if (!loggedIn) return <Redirect to='/' />
+
+        const businessId =  this.props.business ? this.props.business.attributes.id : null
  
         let currentBusinessProducts = this.props.business ? this.props.business.attributes.products.map(product =>
             <div key={product.id} className="">
-                
                 <Link to={`/businesses/${product.business_id}/products/${product.id}`}>
                     <li className="products-image"><img src={ product.image } alt="product" ></img></li>
                 </Link>
-                <li className="products-text"> <b className="titlespacing">Product Name:</b> {product.name}</li>
-                <li className="products-text"><b className="titlespacing">Item Number:</b> {product.item_number}</li>     
+                <li className="products-text"> <b className="titlespacing"></b> {product.name}</li>
+                <li className="products-text"><b className="titlespacing">Item:</b> {product.item_number}</li>     
+                <Link to={`/products/${product.id}/edit`} className="edit-link">Edit Product</Link>
+                <br></br>
+                <br></br>
             </div>
             ) : null
     
@@ -37,6 +41,9 @@ class BusinessProducts extends Component {
                         <br></br>
                         <br></br>
                         <h2>Products</h2>
+                        <br></br>
+                        <Link to={`/businesses/${businessId}/products/new`} className="edit-link">Add New Product</Link>
+                        <br></br>
                         <br></br>
                      </div>
 
