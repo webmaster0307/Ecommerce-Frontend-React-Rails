@@ -15,7 +15,7 @@ class ProductNew extends Component {
             price: "",
             image: "",
             item_number: "",
-            category: "",
+            selected_category: "",
          }
     }
 
@@ -39,9 +39,7 @@ class ProductNew extends Component {
     }
 
     render() { 
-        // let categories = this.props.categories ? this.props.categories.categories.map(category => <div>{category.attributes.name}</div>) : null
 
-        // console.log(categories)
 
         return ( 
             <div className="container-form">
@@ -53,6 +51,12 @@ class ProductNew extends Component {
                     <div className="row"> 
                     <select onChange={this.handleChange}>
                         {this.props.categories.categories.map((category) => <option key={category.attributes.id} id={category.attributes.id} value={category.attributes.id}>{category.attributes.name}</option>) }
+                    </select>
+                    </div>
+
+                    <div className="row"> 
+                    <select onChange={this.handleChange}>
+                        {this.props.subcategories.subcategories.map((subcategory) => <option key={subcategory.attributes.id} id={subcategory.attributes.id} value={subcategory.attributes.id}>{subcategory.attributes.name}</option>) }
                     </select>
                     </div>
                   
@@ -100,6 +104,7 @@ class ProductNew extends Component {
 const mapStateToProps = state => {
     return {
       categories: state.categoryReducer,
+      subcategories: state.subcategoryReducer,
       currentUser: state.currentUser,
       loggedIn: !!state.currentUser
     }
