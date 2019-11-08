@@ -15,8 +15,8 @@ class ProductNew extends Component {
             description: "",
             price: "",
             image: "",
-            selectedCategory: "",
-            selectedSubcategory: "",
+            category_id: "",
+            subcategory_id: "",
          }
     }
 
@@ -34,18 +34,18 @@ class ProductNew extends Component {
         let item_number =  cuid()
         let product = {...this.state, business_id, item_number }
         
-        console.log(item_number)
-        console.log("product", product)
-        // this.props.createProduct(this.state);
-        // this.props.history.push('/businesses');
+        // console.log(item_number)
+        // console.log("product", product)
+        this.props.createProduct(product);
+        this.props.history.push('/businesses');
             this.setState({
                 name: "",
                 description: "",
                 price: "",
                 image: "",
                 item_number: "",
-                selectedCategory: "",
-                selectedSubcategory: "",
+                category_id: "",
+                subcategory_id: "",
             })
     }
 
@@ -62,7 +62,7 @@ class ProductNew extends Component {
                     <div className="row"> 
                     <div className="label">   
                         <label htmlFor="name">Category: Required  </label>
-                            <select onChange={(e) => this.setState({selectedCategory: e.target.value})}>>
+                            <select onChange={(e) => this.setState({category_id: e.target.value})}>>
                             <option>Select an option.</option>
                                 {this.props.categories.categories.map((category) => <option key={category.id} id={category.id} value={category.id} >{category.attributes.name}</option>) }
                             </select>
@@ -72,7 +72,7 @@ class ProductNew extends Component {
                     <div className="row"> 
                     <div className="label">   
                         <label htmlFor="name">SubCategory:  Required  </label>
-                            <select onChange={(e) => this.setState({selectedSubcategory: e.target.value})} >>
+                            <select onChange={(e) => this.setState({subcategory_id: e.target.value})} >>
                             <option>Select an option.</option>
                                 {this.props.subcategories.subcategories.map((subcategory) => <option key={subcategory.id} id={subcategory.id} value={subcategory.id} >{subcategory.attributes.name}</option>) }
                             </select > 
@@ -131,4 +131,4 @@ const mapStateToProps = state => {
   }
 
  
-export default connect(mapStateToProps)(ProductNew);
+export default connect(mapStateToProps, { createProduct })(ProductNew);
