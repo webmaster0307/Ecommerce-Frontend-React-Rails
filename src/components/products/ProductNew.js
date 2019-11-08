@@ -15,7 +15,8 @@ class ProductNew extends Component {
             price: "",
             image: "",
             item_number: "",
-            selected_category: "",
+            selectedCategory: "",
+            selectedSubcategory: "",
          }
     }
 
@@ -49,15 +50,21 @@ class ProductNew extends Component {
                     <form onSubmit={this.handleSubmit}>
 
                     <div className="row"> 
-                    <select onChange={this.handleChange}>
-                        {this.props.categories.categories.map((category) => <option key={category.attributes.id} id={category.attributes.id} value={category.attributes.id}>{category.attributes.name}</option>) }
-                    </select>
+                    <div className="label">   
+                        <label htmlFor="name">Category:  </label>
+                            <select onChange={(e) => this.setState({selectedCategory: e.target.value})}>>
+                                {this.props.categories.categories.map((category) => <option key={category.attributes.id} id={category.attributes.id} value={category.attributes.id} >{category.attributes.name}</option>) }
+                            </select>
+                        </div>
                     </div>
 
                     <div className="row"> 
-                    <select onChange={this.handleChange}>
-                        {this.props.subcategories.subcategories.map((subcategory) => <option key={subcategory.attributes.id} id={subcategory.attributes.id} value={subcategory.attributes.id}>{subcategory.attributes.name}</option>) }
-                    </select>
+                    <div className="label">   
+                        <label htmlFor="name">SubCategory: </label>
+                        <select onChange={(e) => this.setState({selectedSubcategory: e.target.value})}>>
+                            {this.props.subcategories.subcategories.map((subcategory) => <option key={subcategory.attributes.id} id={subcategory.attributes.id} value={subcategory.attributes.id}>{subcategory.attributes.name}</option>) }
+                        </select>
+                    </div>
                     </div>
                   
 
