@@ -53,19 +53,20 @@ class ProductNew extends Component {
                     <div className="label">   
                         <label htmlFor="name">Category:  </label>
                             <select onChange={(e) => this.setState({selectedCategory: e.target.value})}>>
-                                {this.props.categories.categories.map((category) => <option key={category.attributes.id} id={category.attributes.id} value={category.attributes.id} >{category.attributes.name}</option>) }
+                                {this.props.categories.categories.map((category) => <option key={category.attributes.id} id={category.attributes.id} value={category.id} >{category.attributes.name}</option>) }
                             </select>
                         </div>
                     </div>
 
                     <div className="row"> 
                     <div className="label">   
-                        <label htmlFor="name">SubCategory: </label>
-                        <select onChange={(e) => this.setState({selectedSubcategory: e.target.value})}>>
-                            {this.props.subcategories.subcategories.map((subcategory) => <option key={subcategory.attributes.id} id={subcategory.attributes.id} value={subcategory.attributes.id}>{subcategory.attributes.name}</option>) }
-                        </select>
+                        <label htmlFor="name">SubCategory:  </label>
+                            <select onChange={(e) => this.setState({selectedSubcategory: e.target.value})}>>
+                                {this.props.subcategories.subcategories.map((subcategory) => <option key={subcategory.attributes.id} id={subcategory.attributes.id} value={subcategory.id} >{subcategory.attributes.name}</option>) }
+                            </select>
+                        </div>
                     </div>
-                    </div>
+
                   
 
                     <div className="row"> 
