@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { createProduct } from '../../actions/product'
 import { Redirect } from 'react-router-dom'
+import cuid from 'cuid';
 
 class ProductNew extends Component {
     constructor(props){
         super(props);
 
-        console.log(this.props);
+        console.log("product new", this.props);
 
         this.state = { 
             name: "",
             description: "",
             price: "",
             image: "",
-            item_number: "",
             selectedCategory: "",
             selectedSubcategory: "",
          }
@@ -30,12 +30,22 @@ class ProductNew extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
+        let business_id = this.props.match.params.id
+        let item_number =  cuid()
+        let product = {...this.state, business_id, item_number }
+        
+        console.log(item_number)
+        console.log("product", product)
         // this.props.createProduct(this.state);
         // this.props.history.push('/businesses');
             this.setState({
                 name: "",
-                tax_id: "",
+                description: "",
+                price: "",
+                image: "",
+                item_number: "",
+                selectedCategory: "",
+                selectedSubcategory: "",
             })
     }
 
@@ -87,7 +97,7 @@ class ProductNew extends Component {
 
                     <div className="row"> 
                         <div className="label">  
-                            <label htmlFor="price">Price:  </label>
+                            <label htmlFor="price">Price: Don't enter $ symbol  </label>
                         </div>  
                             <input type="text" name="price" id="price" placeholder="price" onChange={this.handleChange} required/>
                     </div>
