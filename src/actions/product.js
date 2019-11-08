@@ -47,7 +47,7 @@ export const setMyProducts = products => {
       })
         .then(r => r.json())
         .then(response => {
-            // console.log(response);
+            console.log(response);
           if (response.error) {
             alert(response.error)
           } else {
