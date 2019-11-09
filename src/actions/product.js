@@ -5,10 +5,10 @@ export const setMyProducts = products => {
     }
   }
 
-  export const addProduct = product => {
+  export const addProduct = business => {
     return {
       type: "ADD_PRODUCT",
-      product
+      business
     }
   }
 

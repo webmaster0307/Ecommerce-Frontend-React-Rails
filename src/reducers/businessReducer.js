@@ -19,6 +19,17 @@ export default (state = {businesses: []}, action) => {
          case 'DELETE_BUSINESS':
             const businesses = state.businesses.filter(business => business.id !== action.businessId);
             return {...state, businesses }  
+
+            case 'ADD_PRODUCT':
+              // debugger;
+                let businessTwo = state.businesses.map(business => {
+                  if (business.id === action.business.id) {
+                    return action.business
+                  } else {
+                    return business
+                  }
+                })
+                return {...state, businesses: businessTwo}
           
             default:
             return state
