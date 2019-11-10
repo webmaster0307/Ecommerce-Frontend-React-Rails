@@ -45,8 +45,8 @@ const CategoryProducts = (props) => {
 
 const mapStateToProps = state => {
       return {
-        categories: state.categoryReducer,
-        subcategories: state.subcategoryReducer,
+        categories: state.businessReducer,
+        subcategories: state.businessReducer,
       };    
 }
 

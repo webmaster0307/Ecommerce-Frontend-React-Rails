@@ -20,6 +20,7 @@ class DashboardProductsContainer extends Component {
         return ( 
           <div className="main">
              <Categories categoriesList={this.props} />
+             <li>Image 1</li>
           </div>
          );
       }
@@ -28,8 +29,8 @@ class DashboardProductsContainer extends Component {
     const mapStateToProps = state => {
         // console.log("mapStateToProps", state);
           return {
-            categories: state.categoryReducer,
-            subcategories: state.subcategoryReducer,
+            categories: state.businessReducer,
+            // subcategories: state.businessReducer,
           };    
     }
  

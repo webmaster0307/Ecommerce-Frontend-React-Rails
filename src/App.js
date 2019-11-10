@@ -31,16 +31,16 @@ class App extends Component {
 
   render() {
     const { businesses } = this.props
-    console.log("app businesses", businesses)
+    // console.log("app businesses", businesses)
     return ( 
       <div className="App">
         <Navbar />
         {/* <Search /> */} 
         {/* <Footer /> */}
-        <DashboardProductsContainer />
+        
         
         <Switch>           
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={DashboardProductsContainer} />
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Register} />
           <Route path='/about' component={About} />

@@ -9,7 +9,7 @@ class Businesses extends Component {
         super(props);
 
 
-    // console.log("business props", this.props);
+    console.log("business props", this.props);
     }
 
     handleDelete = (businessId) => {

@@ -57,7 +57,7 @@ class BusinessProduct extends Component {
  
 const mapStateToProps = state => {
     return {
-      products: state.productReducer,
+      products: state.businessReducer,
     };    
 }
 
