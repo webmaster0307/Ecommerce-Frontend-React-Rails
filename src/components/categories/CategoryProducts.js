@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-
 const CategoryProducts = (props) => {
 
     // console.log("categoryProducts", props)
@@ -32,8 +31,8 @@ const CategoryProducts = (props) => {
         )
         : null
 
-
     return (
+        
       <div className="products">
           <h1 className="products">{CategoryName}</h1>
           <div className="products">
