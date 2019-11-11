@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 const CategoryProducts = (props) => {
 
-    console.log("categoryProducts", props)
+    // console.log("categoryProducts", props)
     // console.log("category props", props.categories.categories)
 
     let productList = props.match ? props.categories.categories.filter(category => category.id === props.match.params.id)[0] : null
