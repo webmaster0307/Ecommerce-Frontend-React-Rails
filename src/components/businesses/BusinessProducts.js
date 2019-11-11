@@ -9,7 +9,7 @@ class BusinessProducts extends Component {
         super(props);
 
 
-    console.log("business", this.props);
+    // console.log("business", this.props);
     }
 
 

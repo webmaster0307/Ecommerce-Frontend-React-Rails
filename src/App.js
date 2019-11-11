@@ -32,6 +32,10 @@ class App extends Component {
   render() {
     const { businesses } = this.props
     // console.log("app businesses", businesses)
+
+    const { products } = this.props
+    // console.log("app products", products)
+
     return ( 
       <div className="App">
         <Navbar />
@@ -65,7 +69,12 @@ class App extends Component {
           
           <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} />
           <Route exact path ='/businesses/:id/products/new' component={ProductNew} />
-          <Route exact path ='/businesses/:id/products/:id/edit' component={ProductEdit} />
+          <Route exact path ='/businesses/:id/products/:id/edit' render={props => {
+            const product = products.products.find(product => product.id === props.match.params.id)
+            // console.log("product", product)
+            return <ProductEdit product={product} {...props} />
+           }
+          } />
         </Switch>
       </div>
     );
@@ -75,7 +84,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    businesses: state.businessReducer
+    businesses: state.businessReducer,
+    products: state.productReducer,
   };    
 }
  

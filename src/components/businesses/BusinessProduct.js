@@ -50,7 +50,7 @@ class BusinessProduct extends Component {
                     <br></br>
                     <br></br>
 
-                    <Link to={`/businesses/${productBusinessId}/products/${product.id}/edit`} className="edit-link">Edit Product</Link>
+                    <Link to={`/businesses/${productBusinessId}/products/${product.attributes.id}/edit`} className="edit-link">Edit Product</Link>
                     <br></br>
                 </div>     
             </div>

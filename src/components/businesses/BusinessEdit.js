@@ -43,8 +43,7 @@ class BusinessEdit extends Component {
         return ( 
             <div className="container-form">
                 <div className="middle-container">
-                    <h1>Register Business</h1>
-                    <p>Please fill in this form to register a buiness.</p>
+                    <h1>Edit Business Form</h1>
 
                     <form onSubmit={this.handleSubmit}>
                     <div className="row"> 
