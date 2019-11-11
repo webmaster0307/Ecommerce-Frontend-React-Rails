@@ -123,8 +123,8 @@ class ProductNew extends Component {
 
 const mapStateToProps = state => {
     return {
-      categories: state.businessReducer,
-      subcategories: state.businessReducer,
+      categories: state.categoryReducer,
+      subcategories: state.subcategoryReducer,
       currentUser: state.currentUser,
       loggedIn: !!state.currentUser
     }

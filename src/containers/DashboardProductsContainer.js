@@ -29,7 +29,7 @@ class DashboardProductsContainer extends Component {
     const mapStateToProps = state => {
         // console.log("mapStateToProps", state);
           return {
-            categories: state.businessReducer,
+            categories: state.categoryReducer,
             // subcategories: state.businessReducer,
           };    
     }

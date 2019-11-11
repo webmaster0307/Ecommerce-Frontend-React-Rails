@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 const CategoryProducts = (props) => {
 
-    // console.log("categoryProducts", props)
+    console.log("categoryProducts", props)
     // console.log("category props", props.categories.categories)
 
     let productList = props.match ? props.categories.categories.filter(category => category.id === props.match.params.id)[0] : null
@@ -31,12 +31,20 @@ const CategoryProducts = (props) => {
         )
         : null
 
+      // let subcategories = props.categories.subcategories.map(subcategory => 
+      //   <li>{subcategory.attributes.name}</li>
+      // )
+      // console.log("subcategories", subcategories)
+
     return (
         
       <div className="products">
+        
           <h1 className="products">{CategoryName}</h1>
+          {/* {subcategories} */}
           <div className="products">
             {categoryProducts}
+
           </div>     
       </div>
     )
@@ -44,8 +52,8 @@ const CategoryProducts = (props) => {
 
 const mapStateToProps = state => {
       return {
-        categories: state.businessReducer,
-        subcategories: state.businessReducer,
+        categories: state.categoryReducer,
+        subcategories: state.subcategoryReducer,
       };    
 }
 

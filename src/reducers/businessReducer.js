@@ -1,4 +1,4 @@
-export default (state = { businesses: [], categories: [], subcategories: [], products: [] }, action) => {
+export default (state = { businesses: [] }, action) => {
     switch (action.type) {
      
       case "FETCH_BUSINESSES":
@@ -21,14 +21,6 @@ export default (state = { businesses: [], categories: [], subcategories: [], pro
             return {...state, businesses }  
 
           case 'ADD_PRODUCT':
-            // debugger;
-
-          //  let currentBusiness = state.businesses.filter(business => business.id === action.product.relationships.business.data.id)
-          //  let currentBusinessProducts = currentBusiness[0].attributes.products 
-          //  let newCurrentBusiness = [...currentBusinessProducts, action.product] 
-
-          //     return {...state, businesses: newCurrentBusiness}
-
               let businessTwo = state.businesses.map(business => {
                 if (business.id === action.business.id) {
                   return action.business
@@ -39,16 +31,6 @@ export default (state = { businesses: [], categories: [], subcategories: [], pro
     
               return {...state, businesses: businessTwo}
 
-            case "FETCH_CATEGORIES":
-              return {...state, categories: action.categories }
-
-            case "FETCH_SUBCATEGORIES":
-              return {...state, subcategories: action.subcategories}
-
-      
-            case "FETCH_PRODUCTS":
-              return {...state, products: action.products}
-      
             default:
             return state
     }
