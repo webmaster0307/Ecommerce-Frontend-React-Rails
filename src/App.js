@@ -8,7 +8,7 @@ import Home from './components/dashboard/Home'
 import About from './components/About'
 import Wishlist from './components/Wishlist'
 import Navbar from './components/layout/Navbar'
-import NewBusiness from './components/businesses/NewBusiness'
+import BusinessNew from './components/businesses/BusinessNew'
 import BusinessProducts from './components/businesses/BusinessProducts'
 import BusinessProduct from './components/businesses/BusinessProduct'
 import BusinessEdit from './components/businesses/BusinessEdit'
@@ -18,7 +18,7 @@ import { getCurrentUser } from './actions/currentUser'
 import { fetchProducts } from './actions/product'
 import BusinessesContainer from './containers/BusinessesContainer'
 import ProductNew from './components/products/ProductNew'
-
+import ProductEdit from './components/products/ProductEdit'
 
 
 class App extends Component {
@@ -47,7 +47,7 @@ class App extends Component {
           <Route path='/wishlist' component={Wishlist} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
-          <Route exact path='/businesses/new' component={NewBusiness} />
+          <Route exact path='/businesses/new' component={BusinessNew} />
           <Route exact path='/businesses' component={BusinessesContainer} />
           <Route exact path='/businesses/:id' render={props => {
             const business = businesses.businesses.find(business => business.id === props.match.params.id)
@@ -62,10 +62,10 @@ class App extends Component {
             return <BusinessEdit business={business} {...props} />
            }
           }/>
-          <Route exact path ='/businesses/:id/products/new' component={ProductNew} />
-          <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} />
-
           
+          <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} />
+          <Route exact path ='/businesses/:id/products/new' component={ProductNew} />
+          <Route exact path ='/businesses/:id/products/:id/edit' component={ProductEdit} />
         </Switch>
       </div>
     );
