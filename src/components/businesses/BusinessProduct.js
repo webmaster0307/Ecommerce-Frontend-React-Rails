@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class BusinessProduct extends Component {
     constructor(props){
         super(props);
 
 
-    console.log("BusinessProduct", this.props);
+    // console.log("BusinessProduct", this.props);
     }
 
     
     render() { 
 
         let product = this.props.products.products.filter(product => product.id === this.props.match.params.id)[0]
-        console.log(product)
+        console.log("product", product)
+
+        let productBusinessId = product ? product.attributes.business_id : null
+        // console.log("businessId", productBusinessId)
 
         let productColors = product ? product.attributes.colors.map(color => 
             <div key={color.color_id}>
@@ -46,7 +50,7 @@ class BusinessProduct extends Component {
                     <br></br>
                     <br></br>
 
-                    <button className="product-button">Edit Product</button>
+                    <Link to={`/businesses/${productBusinessId}/products/${product.attributes.id}/edit`} className="edit-link">Edit Product</Link>
                     <br></br>
                 </div>     
             </div>
@@ -57,7 +61,7 @@ class BusinessProduct extends Component {
  
 const mapStateToProps = state => {
     return {
-      products: state.businessReducer,
+      products: state.productReducer,
     };    
 }
 

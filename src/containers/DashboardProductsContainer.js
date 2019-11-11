@@ -30,7 +30,7 @@ class DashboardProductsContainer extends Component {
         // console.log("mapStateToProps", state);
           return {
             categories: state.categoryReducer,
-            // subcategories: state.businessReducer,
+            // subcategories: state.subcategoryReducer,
           };    
     }
  

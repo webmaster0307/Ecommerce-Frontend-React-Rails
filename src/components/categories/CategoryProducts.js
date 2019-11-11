@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+
 const CategoryProducts = (props) => {
 
     console.log("categoryProducts", props)
@@ -31,17 +32,12 @@ const CategoryProducts = (props) => {
         )
         : null
 
-      // let subcategories = props.categories.subcategories.map(subcategory => 
-      //   <li>{subcategory.attributes.name}</li>
-      // )
-      // console.log("subcategories", subcategories)
-
+  
     return (
         
       <div className="products">
         
           <h1 className="products">{CategoryName}</h1>
-          {/* {subcategories} */}
           <div className="products">
             {categoryProducts}
 
