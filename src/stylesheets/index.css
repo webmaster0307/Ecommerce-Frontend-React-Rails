@@ -61,6 +61,20 @@ h1, p {
   border-radius: 4px;
 }
 
+.product-delete-button {
+  background-color: RGB(0, 255, 244);
+  border: none;
+  color: black;
+  padding: 6.5px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 4px;
+  width: 200px;
+}
+
+
 .red {
   color: red;
   font-size: 1rem;

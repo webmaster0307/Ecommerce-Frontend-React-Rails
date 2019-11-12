@@ -21,6 +21,14 @@ export const setMyProducts = products => {
     }
   }
 
+  export const deleteMyProduct = product => {
+    // console.log("returned product is", product);
+    return {
+      type: "DELETE_PRODUCT",
+      product
+    }
+  }
+
   export const fetchProducts = () => {
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/products", {
@@ -90,3 +98,26 @@ export const setMyProducts = products => {
         .catch(console.log)
     }
   }
+
+  export const deleteProduct = (ProductId) => {
+    // return dispatch => {
+    //   return fetch(`http://localhost:3001/api/v1/businesses/${businessId}`, {
+    //     credentials: "include",
+    //     method: "DELETE",
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     },
+    //   })
+    //     .then(r => r.json())
+    //     .then(response => {
+    //       // console.log("Response" , response);
+    //       if (response.error) {
+    //         alert(response.error)
+    //       } else {
+    //         dispatch(deleteMyProduct(productId))
+    //       }
+    //     })
+    //     .catch(console.log)
+    // }
+  }
+  

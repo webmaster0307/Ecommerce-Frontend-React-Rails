@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { deleteProduct } from '../../actions/product'
 
 class BusinessProduct extends Component {
     constructor(props){
         super(props);
 
 
-    // console.log("BusinessProduct", this.props);
+    console.log("BusinessProduct", this.props);
     }
+
+    
+
+    handleDelete = (productId) => {
+        // console.log("productId", productId)
+        this.props.deleteProduct(productId);
+    }
+
 
     
     render() { 
@@ -37,6 +46,7 @@ class BusinessProduct extends Component {
                 </div>
     
                 <div className="product-info col-7">
+
                     <li className="product-text"> <b className="titlespacing">Category Name:</b> {product ? product.attributes.category.name : null}</li>
                     <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {product ? product.attributes.subcategory.name : null}</li>
                     <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
@@ -52,8 +62,13 @@ class BusinessProduct extends Component {
     
                     <br></br>
                     <br></br>
+
                     {edit_link}
                     <br></br>
+
+                    <button onClick={() => this.handleDelete(`${product.attributes.id}`)} className="product-delete-button">Delete Product</button>
+
+                    
                 </div>     
             </div>
         )
@@ -67,4 +82,4 @@ const mapStateToProps = state => {
     };    
 }
 
-export default connect(mapStateToProps)(BusinessProduct);
+export default connect(mapStateToProps, { deleteProduct })(BusinessProduct);
