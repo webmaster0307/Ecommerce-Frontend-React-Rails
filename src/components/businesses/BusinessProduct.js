@@ -25,7 +25,8 @@ class BusinessProduct extends Component {
             </div>
         ) : null
     
-        // let business = product ? product.attributes.business
+        let edit_link =  product ? <Link to={`/businesses/${productBusinessId}/products/${product.attributes.id}/edit`} className="edit-link">Edit Product</Link> : null
+
        
         return(
             <div className="product-main">
@@ -36,6 +37,8 @@ class BusinessProduct extends Component {
                 </div>
     
                 <div className="product-info col-7">
+                    <li className="product-text"> <b className="titlespacing">Category Name:</b> {product ? product.attributes.category.name : null}</li>
+                    <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {product ? product.attributes.subcategory.name : null}</li>
                     <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
                     <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.attributes.description : null}</li>
                     <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.attributes.item_number : null}</li>
@@ -49,8 +52,7 @@ class BusinessProduct extends Component {
     
                     <br></br>
                     <br></br>
-
-                    <Link to={`/businesses/${productBusinessId}/products/${product.attributes.id}/edit`} className="edit-link">Edit Product</Link>
+                    {edit_link}
                     <br></br>
                 </div>     
             </div>
