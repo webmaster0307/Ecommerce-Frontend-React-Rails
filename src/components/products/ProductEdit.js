@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { editProduct } from '../../actions/product'
 
 class ProductEdit extends Component {
     constructor(props){
@@ -28,11 +29,14 @@ class ProductEdit extends Component {
     handleSubmit= (e) => {
         e.preventDefault();
         // console.log(this.state)
+        let product_id = this.props.product.id
         let business_id = this.props.product.relationships.business.data.id
         let item_number = this.props.product.attributes.item_number
         // console.log("business_id", business_id)
-        let product = {...this.state, business_id, item_number}
+        let product = {...this.state, product_id, business_id, item_number}
         console.log("product", product)
+        this.props.editProduct(product);
+        this.props.history.push(`/businesses/${business_id}/products/${product_id}`)
     }
 
     render() { 
@@ -117,4 +121,4 @@ const mapStateToProps = state => {
     }
   }
  
-export default connect(mapStateToProps)(ProductEdit);
+export default connect(mapStateToProps, { editProduct })(ProductEdit);
