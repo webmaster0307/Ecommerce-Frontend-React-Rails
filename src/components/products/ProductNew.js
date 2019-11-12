@@ -8,7 +8,7 @@ class ProductNew extends Component {
     constructor(props){
         super(props);
 
-        console.log("product new", this.props);
+        // console.log("product new", this.props);
 
         this.state = { 
             name: "",
