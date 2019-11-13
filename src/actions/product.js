@@ -21,11 +21,11 @@ export const setMyProducts = products => {
     }
   }
 
-  export const deleteMyProduct = product => {
+  export const deleteMyProduct = productId => {
     // console.log("returned product is", product);
     return {
       type: "DELETE_PRODUCT",
-      product
+      productId
     }
   }
 

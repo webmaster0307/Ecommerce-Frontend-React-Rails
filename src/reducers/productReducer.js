@@ -16,6 +16,11 @@ export default (state = {products: []}, action) => {
 
       return {...state, products: product}
 
+      case 'DELETE_PRODUCT':
+        const products = state.products.filter(product => product.id !== action.productId);
+        return {...state, products }  
+
+
 
       default:
           return state

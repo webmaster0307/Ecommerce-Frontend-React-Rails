@@ -9,17 +9,15 @@ class BusinessProduct extends Component {
         super(props);
 
 
-    console.log("BusinessProduct", this.props);
+    // console.log("BusinessProduct", this.props);
     }
 
     
-//   componentDidMount() {
-//     this.props.fetchProducts()
-//   }
 
     handleDelete = (productId) => {
         // console.log("productId", productId)
         this.props.deleteProduct(productId);
+        this.props.history.push('/businesses');
     }
 
 
