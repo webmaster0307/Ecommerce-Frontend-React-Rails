@@ -29,7 +29,7 @@ class BusinessProducts extends Component {
                     <li className="products-image"><img src={ product.image } alt="product" ></img></li>
                 </Link>
                 <li className="products-text"> <b className="titlespacing"></b> {product.name}</li>
-                <li className="products-text"><b className="titlespacing">Item:</b> {product.item_number}</li>     
+                <li className="products-text item-no"><b className="titlespacing">Item:</b> {product.item_number}</li>     
                 <br></br>
                 <br></br>
             </div>

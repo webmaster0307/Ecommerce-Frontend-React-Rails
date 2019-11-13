@@ -19,6 +19,9 @@
     background-color: #f2f2f2;
 }
 
+.products-text.item-no {
+    font-size: .80rem;
+}
 .products-price {
     margin-bottom: 20px;
 }
