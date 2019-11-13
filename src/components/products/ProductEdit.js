@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { editProduct } from '../../actions/product'
+import { Redirect } from 'react-router-dom'
 
 class ProductEdit extends Component {
     constructor(props){
@@ -40,6 +41,10 @@ class ProductEdit extends Component {
     }
 
     render() { 
+        const { loggedIn } = this.props;
+        // console.log("loggedIn", loggedIn)
+        if (!loggedIn) return <Redirect to='/' />
+
         return ( 
             <div className="container-form">
                 <div className="middle-container">
@@ -116,7 +121,6 @@ const mapStateToProps = state => {
     return {
       categories: state.categoryReducer,
       subcategories: state.subcategoryReducer,
-      currentUser: state.currentUser,
       loggedIn: !!state.currentUser
     }
   }

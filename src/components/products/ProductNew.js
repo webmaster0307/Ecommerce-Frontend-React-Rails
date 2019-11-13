@@ -50,7 +50,9 @@ class ProductNew extends Component {
     }
 
     render() { 
-
+        const { loggedIn } = this.props;
+        // console.log("loggedIn", loggedIn)
+        if (!loggedIn) return <Redirect to='/' />
 
         return ( 
             <div className="container-form">
@@ -125,7 +127,6 @@ const mapStateToProps = state => {
     return {
       categories: state.categoryReducer,
       subcategories: state.subcategoryReducer,
-      currentUser: state.currentUser,
       loggedIn: !!state.currentUser
     }
   }

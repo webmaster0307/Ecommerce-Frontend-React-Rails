@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { deleteProduct } from '../../actions/product'
 import { fetchProducts } from '../../actions/product'
+import { Redirect } from 'react-router-dom'
 
 class BusinessProduct extends Component {
     constructor(props){
@@ -23,6 +24,10 @@ class BusinessProduct extends Component {
 
     
     render() { 
+
+        const { loggedIn } = this.props;
+        // console.log("loggedIn", loggedIn)
+        if (!loggedIn) return <Redirect to='/' />
 
         let product = this.props.products.products.filter(product => product.id === this.props.match.params.id)[0]
         console.log("product", product)
@@ -82,6 +87,7 @@ class BusinessProduct extends Component {
 const mapStateToProps = state => {
     return {
       products: state.productReducer,
+      loggedIn: !!state.currentUser,
     };    
 }
 
