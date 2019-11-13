@@ -14,7 +14,7 @@ export const setMyProducts = products => {
   }
 
   export const editMyProduct = product => {
-    // console.log("returned product is", product);
+    console.log("returned product is", product);
     return {
       type: "EDIT_PRODUCT",
       product
@@ -52,7 +52,7 @@ export const setMyProducts = products => {
   }
 
   export const createProduct = (data) => {
-    console.log("create action data" , data)
+    // console.log("create action data" , data)
     return dispatch => {
       return fetch(`http://localhost:3001/api/v1/businesses/${data.business_id}/products`, {
         credentials: "include",
@@ -64,7 +64,7 @@ export const setMyProducts = products => {
       })
         .then(r => r.json())
         .then(response => {
-            console.log(response);
+            // console.log(response);
           if (response.error) {
             alert(response.error)
           } else {
@@ -76,7 +76,7 @@ export const setMyProducts = products => {
   }
 
   export const editProduct = (data) => {
-    // console.log("edit action data" , data)
+    console.log("edit action data" , data)
     return dispatch => {
       return fetch(`http://localhost:3001/api/v1/businesses/${data.business_id}/products/${data.product_id}`, {
         credentials: "include",
@@ -88,7 +88,7 @@ export const setMyProducts = products => {
       })
         .then(r => r.json())
         .then(response => {
-            console.log(response);
+            console.log("response", response);
           if (response.error) {
             alert(response.error)
           } else {
@@ -99,25 +99,25 @@ export const setMyProducts = products => {
     }
   }
 
-  export const deleteProduct = (ProductId) => {
-    // return dispatch => {
-    //   return fetch(`http://localhost:3001/api/v1/businesses/${businessId}`, {
-    //     credentials: "include",
-    //     method: "DELETE",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //   })
-    //     .then(r => r.json())
-    //     .then(response => {
-    //       // console.log("Response" , response);
-    //       if (response.error) {
-    //         alert(response.error)
-    //       } else {
-    //         dispatch(deleteMyProduct(productId))
-    //       }
-    //     })
-    //     .catch(console.log)
-    // }
+  export const deleteProduct = (productId) => {
+    return dispatch => {
+      return fetch(`http://localhost:3001/api/v1/products/${productId}`, {
+        credentials: "include",
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      })
+        .then(r => r.json())
+        .then(response => {
+          // console.log("Response" , response);
+          if (response.error) {
+            alert(response.error)
+          } else {
+            dispatch(deleteMyProduct(productId))
+          }
+        })
+        .catch(console.log)
+    }
   }
   

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { deleteProduct } from '../../actions/product'
+import { fetchProducts } from '../../actions/product'
 
 class BusinessProduct extends Component {
     constructor(props){
@@ -12,6 +13,9 @@ class BusinessProduct extends Component {
     }
 
     
+//   componentDidMount() {
+//     this.props.fetchProducts()
+//   }
 
     handleDelete = (productId) => {
         // console.log("productId", productId)
@@ -34,9 +38,9 @@ class BusinessProduct extends Component {
             </div>
         ) : null
     
-        let edit_link =  product ? <Link to={`/businesses/${productBusinessId}/products/${product.attributes.id}/edit`} className="edit-link">Edit Product</Link> : null
+        let editLink =  product ? <Link to={`/businesses/${productBusinessId}/products/${product.attributes.id}/edit`} className="edit-link">Edit Product</Link> : null
 
-       
+        let linkBusiness =  product ? <Link to={`/businesses/${productBusinessId}`} className="edit-link">Link Back to Products</Link> : null
         return(
             <div className="product-main">
                 <div className="product-flex">
@@ -62,8 +66,9 @@ class BusinessProduct extends Component {
     
                     <br></br>
                     <br></br>
+                    {linkBusiness}
 
-                    {edit_link}
+                    {editLink}
                     <br></br>
 
                     <button onClick={() => this.handleDelete(`${product.attributes.id}`)} className="product-delete-button">Delete Product</button>
@@ -82,4 +87,4 @@ const mapStateToProps = state => {
     };    
 }
 
-export default connect(mapStateToProps, { deleteProduct })(BusinessProduct);
+export default connect(mapStateToProps, { deleteProduct})(BusinessProduct);
