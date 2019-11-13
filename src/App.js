@@ -19,6 +19,7 @@ import { fetchProducts } from './actions/product'
 import BusinessesContainer from './containers/BusinessesContainer'
 import ProductNew from './components/products/ProductNew'
 import ProductEdit from './components/products/ProductEdit'
+import ProductColorNew from './components/products/ProductColorNew'
 
 
 class App extends Component {
@@ -75,6 +76,9 @@ class App extends Component {
             return <ProductEdit product={product} {...props} />
            }
           } />
+
+          <Route exact path ='/products/:id/colors/new' component={ProductColorNew} />
+
         </Switch>
       </div>
     );

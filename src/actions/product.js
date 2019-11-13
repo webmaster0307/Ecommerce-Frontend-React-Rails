@@ -29,6 +29,13 @@ export const setMyProducts = products => {
     }
   }
 
+  export const addColor = product => {
+    return {
+      type: "ADD_PRODUCT",
+      product
+    }
+  }
+
   export const fetchProducts = () => {
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/products", {
@@ -121,3 +128,27 @@ export const setMyProducts = products => {
     }
   }
   
+
+  export const createColor = (data) => {
+    // console.log("create action data" , data)
+    return dispatch => {
+      return fetch(`http://localhost:3001/api/v1/products/${data.product_id}/colors`, {
+        credentials: "include",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(r => r.json())
+        .then(response => {
+            console.log(response);
+          if (response.error) {
+            alert(response.error)
+          } else {
+            dispatch(addColor(response.data))
+          }
+        })
+        .catch(console.log)
+    }
+  }

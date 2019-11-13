@@ -5,6 +5,7 @@ import { deleteProduct } from '../../actions/product'
 import { fetchProducts } from '../../actions/product'
 import { Redirect } from 'react-router-dom'
 
+
 class BusinessProduct extends Component {
     constructor(props){
         super(props);
@@ -37,7 +38,7 @@ class BusinessProduct extends Component {
 
         let productColors = product ? product.attributes.colors.map(color => 
             <div key={color.color_id}>
-                <li className="product-text">{color.color_name}</li> 
+                <li className="product-text">Color Name:  {color.color_name} - Available Qty: {color.available_qty}</li> 
             </div>
         ) : null
     
@@ -63,6 +64,8 @@ class BusinessProduct extends Component {
                     <br></br>
                     <li className="product-text"><b className="titlespacing">Colors:</b> </li>
                     { productColors }
+                    <Link to={`/products/${product.id}/colors/new`} className="edit-link">Add New Color</Link>
+
                     
                     <br></br>
                     <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
