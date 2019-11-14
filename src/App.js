@@ -8,6 +8,7 @@ import Home from './components/dashboard/Home'
 import About from './components/About'
 import Wishlist from './components/Wishlist'
 import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 import BusinessNew from './components/businesses/BusinessNew'
 import BusinessProducts from './components/businesses/BusinessProducts'
 import BusinessProduct from './components/businesses/BusinessProduct'
@@ -41,7 +42,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         {/* <Search /> */} 
-        {/* <Footer /> */}
+        <Footer />
         
         
         <Switch>           
