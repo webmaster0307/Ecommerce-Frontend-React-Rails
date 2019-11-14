@@ -46,41 +46,43 @@ class BusinessProduct extends Component {
 
         let linkBusiness =  product ? <Link to={`/businesses/${productBusinessId}`} className="edit-link">Link Back to Products</Link> : null
         return(
-            <div className="product-main">
-                <div className="product-flex">
-                    <div className="product col-5">
-                        <li className="product-image">{product ? <img src={ product.attributes.image } alt="product" ></img> : null}</li>
+            <div className="main">
+                <div className="product-main">
+                    <div className="product-flex">
+                        <div className="product col-5">
+                            <li className="product-image">{product ? <img src={ product.attributes.image } alt="product" ></img> : null}</li>
+                        </div>
                     </div>
+        
+                    <div className="product-info col-7">
+
+                        <li className="product-text"> <b className="titlespacing">Category Name:</b> {product ? product.attributes.category.name : null}</li>
+                        <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {product ? product.attributes.subcategory.name : null}</li>
+                        <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
+                        <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.attributes.description : null}</li>
+                        <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.attributes.item_number : null}</li>
+        
+                        <br></br>
+                        <li className="product-text"><b className="titlespacing">Colors:</b> </li>
+                        { productColors }
+                        <Link to={`/products/${product.id}/colors/new`} className="edit-link">Add New Color</Link>
+
+                        
+                        <br></br>
+                        <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
+        
+                        <br></br>
+                        <br></br>
+                        {linkBusiness}
+
+                        {editLink}
+                        <br></br>
+
+                        <button onClick={() => this.handleDelete(`${product.attributes.id}`)} className="product-delete-button">Delete Product</button>
+
+                        
+                    </div>     
                 </div>
-    
-                <div className="product-info col-7">
-
-                    <li className="product-text"> <b className="titlespacing">Category Name:</b> {product ? product.attributes.category.name : null}</li>
-                    <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {product ? product.attributes.subcategory.name : null}</li>
-                    <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
-                    <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.attributes.description : null}</li>
-                    <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.attributes.item_number : null}</li>
-    
-                    <br></br>
-                    <li className="product-text"><b className="titlespacing">Colors:</b> </li>
-                    { productColors }
-                    <Link to={`/products/${product.id}/colors/new`} className="edit-link">Add New Color</Link>
-
-                    
-                    <br></br>
-                    <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
-    
-                    <br></br>
-                    <br></br>
-                    {linkBusiness}
-
-                    {editLink}
-                    <br></br>
-
-                    <button onClick={() => this.handleDelete(`${product.attributes.id}`)} className="product-delete-button">Delete Product</button>
-
-                    
-                </div>     
             </div>
         )
     

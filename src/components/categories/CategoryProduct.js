@@ -17,31 +17,33 @@ const CategoryProduct = (props) => {
         
 
     return(
-        <div className="product-main">
-            <div className="product-flex">
-                <div className="product col-5">
-                    <li className="product-image">{product ? <img src={ product.attributes.image } alt="product" ></img> : null}</li>
+        <div className="main">
+            <div className="product-main">
+                <div className="product-flex">
+                    <div className="product col-5">
+                        <li className="product-image">{product ? <img src={ product.attributes.image } alt="product" ></img> : null}</li>
+                    </div>
                 </div>
+
+                <div className="product-info col-7">
+                    <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
+                    <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.attributes.description : null}</li>
+                    <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.attributes.item_number : null}</li>
+
+                    <br></br>
+                    <li className="product-text"><b className="titlespacing">Colors:</b> </li>
+                    { productColors }
+                    
+                    <br></br>
+                    <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
+
+                    <br></br>
+                    <br></br>
+
+                    <button className="product-button">Add to Wish List</button>
+                    <br></br>
+                </div>     
             </div>
-
-            <div className="product-info col-7">
-                <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
-                <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.attributes.description : null}</li>
-                <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.attributes.item_number : null}</li>
-
-                <br></br>
-                <li className="product-text"><b className="titlespacing">Colors:</b> </li>
-                { productColors }
-                
-                <br></br>
-                <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
-
-                <br></br>
-                <br></br>
-
-                <button className="product-button">Add to Wish List</button>
-                <br></br>
-            </div>     
         </div>
     )
 }

@@ -36,6 +36,9 @@
   margin: 15px auto; 
 }
 
+.navbar li {
+  list-style-type: none;
+}
 .main-nav a:hover {
   padding: 8px;
   color: white;

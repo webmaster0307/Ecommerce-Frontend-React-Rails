@@ -45,11 +45,13 @@ class Businesses extends Component {
 
             
         return (
+            <div className="main">
             <div className="businesses">
                 <div className="wrapper">
                     { currentUserBusinesses }
                     <p className="business-para">Create a new business? <Link to="/businesses/new">Click here</Link></p>
                 </div>
+            </div>
             </div>
         )
     

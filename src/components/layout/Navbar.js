@@ -25,7 +25,6 @@ class NavBar extends Component {
                     <FontAwesomeIcon icon={faBars} onClick={this.handleOnClick} />
                 </span>
                 <Link to="/" className="logo">E-Comm Site</Link>
-                <Link to="/" className="nav-links products">Product Categories</Link>
                 { links }
                 
              </nav>
