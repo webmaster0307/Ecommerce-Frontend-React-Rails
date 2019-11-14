@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { deleteProduct } from '../../actions/product'
-import { fetchProducts } from '../../actions/product'
 import { Redirect } from 'react-router-dom'
 
 
@@ -11,7 +10,7 @@ class BusinessProduct extends Component {
         super(props);
 
 
-    // console.log("BusinessProduct", this.props);
+    console.log("BusinessProduct", this.props);
     }
 
     

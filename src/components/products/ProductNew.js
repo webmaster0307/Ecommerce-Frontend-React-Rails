@@ -8,8 +8,6 @@ class ProductNew extends Component {
     constructor(props){
         super(props);
 
-        // console.log("product new", this.props);
-
         this.state = { 
             name: "",
             description: "",
@@ -37,7 +35,7 @@ class ProductNew extends Component {
         // console.log(item_number)
         // console.log("product", product)
         this.props.createProduct(product);
-        this.props.history.push(`/businesses`);
+        this.props.history.push(`/businesses/${business_id}`);
             this.setState({
                 name: "",
                 description: "",

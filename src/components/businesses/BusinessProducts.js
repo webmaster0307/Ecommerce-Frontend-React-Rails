@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
-import { fetchProducts } from '../../actions/product'
+// import { fetchProducts } from '../../actions/product'
 
 
 class BusinessProducts extends Component {
     constructor(props){
         super(props);
-  // console.log("business", this.props);
+  console.log("business", this.props);
 }
 
 
     componentDidMount() {
-    this.props.fetchProducts()
+    // this.props.fetchProducts()
      }
   
 
@@ -66,4 +66,4 @@ const mapStateToProps = ({ currentUser }) => {
     }
   }
 
-export default connect(mapStateToProps, { fetchProducts })(BusinessProducts);
+export default connect(mapStateToProps)(BusinessProducts);
