@@ -42,7 +42,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         {/* <Search /> */} 
-        <Footer />
+       
         
         
         <Switch>           
@@ -81,6 +81,7 @@ class App extends Component {
           <Route exact path ='/products/:id/colors/new' component={ProductColorNew} />
 
         </Switch>
+        <Footer />
       </div>
     );
   }
