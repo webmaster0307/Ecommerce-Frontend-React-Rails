@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom'
 class BusinessProducts extends Component {
     constructor(props){
         super(props);
-  console.log("business", this.props);
+//   console.log("business", this.props);
 }
 
 

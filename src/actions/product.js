@@ -21,11 +21,11 @@ export const setMyProducts = products => {
     }
   }
 
-  export const deleteMyProduct = productId => {
-    // console.log("returned product is", product);
+  export const deleteMyProduct = business => {
+    // console.log("action business" , business)
     return {
       type: "DELETE_PRODUCT",
-      productId
+      business
     }
   }
 
@@ -39,7 +39,7 @@ export const setMyProducts = products => {
   export const fetchProducts = () => {
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/products", {
-        // credentials: "include",
+        credentials: "include",
         method: "GET",
         headers: {
           "Content-Type": "application/json"
@@ -47,7 +47,7 @@ export const setMyProducts = products => {
       })
         .then(r => r.json())
         .then(response => {
-            // console.log(response);
+            console.log(response);
           if (response.error) {
             alert(response.error)
           } else {
@@ -106,9 +106,9 @@ export const setMyProducts = products => {
     }
   }
 
-  export const deleteProduct = (productId) => {
+  export const deleteProduct = (productId, businessId) => {
     return dispatch => {
-      return fetch(`http://localhost:3001/api/v1/products/${productId}`, {
+      return fetch(`http://localhost:3001/api/v1/businesses/${businessId}/products/${productId}`, {
         credentials: "include",
         method: "DELETE",
         headers: {
@@ -116,12 +116,12 @@ export const setMyProducts = products => {
         },
       })
         .then(r => r.json())
-        .then(response => {
-          // console.log("Response" , response);
-          if (response.error) {
-            alert(response.error)
+        .then(business => {
+          // console.log("Response" , business);
+          if (business.error) {
+            alert(business.error)
           } else {
-            dispatch(deleteMyProduct(productId))
+            dispatch(deleteMyProduct(business.data))
           }
         })
         .catch(console.log)
