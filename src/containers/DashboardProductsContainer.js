@@ -4,6 +4,7 @@ import { fetchCategories } from "../actions/category.js"
 import { fetchSubcategories } from "../actions/subcategory.js"
 import { fetchProducts } from "../actions/product.js"
 import Categories from '../components/categories/Categories.js'
+import Carosel from '../components/dashboard/Carosel.js';
 
 
 class DashboardProductsContainer extends Component {
@@ -22,9 +23,7 @@ class DashboardProductsContainer extends Component {
         return ( 
           <div className="main">
             <Categories categoriesList={this.props} />
-            <img src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Smiley face" height="400" width="400"></img>
-            <img src="https://images.pexels.com/photos/942317/pexels-photo-942317.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Smiley face" height="400" width="400"></img>
-            <img src="https://images.pexels.com/photos/1785138/pexels-photo-1785138.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Smiley face" height="400" width="400"></img>
+            <Carosel />
           </div>
          );
       }
