@@ -38,6 +38,7 @@ class BusinessProduct extends Component {
 
         let productColors = productForColor ? productForColor.attributes.colors.map(color => 
             <div key={color.color_id}>
+                <br></br>
                 <li className="product-text">Color Name:  {color.color_name} - Available Qty: {color.available_qty}</li> 
                 <Link to={`/products/${productForColor.attributes.id}/colors/${color.color_id}/edit`} className="edit-link">Edit Color</Link>
             </div>
@@ -59,6 +60,12 @@ class BusinessProduct extends Component {
                     </div>
         
                     <div className="product-info col-7">
+                        {linkBusiness}
+                        <br></br>
+                        {editLink}
+                        <br></br>
+                        {linkColorNew}
+                        <br></br>
 
                         <li className="product-text"> <b className="titlespacing">Category Name:</b> {this.props.product ? this.props.product.category_name : null}</li>
                         <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {this.props.product ? this.props.product.subcategory_name : null}</li>
@@ -69,21 +76,15 @@ class BusinessProduct extends Component {
                         <br></br>
                         <li className="product-text"><b className="titlespacing">Colors:</b> </li>
                         { productColors }
-                        {linkColorNew}
                         
                         <br></br>
                         <li className="product-text"><b className="titlespacing" >Price:</b> ${this.props.product ? this.props.product.price : null}</li>
         
                         <br></br>
                         <br></br>
-                        {linkBusiness}
-
-                        {editLink}
                         <br></br>
 
                         <button onClick={() => this.handleDelete(`${this.props.product.id}`)} className="product-delete-button">Delete Product</button>
-
-                        
                     </div>     
                 </div>
             </div>
