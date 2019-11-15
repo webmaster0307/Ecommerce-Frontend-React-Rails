@@ -37,6 +37,7 @@ class BusinessProduct extends Component {
         let productColors = productForColor ? productForColor.attributes.colors.map(color => 
             <div key={color.color_id}>
                 <li className="product-text">Color Name:  {color.color_name} - Available Qty: {color.available_qty}</li> 
+                <Link to={`/products/${this.props.product.id}/colors/${color.color_id}/edit`} className="edit-link">Edit Product</Link>
             </div>
         ) : null
     
