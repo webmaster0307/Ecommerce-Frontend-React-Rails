@@ -30,11 +30,14 @@ class App extends Component {
 
 
   render() {
-    const { businesses } = this.props
+    const { businesses } = this.props;
     // console.log("app businesses", businesses)
 
-    const { products } = this.props
+    const { products } = this.props;
+    const { colors } = this.props;
     // console.log("app products", products)
+
+    
 
     return ( 
       <div className="App">
@@ -91,14 +94,15 @@ class App extends Component {
           }/>
           
           
-          <Route exact path ='/products/:id/colors/:id/edit' component={ProductColorEdit} />
+          {/* <Route exact path ='/products/:id/colors/:id/edit' component={ProductColorEdit} /> */}
 
-
-          {/* <Route exact path='/products/:id/colors/:id/edit' render={props => {
-            const product = products.products.find(product => product.id === props.match.params.id)
-            return <ProductColorEdit product={product} {...props} />
+          <Route exact path='/products/:id/colors/:id/edit' render={props => {
+            const color = colors.colors.find(color => color.id === parseInt(props.match.params.id))
+            const productId = props.match.url[10] + props.match.url[11]
+            const product = products.products.find(product => product.id === productId)
+            return <ProductColorEdit color={color} productId={product} {...props} />
            }
-          }/> */}
+          }/>
 
 
         </Switch>
@@ -113,6 +117,7 @@ const mapStateToProps = state => {
   return {
     businesses: state.businessReducer,
     products: state.productReducer,
+    colors: state.colorReducer,
   };    
 }
  

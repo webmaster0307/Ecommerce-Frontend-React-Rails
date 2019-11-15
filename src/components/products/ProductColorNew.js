@@ -41,6 +41,10 @@ class ProductColorNew extends Component {
     }
 
     render() { 
+
+        const { loggedIn } = this.props;
+        if (!loggedIn) return <Redirect to='/' />
+
         return ( 
             <div className="container-form">
                 <div className="middle-container">
@@ -74,5 +78,14 @@ class ProductColorNew extends Component {
 
     }
 }
+
+const mapStateToProps = ({ currentUser }) => {
+    return {
+      currentUser,
+      loggedIn: !!currentUser
+    }
+  }
  
-export default connect(null, { createColor })(ProductColorNew);
+
+ 
+export default connect(mapStateToProps, { createColor })(ProductColorNew);

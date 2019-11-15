@@ -8,15 +8,10 @@ class ProductColorEdit extends Component {
         super(props);
 
         console.log("color edit", props)
-
-        let currentProduct = this.props ? this.props.products.products.filter(product => product.attributes.id === parseInt(this.props.match.params.id))[0] : null
-            console.log("currentProduct", currentProduct)
-
-            // debugger;
         
         this.state = { 
-            color_name: "",
-            available_qty: "",
+            color_name: `${this.props.color ? this.props.color.color_name : ""}` ,
+            available_qty: `${this.props.color ? this.props.color.available_qty : ""}` ,
          }
     }
 
@@ -29,23 +24,32 @@ class ProductColorEdit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // let product_id = this.props.match.params.id
-        // let businessId = this.props.product.attributes.business_id
-        // // console.log(business_id)
-        // // console.log(product_id)
-        // let color = {...this.state, product_id}
-        // // console.log("color" , color)
-        // this.props.createColor(color)
-        // this.props.history.push(`/businesses/${businessId}/products/${product_id}`);
-        // this.setState({
-        //     color_name: "",
-        //     available_qty: "",
-        // })
+        let product_id = this.props.color.product_id
+        console.log(product_id)
+
+        let businessId = this.props.productId.attributes.business_id
+        let color_id = this.props.color.id
+
+        let color = {...this.state, color_id, product_id}
+        console.log("color" , color)
+
+        this.props.editColor(color);
+ 
+        this.props.history.push(`/businesses/${businessId}/products/${product_id}`);
+        // this.props.history.push(`/businesses`);
+        this.setState({
+            color_name: "",
+            available_qty: "",
+        })
     }
 
 
 
     render() { 
+
+        const { loggedIn } = this.props;
+        if (!loggedIn) return <Redirect to='/' />
+
         return ( 
             <div className="container-form">
                 <div className="middle-container">
@@ -57,14 +61,14 @@ class ProductColorEdit extends Component {
                         <div className="label">    
                             <label htmlFor="color_name">Color name:  </label>
                         </div>  
-                            <input type="text" name="color_name" id="color_name" placeholder="Enter Color Name" onChange={this.handleChange} required/>
+                            <input type="text" name="color_name" id="color_name" placeholder="Enter Color Name" value={this.state.color_name} onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row"> 
                         <div className="label">  
                             <label htmlFor="available_qty">Available Quantity:  </label>
                         </div>  
-                            <input type="text" name="available_qty" id="available_qty" placeholder="available qty" onChange={this.handleChange} required/>
+                            <input type="text" name="available_qty" id="available_qty" placeholder="available qty" value={this.state.available_qty} onChange={this.handleChange} required/>
                     </div>
 
                     <div className="row">
@@ -81,9 +85,10 @@ class ProductColorEdit extends Component {
 
 const mapStateToProps = state => {
     return {
-      products: state.productReducer,
-      loggedIn: !!state.currentUser
-    }
-  }
+      loggedIn: !!state.currentUser,
+      businesses: state.businessReducer,
+    };    
+}
+
  
-export default connect(mapStateToProps)(ProductColorEdit);
+export default connect(mapStateToProps, { editColor })(ProductColorEdit);

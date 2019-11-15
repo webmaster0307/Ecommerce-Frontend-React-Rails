@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { deleteProduct, fetchProducts } from '../../actions/product'
+import { fetchColors} from '../../actions/color'
 import { Redirect } from 'react-router-dom'
 
 
@@ -14,6 +15,7 @@ class BusinessProduct extends Component {
 
     componentDidMount() {
         this.props.fetchProducts()
+        this.props.fetchColors()
       }
 
     handleDelete = (productId) => {
@@ -97,4 +99,4 @@ const mapStateToProps = state => {
     };    
 }
 
-export default connect(mapStateToProps, { deleteProduct, fetchProducts })(BusinessProduct);
+export default connect(mapStateToProps, { deleteProduct, fetchProducts, fetchColors })(BusinessProduct);

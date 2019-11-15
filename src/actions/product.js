@@ -14,7 +14,7 @@ export const setMyProducts = products => {
   }
 
   export const editMyProduct = business => {
-    console.log("returned business is", business);
+    // console.log("returned business is", business);
     return {
       type: "EDIT_PRODUCT",
       business
@@ -29,15 +29,21 @@ export const setMyProducts = products => {
     }
   }
 
-
-
-
   export const addColor = product => {
     return {
       type: "ADD_PRODUCT",
       product
     }
   }
+
+  export const editMyColor = product => {
+    console.log("ACTION returned product is", product);
+    return {
+      type: "EDIT_COLOR",
+      product
+    }
+  }
+
 
   export const fetchProducts = () => {
     return dispatch => {
@@ -150,6 +156,30 @@ export const setMyProducts = products => {
             alert(response.error)
           } else {
             dispatch(addColor(response.data))
+          }
+        })
+        .catch(console.log)
+    }
+  }
+
+  export const editColor = (data) => {
+    // console.log("create action data" , data)
+    return dispatch => {
+      return fetch(`http://localhost:3001/api/v1/products/${data.product_id}/colors/${data.color_id}`, {
+        credentials: "include",
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(r => r.json())
+        .then(response => {
+            console.log(response);
+          if (response.error) {
+            alert(response.error)
+          } else {
+            dispatch(editMyColor(response.data))
           }
         })
         .catch(console.log)
