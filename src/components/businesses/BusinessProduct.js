@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { deleteProduct } from '../../actions/product'
+import { deleteProduct, fetchProducts } from '../../actions/product'
 import { Redirect } from 'react-router-dom'
 
 
@@ -12,7 +12,9 @@ class BusinessProduct extends Component {
     console.log("BusinessProduct", this.props);
     }
 
-    
+    componentDidMount() {
+        this.props.fetchProducts()
+      }
 
     handleDelete = (productId) => {
         let businessId = this.props.business.id;
@@ -28,17 +30,15 @@ class BusinessProduct extends Component {
         // console.log("loggedIn", loggedIn)
         if (!loggedIn) return <Redirect to='/' />
 
-        // let productForColor = this.props.products.products.filter(product => product.id === this.props.match.params.id)[0]
-        // console.log("product", productForColor)
+        let productForColor = this.props.products.products.filter(product => product.id === this.props.match.params.id)[0]
+        console.log("product", productForColor)
 
-        // let productBusinessId = product ? product.attributes.business_id : null
-        // // console.log("businessId", productBusinessId)
 
-        // let productColors = productForColor ? productForColor.attributes.colors.map(color => 
-        //     <div key={color.color_id}>
-        //         <li className="product-text">Color Name:  {color.color_name} - Available Qty: {color.available_qty}</li> 
-        //     </div>
-        // ) : null
+        let productColors = productForColor ? productForColor.attributes.colors.map(color => 
+            <div key={color.color_id}>
+                <li className="product-text">Color Name:  {color.color_name} - Available Qty: {color.available_qty}</li> 
+            </div>
+        ) : null
     
         let editLink =  this.props.product ? <Link to={`/businesses/${this.props.business.id}/products/${this.props.product.id}/edit`} className="edit-link">Edit Product</Link> : null
 
@@ -64,7 +64,7 @@ class BusinessProduct extends Component {
         
                         <br></br>
                         <li className="product-text"><b className="titlespacing">Colors:</b> </li>
-                        {/* { productColors } */}
+                        { productColors }
                         <Link to={`/products/${this.props.product.id}/colors/new`} className="edit-link">Add New Color</Link>
 
                         
@@ -92,7 +92,8 @@ class BusinessProduct extends Component {
 const mapStateToProps = state => {
     return {
       loggedIn: !!state.currentUser,
+      products: state.productReducer,
     };    
 }
 
-export default connect(mapStateToProps, { deleteProduct })(BusinessProduct);
+export default connect(mapStateToProps, { deleteProduct, fetchProducts })(BusinessProduct);

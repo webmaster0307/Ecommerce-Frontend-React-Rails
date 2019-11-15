@@ -37,7 +37,7 @@ class Carosel extends Component {
         return (
             <div className="main">
                 <div className="carosel-image">
-                    <img className=""src={this.state.default} alt="Photo" ></img>
+                    <img className=""src={this.state.default} alt="feature" ></img>
                 </div>
                 <div className="carosel-dot">
                     <FontAwesomeIcon className="dots" icon={faCircle} onClick={this.handleClickOne} />

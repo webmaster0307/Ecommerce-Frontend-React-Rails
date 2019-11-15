@@ -9,7 +9,7 @@ class ProductColorNew extends Component {
     constructor(props){
         super(props);
 
-        console.log(props)
+        console.log("color new", props)
         this.state = { 
             color_name: "",
             available_qty: "",
@@ -26,9 +26,13 @@ class ProductColorNew extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         let product_id = this.props.match.params.id
+        let businessId = this.props.product.attributes.business_id
+        // console.log(business_id)
+        // console.log(product_id)
         let color = {...this.state, product_id}
+        // console.log("color" , color)
         this.props.createColor(color)
-        // this.props.history.push(`/businesses/${}/products${}`);
+        this.props.history.push(`/businesses/${businessId}/products/${product_id}`);
         this.setState({
             color_name: "",
             available_qty: "",
