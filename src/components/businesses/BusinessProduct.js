@@ -24,6 +24,9 @@ class BusinessProduct extends Component {
         this.props.history.push(`/businesses/${businessId}`);
     }
 
+    handleColorDelete = () => {
+
+    }
 
     
     render() { 
@@ -41,6 +44,8 @@ class BusinessProduct extends Component {
                 <br></br>
                 <li className="product-text">Color Name:  {color.color_name} - Available Qty: {color.available_qty}</li> 
                 <Link to={`/products/${productForColor.attributes.id}/colors/${color.color_id}/edit`} className="edit-link">Edit Color</Link>
+                <br></br>
+                <button onClick={() => this.handleColorDelete(`${color.color_id}`)} className="button">X</button>
             </div>
         ) : null
     
@@ -85,6 +90,8 @@ class BusinessProduct extends Component {
                         <br></br>
 
                         <button onClick={() => this.handleDelete(`${this.props.product.id}`)} className="product-delete-button">Delete Product</button>
+                        <br></br>
+                        <br></br>
                     </div>     
                 </div>
             </div>

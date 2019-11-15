@@ -37,7 +37,7 @@ class BusinessProducts extends Component {
     
 
             return (
-                <div>
+                <div className="main">
                     <div className="businesses">
                         <li className="business-name"><b className="titlespacing">Business Name:</b> {this.props.business ? this.props.business.attributes.name :null}</li>       
                         <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {this.props.business ? this.props.business.attributes.tax_id: null}</li>

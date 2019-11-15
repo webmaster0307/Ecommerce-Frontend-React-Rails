@@ -35,7 +35,7 @@ class Carosel extends Component {
 
     render() { 
         return (
-            <div className="main">
+            <div className="">
                 <div className="carosel-image">
                     <img className=""src={this.state.default} alt="feature" ></img>
                 </div>
