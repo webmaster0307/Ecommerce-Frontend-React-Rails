@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchBusinesses } from "../actions/userBusiness.js"
 import Businesses from '../components/businesses/Businesses.js'
+import { fetchColors } from "../actions/color.js"
 
 class BusinessesContainer extends Component {
     state = {  }
 
     componentDidMount() {
         this.props.fetchBusinesses()
+        this.props.fetchColors()
       }
 
     render() { 
@@ -28,4 +30,4 @@ const mapStateToProps = state => {
       };    
 }
  
-export default connect(mapStateToProps, {fetchBusinesses})(BusinessesContainer);
+export default connect(mapStateToProps, { fetchBusinesses, fetchColors })(BusinessesContainer);

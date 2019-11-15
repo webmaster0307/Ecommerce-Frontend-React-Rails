@@ -37,7 +37,7 @@ class BusinessProduct extends Component {
         let productColors = productForColor ? productForColor.attributes.colors.map(color => 
             <div key={color.color_id}>
                 <li className="product-text">Color Name:  {color.color_name} - Available Qty: {color.available_qty}</li> 
-                <Link to={`/products/${this.props.product.id}/colors/${color.color_id}/edit`} className="edit-link">Edit Product</Link>
+                <Link to={`/products/${productForColor.attributes.id}/colors/${color.color_id}/edit`} className="edit-link">Edit Color</Link>
             </div>
         ) : null
     
@@ -45,7 +45,8 @@ class BusinessProduct extends Component {
 
         let linkBusiness =  this.props.product ? <Link to={`/businesses/${this.props.business.id}`} className="edit-link">Link Back to Products</Link> : null
         
-        
+        let linkColorNew = this.props.product ?  <Link to={`/products/${this.props.product.id}/colors/new`} className="edit-link">Add New Color</Link> : null
+
         return(
             <div className="main">
                 <div className="product-main">
@@ -66,8 +67,7 @@ class BusinessProduct extends Component {
                         <br></br>
                         <li className="product-text"><b className="titlespacing">Colors:</b> </li>
                         { productColors }
-                        <Link to={`/products/${this.props.product.id}/colors/new`} className="edit-link">Add New Color</Link>
-
+                        {linkColorNew}
                         
                         <br></br>
                         <li className="product-text"><b className="titlespacing" >Price:</b> ${this.props.product ? this.props.product.price : null}</li>

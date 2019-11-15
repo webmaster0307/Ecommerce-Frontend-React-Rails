@@ -5,6 +5,7 @@ import categoryReducer from './reducers/categoryReducer'
 import subcategoryReducer from './reducers/subcategoryReducer'
 import productReducer from './reducers/productReducer'
 import businessReducer from './reducers/businessReducer'
+import colorReducer from './reducers/colorReducer'
 
 const reducer = combineReducers ({
     currentUser,
@@ -12,6 +13,7 @@ const reducer = combineReducers ({
     subcategoryReducer,
     productReducer,
     businessReducer,
+    colorReducer,
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

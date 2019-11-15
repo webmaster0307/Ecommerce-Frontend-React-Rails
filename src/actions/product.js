@@ -29,6 +29,9 @@ export const setMyProducts = products => {
     }
   }
 
+
+
+
   export const addColor = product => {
     return {
       type: "ADD_PRODUCT",

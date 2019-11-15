@@ -19,6 +19,7 @@ import BusinessesContainer from './containers/BusinessesContainer'
 import ProductNew from './components/products/ProductNew'
 import ProductEdit from './components/products/ProductEdit'
 import ProductColorNew from './components/products/ProductColorNew'
+import ProductColorEdit from './components/products/ProductColorEdit'
 
 
 class App extends Component {
@@ -85,10 +86,20 @@ class App extends Component {
 
           <Route exact path='/products/:id/colors/new' render={props => {
             const product = products.products.find(product => product.id === props.match.params.id)
-            // console.log("product props", product)
             return <ProductColorNew product={product} {...props} />
            }
           }/>
+          
+          
+          <Route exact path ='/products/:id/colors/:id/edit' component={ProductColorEdit} />
+
+
+          {/* <Route exact path='/products/:id/colors/:id/edit' render={props => {
+            const product = products.products.find(product => product.id === props.match.params.id)
+            return <ProductColorEdit product={product} {...props} />
+           }
+          }/> */}
+
 
         </Switch>
         <Footer />

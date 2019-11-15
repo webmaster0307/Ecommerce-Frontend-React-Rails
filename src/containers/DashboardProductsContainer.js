@@ -13,6 +13,7 @@ class DashboardProductsContainer extends Component {
         this.props.fetchCategories()
         this.props.fetchProducts()
         this.props.fetchSubcategories()
+   
       }
  
     render() { 
