@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { deleteProduct, fetchProducts } from '../../actions/product'
+import { deleteProduct, fetchProducts, deleteColor } from '../../actions/product'
 import { fetchColors} from '../../actions/color'
 import { Redirect } from 'react-router-dom'
 
@@ -24,8 +24,12 @@ class BusinessProduct extends Component {
         this.props.history.push(`/businesses/${businessId}`);
     }
 
-    handleColorDelete = () => {
-
+    handleColorDelete = (colorId) => {
+        console.log("bp colorId", colorId)
+        let productId = this.props.product.id
+        let businessId = this.props.business.id;
+        this.props.deleteColor(productId, colorId);
+        this.props.history.push(`/businesses/${businessId}/products/${productId}`);
     }
 
     
@@ -107,4 +111,4 @@ const mapStateToProps = state => {
     };    
 }
 
-export default connect(mapStateToProps, { deleteProduct, fetchProducts })(BusinessProduct);
+export default connect(mapStateToProps, { deleteProduct, fetchProducts, deleteColor })(BusinessProduct);

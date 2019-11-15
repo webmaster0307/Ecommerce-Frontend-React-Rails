@@ -28,6 +28,19 @@ export default (state = {products: []}, action) => {
 
       return {...state, products: productThree}
 
+      case 'DELETE_COLOR':
+        let productFour = state.products.map(product => {
+          if (product.id === action.product.id) {
+            return action.product
+          } else {
+            return product
+          }
+        })
+  
+        return {...state, products: productFour}
+  
+  
+
     default:
      return state
   }

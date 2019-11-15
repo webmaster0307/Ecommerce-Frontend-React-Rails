@@ -44,6 +44,14 @@ export const setMyProducts = products => {
     }
   }
 
+  export const deleteMyColor = product => {
+    // console.log("action product" , product)
+    return {
+      type: "DELETE_COLOR",
+      product
+    }
+  }
+
 
   export const fetchProducts = () => {
     return dispatch => {
@@ -180,6 +188,31 @@ export const setMyProducts = products => {
             alert(response.error)
           } else {
             dispatch(editMyColor(response.data))
+          }
+        })
+        .catch(console.log)
+    }
+  }
+
+
+  export const deleteColor = (productId, colorId) => {
+
+    console.log("action", colorId)
+    return dispatch => {
+      return fetch(`http://localhost:3001/api/v1/products/${productId}/colors/${colorId}`, {
+        credentials: "include",
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      })
+        .then(r => r.json())
+        .then(product => {
+          console.log("Response" , product);
+          if (product.error) {
+            alert(product.error)
+          } else {
+            dispatch(deleteMyColor(product.data))
           }
         })
         .catch(console.log)
