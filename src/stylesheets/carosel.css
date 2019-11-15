@@ -1,0 +1,25 @@
+/* CAROSEL */
+
+.carosel {
+    display: none;
+    list-style-type: none;
+    margin-top: 20px;
+  }
+
+
+.carosel-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.carosel-image img {
+    width: 600px;
+    height: 500px;
+}
+
+.carosel-dot {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}

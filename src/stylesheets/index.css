@@ -101,13 +101,7 @@ h1, p {
 }
 
 
-/* CAROSEL */
 
-.carosel {
-  display: none;
-  list-style-type: none;
-  margin-top: 20px;
-}
 
 
 @media screen and (min-width: 768px) {
