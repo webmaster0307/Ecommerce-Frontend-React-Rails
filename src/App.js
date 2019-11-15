@@ -69,12 +69,15 @@ class App extends Component {
 
           <Route exact path ='/businesses/:id/products/new' component={ProductNew} />
           <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct2} /> 
+        
+
           <Route exact path ='/businesses/:id/products/:id/edit' render={props => {
-            const product = products.products.find(product => product.id === props.match.params.id)
-            // console.log("product", product)
-            return <ProductEdit product={product} {...props} />
+            const businessId = props.match.url[12] + props.match.url[13]
+            const business = businesses.businesses.find(business => business.id === businessId )        
+            const product = business.attributes.products.filter(product => product.id === parseInt(props.match.params.id) )[0]
+            return <ProductEdit business={business} product={product} {...props} />
            }
-          } />
+          } /> 
 
           <Route exact path ='/products/:id/colors/new' component={ProductColorNew} />
 

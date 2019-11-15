@@ -13,11 +13,11 @@ export const setMyProducts = products => {
     }
   }
 
-  export const editMyProduct = product => {
-    console.log("returned product is", product);
+  export const editMyProduct = business => {
+    console.log("returned business is", business);
     return {
       type: "EDIT_PRODUCT",
-      product
+      business
     }
   }
 

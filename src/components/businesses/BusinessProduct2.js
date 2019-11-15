@@ -31,23 +31,23 @@ class BusinessProduct extends Component {
 
  
             let businessId = this.props.match.url[12] + this.props.match.url[13]
-            console.log("businessId", businessId)
+            // console.log("businessId", businessId)
     
             let businessIdInt = parseInt(businessId)
     
             let currentBusiness = this.props.businesses.businesses.filter(business => business.attributes.id === businessIdInt)[0]
-            console.log("business", currentBusiness)
+            // console.log("business", currentBusiness)
     
             let productId = this.props.match.params.id
-            console.log("productId", productId)
+            // console.log("productId", productId)
     
             let productIdInt = parseInt(productId)
     
             let currentProduct = currentBusiness.attributes.products
-            console.log("currentProduct", currentProduct)
+            // console.log("currentProduct", currentProduct)
     
             let product = currentProduct.filter(product => product.id === productIdInt)[0]
-            console.log("product", product)
+            // console.log("product", product)
     
     
      

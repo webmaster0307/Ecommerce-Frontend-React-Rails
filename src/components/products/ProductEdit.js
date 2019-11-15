@@ -10,12 +10,12 @@ class ProductEdit extends Component {
         console.log("product edit", this.props);
 
         this.state = { 
-            name: `${this.props.product ? this.props.product.attributes.name : ""}` ,
-            description: `${this.props.product ? this.props.product.attributes.description : ""}` ,
-            price: `${this.props.product ? this.props.product.attributes.price : ""}` ,
-            image: `${this.props.product ? this.props.product.attributes.image : ""}` ,
-            category_id: `${this.props.product ? this.props.product.attributes.category.name : ""}` ,
-            subcategory_id: `${this.props.product ? this.props.product.attributes.subcategory.name : ""}` ,
+            name: `${this.props.product ? this.props.product.name : ""}` ,
+            description: `${this.props.product ? this.props.product.description : ""}` ,
+            price: `${this.props.product ? this.props.product.price : ""}` ,
+            image: `${this.props.product ? this.props.product.image : ""}` ,
+            category_id: `${this.props.product ? this.props.product.category_name : ""}` ,
+            subcategory_id: `${this.props.product ? this.props.product.subcategory_name : ""}` ,
          }
 
     }
@@ -31,8 +31,8 @@ class ProductEdit extends Component {
         e.preventDefault();
         // console.log(this.state)
         let product_id = this.props.product.id
-        let business_id = this.props.product.relationships.business.data.id
-        let item_number = this.props.product.attributes.item_number
+        let business_id = this.props.product.business_id
+        let item_number = this.props.product.item_number
         // console.log("business_id", business_id)
         let product = {...this.state, product_id, business_id, item_number}
         console.log("product", product)
