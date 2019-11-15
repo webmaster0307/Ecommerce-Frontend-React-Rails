@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchCategories } from "../actions/category.js"
 import { fetchSubcategories } from "../actions/subcategory.js"
+import { fetchProducts } from "../actions/product.js"
 import Categories from '../components/categories/Categories.js'
 
 
@@ -9,6 +10,7 @@ class DashboardProductsContainer extends Component {
 
     componentDidMount() {
         this.props.fetchCategories()
+        this.props.fetchProducts()
         this.props.fetchSubcategories()
       }
  
@@ -32,10 +34,11 @@ class DashboardProductsContainer extends Component {
         // console.log("mapStateToProps", state);
           return {
             categories: state.categoryReducer,
-            // subcategories: state.subcategoryReducer,
+            products: state.productReducer,
+    
           };    
     }
  
-export default connect(mapStateToProps, { fetchCategories, fetchSubcategories })(DashboardProductsContainer);
+export default connect(mapStateToProps, { fetchCategories, fetchSubcategories, fetchProducts })(DashboardProductsContainer);
 
 

@@ -16,7 +16,6 @@ import BusinessEdit from './components/businesses/BusinessEdit'
 import CategoryProducts from './components/categories/CategoryProducts'
 import CategoryProduct from './components/categories/CategoryProduct'
 import { getCurrentUser } from './actions/currentUser'
-import { fetchProducts } from './actions/product'
 import BusinessesContainer from './containers/BusinessesContainer'
 import ProductNew from './components/products/ProductNew'
 import ProductEdit from './components/products/ProductEdit'
@@ -27,7 +26,6 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
-    this.props.fetchProducts()
   }
 
 
@@ -96,5 +94,5 @@ const mapStateToProps = state => {
   };    
 }
  
-export default connect(mapStateToProps, { getCurrentUser, fetchProducts } )(App);
+export default connect(mapStateToProps, { getCurrentUser } )(App);
 

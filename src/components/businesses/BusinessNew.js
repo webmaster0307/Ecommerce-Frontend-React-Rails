@@ -36,31 +36,33 @@ class NewBusiness extends Component {
         // console.log("loggedIn", loggedIn)
         if (!loggedIn) return <Redirect to='/' />
         return ( 
-            <div className="container-form">
-                <div className="middle-container">
-                    <h1>Register Business</h1>
-                    <p>Please fill in this form to register a buiness.</p>
+            <div className="main">
+                <div className="container-form">
+                    <div className="middle-container">
+                        <h1>Register Business</h1>
+                        <p>Please fill in this form to register a buiness.</p>
 
-                    <form onSubmit={this.handleSubmit}>
-                    <div className="row"> 
-                        <div className="label">    
-                            <label htmlFor="name">Business name:  </label>
-                        </div>  
-                            <input type="text" name="name" id="name" placeholder="Enter Business Name" onChange={this.handleChange} required/>
-                    </div>
+                        <form onSubmit={this.handleSubmit}>
+                        <div className="row"> 
+                            <div className="label">    
+                                <label htmlFor="name">Business name:  </label>
+                            </div>  
+                                <input type="text" name="name" id="name" placeholder="Enter Business Name" onChange={this.handleChange} required/>
+                        </div>
 
-                    <div className="row"> 
-                        <div className="label">  
-                            <label htmlFor="tax_id">Tax Id:  </label>
-                        </div>  
-                            <input type="text" name="tax_id" id="tax_id" placeholder="Tax Id" onChange={this.handleChange} required/>
-                    </div>
+                        <div className="row"> 
+                            <div className="label">  
+                                <label htmlFor="tax_id">Tax Id:  </label>
+                            </div>  
+                                <input type="text" name="tax_id" id="tax_id" placeholder="Tax Id" onChange={this.handleChange} required/>
+                        </div>
 
-                    <div className="row">
-                         <input type="submit" value="Submit"></input>
+                        <div className="row">
+                            <input type="submit" value="Submit"></input>
+                        </div>
+                        </form>
+                        
                     </div>
-                    </form>
-                    
                 </div>
             </div>
 
