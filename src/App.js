@@ -83,9 +83,6 @@ class App extends Component {
            }
           } /> 
 
-        {/* <Route exact path ='/products/:id/colors/new' component={ProductColorNew} /> */}
-
-
           <Route exact path='/products/:id/colors/new' render={props => {
             const product = products.products.find(product => product.id === props.match.params.id)
             // console.log("product props", product)
