@@ -94,6 +94,14 @@
   color: white;
 }
 
+.nav-links.products-mobile {
+  display: block;
+}
+
+
+.nav-links.products-desktop {
+  display: none;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -162,8 +170,13 @@
   display: block;
 }
 
-.nav-links.products-signin {
+.nav-links.products-mobile {
   display: none;
 }
+
+.nav-links.products-desktop {
+  display: block;
+}
+
 
 }

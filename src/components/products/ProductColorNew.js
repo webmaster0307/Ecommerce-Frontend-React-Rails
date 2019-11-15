@@ -28,7 +28,7 @@ class ProductColorNew extends Component {
         let product_id = this.props.match.params.id
         let color = {...this.state, product_id}
         this.props.createColor(color)
-        this.props.history.push(`/businesses`);
+        // this.props.history.push(`/businesses/${}/products${}`);
         this.setState({
             color_name: "",
             available_qty: "",
