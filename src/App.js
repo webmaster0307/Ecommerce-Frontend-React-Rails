@@ -11,7 +11,7 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import BusinessNew from './components/businesses/BusinessNew'
 import BusinessProducts from './components/businesses/BusinessProducts'
-import BusinessProduct2 from './components/businesses/BusinessProduct2'
+import BusinessProduct from './components/businesses/BusinessProduct'
 import BusinessEdit from './components/businesses/BusinessEdit'
 import CategoryProducts from './components/categories/CategoryProducts'
 import CategoryProduct from './components/categories/CategoryProduct'
@@ -68,7 +68,7 @@ class App extends Component {
           }/>
 
           <Route exact path ='/businesses/:id/products/new' component={ProductNew} />
-          <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct2} /> 
+          <Route exact path ='/businesses/:id/products/:id' component={BusinessProduct} /> 
         
 
           <Route exact path ='/businesses/:id/products/:id/edit' render={props => {

@@ -10,7 +10,7 @@ class BusinessProduct extends Component {
         super(props);
 
 
-    console.log("BusinessProduct", this.props);
+    console.log("BusinessProduct2", this.props);
     }
 
     
@@ -29,37 +29,64 @@ class BusinessProduct extends Component {
         // console.log("loggedIn", loggedIn)
         if (!loggedIn) return <Redirect to='/' />
 
-        let product = this.props.products.products.filter(product => product.id === this.props.match.params.id)[0]
-        console.log("product", product)
+ 
+            let businessId = this.props.match.url[12] + this.props.match.url[13]
+            // console.log("businessId", businessId)
+    
+            let businessIdInt = parseInt(businessId)
+    
+            let currentBusiness = this.props.businesses.businesses.filter(business => business.attributes.id === businessIdInt)[0]
+            // console.log("business", currentBusiness)
+    
+            let productId = this.props.match.params.id
+            // console.log("productId", productId)
+    
+            let productIdInt = parseInt(productId)
+    
+            let currentProduct = currentBusiness.attributes.products
+            // console.log("currentProduct", currentProduct)
+    
+            let product = currentProduct.filter(product => product.id === productIdInt)[0]
+            // console.log("product", product)
+    
+    
+     
 
-        let productBusinessId = product ? product.attributes.business_id : null
-        // console.log("businessId", productBusinessId)
+                // debugger;
 
-        let productColors = product ? product.attributes.colors.map(color => 
+     
+
+        let productForColor = this.props.products.products.filter(product => product.id === this.props.match.params.id)[0]
+        console.log("product", productForColor)
+
+        // let productBusinessId = product ? product.attributes.business_id : null
+        // // console.log("businessId", productBusinessId)
+
+        let productColors = productForColor ? productForColor.attributes.colors.map(color => 
             <div key={color.color_id}>
                 <li className="product-text">Color Name:  {color.color_name} - Available Qty: {color.available_qty}</li> 
             </div>
         ) : null
     
-        let editLink =  product ? <Link to={`/businesses/${productBusinessId}/products/${product.attributes.id}/edit`} className="edit-link">Edit Product</Link> : null
+        let editLink =  product ? <Link to={`/businesses/${businessIdInt}/products/${product.id}/edit`} className="edit-link">Edit Product</Link> : null
 
-        let linkBusiness =  product ? <Link to={`/businesses/${productBusinessId}`} className="edit-link">Link Back to Products</Link> : null
+        let linkBusiness =  product ? <Link to={`/businesses/${businessIdInt}`} className="edit-link">Link Back to Products</Link> : null
         return(
             <div className="main">
                 <div className="product-main">
                     <div className="product-flex">
                         <div className="product col-5">
-                            <li className="product-image">{product ? <img src={ product.attributes.image } alt="product" ></img> : null}</li>
+                            <li className="product-image">{product ? <img src={ product.image } alt="product" ></img> : null}</li>
                         </div>
                     </div>
         
                     <div className="product-info col-7">
 
-                        <li className="product-text"> <b className="titlespacing">Category Name:</b> {product ? product.attributes.category.name : null}</li>
-                        <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {product ? product.attributes.subcategory.name : null}</li>
-                        <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
-                        <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.attributes.description : null}</li>
-                        <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.attributes.item_number : null}</li>
+                        <li className="product-text"> <b className="titlespacing">Category Name:</b> {product ? product.category_name : null}</li>
+                        <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {product ? product.subcategory_name : null}</li>
+                        <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.name : null}</li>
+                        <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.description : null}</li>
+                        <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.item_number : null}</li>
         
                         <br></br>
                         <li className="product-text"><b className="titlespacing">Colors:</b> </li>
@@ -68,7 +95,7 @@ class BusinessProduct extends Component {
 
                         
                         <br></br>
-                        <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
+                        <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.price : null}</li>
         
                         <br></br>
                         <br></br>
@@ -77,7 +104,7 @@ class BusinessProduct extends Component {
                         {editLink}
                         <br></br>
 
-                        <button onClick={() => this.handleDelete(`${product.attributes.id}`)} className="product-delete-button">Delete Product</button>
+                        <button onClick={() => this.handleDelete(`${product.id}`)} className="product-delete-button">Delete Product</button>
 
                         
                     </div>     
@@ -90,6 +117,7 @@ class BusinessProduct extends Component {
  
 const mapStateToProps = state => {
     return {
+      businesses: state.businessReducer,
       products: state.productReducer,
       loggedIn: !!state.currentUser,
     };    
