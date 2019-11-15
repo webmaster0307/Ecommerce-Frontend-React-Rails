@@ -97,10 +97,10 @@ class App extends Component {
           {/* <Route exact path ='/products/:id/colors/:id/edit' component={ProductColorEdit} /> */}
 
           <Route exact path='/products/:id/colors/:id/edit' render={props => {
-            const color = colors.colors.find(color => color.id === parseInt(props.match.params.id))
+            // const color = colors.colors.find(color => color.id === props.match.params.id)
             const productId = props.match.url[10] + props.match.url[11]
             const product = products.products.find(product => product.id === productId)
-            return <ProductColorEdit color={color} productId={product} {...props} />
+            return <ProductColorEdit productId={product} {...props} />
            }
           }/>
 

@@ -15,7 +15,7 @@ class BusinessProduct extends Component {
 
     componentDidMount() {
         this.props.fetchProducts()
-        this.props.fetchColors()
+        // this.props.fetchColors()
       }
 
     handleDelete = (productId) => {
@@ -99,4 +99,4 @@ const mapStateToProps = state => {
     };    
 }
 
-export default connect(mapStateToProps, { deleteProduct, fetchProducts, fetchColors })(BusinessProduct);
+export default connect(mapStateToProps, { deleteProduct, fetchProducts })(BusinessProduct);

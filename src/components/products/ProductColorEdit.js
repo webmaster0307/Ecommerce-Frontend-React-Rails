@@ -8,10 +8,15 @@ class ProductColorEdit extends Component {
         super(props);
 
         console.log("color edit", props)
-        
+        let colorId = props ? props.match.params.id : null
+        let colorIdInt = parseInt(colorId)
+        // console.log("colorId", colorId)
+        let product_color = props.productId ? props.productId.attributes.colors.filter(color => colorIdInt === color.color_id)[0] : null
+        console.log("product_color", product_color)
+
         this.state = { 
-            color_name: `${this.props.color ? this.props.color.color_name : ""}` ,
-            available_qty: `${this.props.color ? this.props.color.available_qty : ""}` ,
+            color_name: `${this.props.productId ? product_color.color_name : ""}` ,
+            available_qty: `${this.props.productId ? product_color.available_qty : ""}` ,
          }
     }
 
@@ -24,11 +29,9 @@ class ProductColorEdit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let product_id = this.props.color.product_id
-        console.log(product_id)
-
+        let product_id = this.props.productId.attributes.id
         let businessId = this.props.productId.attributes.business_id
-        let color_id = this.props.color.id
+        let color_id = parseInt(this.props.match.params.id)
 
         let color = {...this.state, color_id, product_id}
         console.log("color" , color)
