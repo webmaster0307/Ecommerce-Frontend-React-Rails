@@ -41,10 +41,8 @@ class App extends Component {
 
     return ( 
       <div className="App">
-  
         <Navbar />
-        {/* <Search /> */} 
-        
+
         <Switch>           
           <Route exact path='/' component={DashboardProductsContainer} />
           <Route path='/login' component={Login} />
