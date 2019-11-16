@@ -32,6 +32,11 @@
     width: auto;
   }
 
+  .image3-color {
+    color: black;
+    /* background-color: gray; */
+  }
+
   @media screen and (min-width: 768px) {
 
     /* MAIN */
@@ -42,6 +47,7 @@
       box-shadow: 0 0 10px rgba(0,0,0,.3);
       margin: 100px auto;
       max-width: 60%;
+      margin-top: 0px;
     
       /* padding: 2.25%; 18px / 800px */
     }
