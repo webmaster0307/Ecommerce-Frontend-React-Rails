@@ -23,7 +23,7 @@ const ControlledCarousel = () => {
     <img
       className="d-block w-100"
       src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-      height="620" alt="Second slide"
+      height="740" alt="Second slide"
     />
 
     <Carousel.Caption>
