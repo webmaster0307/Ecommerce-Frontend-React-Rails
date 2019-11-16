@@ -9,7 +9,7 @@ import './stylesheets/product.css';
 import './stylesheets/categories.css';
 import './stylesheets/businesses.css';
 import './stylesheets/footer.css';
-// import './stylesheets/carosel.css';
+import './stylesheets/carosel.css';
 
 
 import App from './App';
