@@ -85,7 +85,7 @@ class App extends Component {
           <Route exact path ='/businesses/:id/products/:id/edit' render={props => {
             const businessId = props.match.url[12] + props.match.url[13]
             const business = businesses.businesses.find(business => business.id === businessId )        
-            const product = business.attributes.products.filter(product => product.id === parseInt(props.match.params.id) )[0]
+            const product = business ? business.attributes.products.filter(product => product.id === parseInt(props.match.params.id) )[0] : null
             return <ProductEdit business={business} product={product} {...props} />
            }
           } /> 

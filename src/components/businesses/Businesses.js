@@ -48,8 +48,8 @@ class Businesses extends Component {
             <div className="main">
             <div className="businesses">
                 <div className="wrapper">
+                <p className="business-para">Create a new business? <Link to="/businesses/new">Click here</Link></p>
                     { currentUserBusinesses }
-                    <p className="business-para">Create a new business? <Link to="/businesses/new">Click here</Link></p>
                 </div>
             </div>
             </div>
