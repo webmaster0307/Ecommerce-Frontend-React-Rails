@@ -5,6 +5,7 @@
     border-radius: 5px;
     background-color: #f2f2f2;
     height: 968px;
+    padding: 100px;
   }
   
   input[type=password], input[type=email], input[type=text], select, textarea {
@@ -46,6 +47,10 @@
     height: 40px;
   }
 
+  .middle-container h1, p {
+    margin-left: -15px;
+  }
+
 
   @media screen and (min-width: 768px) {
 
@@ -63,5 +68,6 @@
     clear: both;
     display: table;
   }
+
 
 }
