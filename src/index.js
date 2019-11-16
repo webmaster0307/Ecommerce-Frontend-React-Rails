@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './stylesheets/index.css';
 import './stylesheets/nav.css';
-import './stylesheets/nav2.css';
 import './stylesheets/form.css';
 import './stylesheets/products.css';
 import './stylesheets/product.css';
