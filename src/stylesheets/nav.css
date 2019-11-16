@@ -1,20 +1,16 @@
-
-.navbar {
+.my-navbar {
   font-size: 18px;
-  /* border: 1px solid black; */
   padding: 12px 16px;
   background-color: RGB(31, 39, 52);
-  /* background-color: RGB(11, 11, 16) */
-  /* position: fixed;  */
-  /* top: 0; 
-  width: 100%; */
 }
 
-.nav-links {
+.my-nav-links {
   text-decoration: none;
   color: RGB(0, 255, 242);
+  
 }
-.nav-links.products {
+
+.my-nav-links.products {
   display: none;
 }
 
@@ -25,6 +21,7 @@
 }
 .logo:hover {
   color: white;
+  text-decoration: none;
 }
 
 .main-nav {
@@ -36,7 +33,7 @@
   margin: 15px auto; 
 }
 
-.navbar li {
+.my-navbar li {
   list-style-type: none;
 }
 .main-nav a:hover {
@@ -44,7 +41,7 @@
   color: white;
 }
 
-.navbar-toggle {
+.my-navbar-toggle {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -53,7 +50,7 @@
   color: RGB(0, 255, 242);
 }
 
-.navbar-toggle:hover {
+.my-navbar-toggle:hover {
   color: white;
 }
 
@@ -75,13 +72,20 @@
   display: none;
 }
 
-.dropdown-content li:hover {
+/* .dropdown-content li:hover {
   padding: 8px;
-}
+  
+} */
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.my-nav-links.products-desktop:hover {
+  color: white;
+  text-decoration: none;
+}
+
 
 .nav-button {
   font-size: 18px;
@@ -94,38 +98,39 @@
   color: white;
 }
 
-.nav-links.products-mobile {
+.my-nav-links.products-mobile {
   display: block;
 }
 
 
-.nav-links.products-desktop {
+.my-nav-links.products-desktop {
   display: none;
 }
 
 
 @media screen and (min-width: 768px) {
 
-.navbar {
+.my-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 70px;
 }
 
 .main-nav {
   display: flex;
-  margin-right :30px;
+  margin-right: 30px;
+  margin-left: 25px;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.nav-links {
+.my-nav-links {
   margin-left: 40px;
 }
 
 
-.navbar-toggle {
+.my-navbar-toggle {
   display: none;
 }
 
@@ -137,7 +142,7 @@
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
-  margin: 0;
+  margin-top: 18px;
 }
 
 .dropdown-content {
@@ -166,15 +171,15 @@
   margin-left: 40px;
 }
 
-.nav-links.products {
+.my-nav-links.products {
   display: block;
 }
 
-.nav-links.products-mobile {
+.my-nav-links.products-mobile {
   display: none;
 }
 
-.nav-links.products-desktop {
+.my-nav-links.products-desktop {
   display: block;
 }
 

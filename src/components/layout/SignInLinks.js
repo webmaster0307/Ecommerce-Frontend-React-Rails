@@ -12,20 +12,20 @@ import { withRouter } from 'react-router'
         // console.log(props);
 
             return (
-                <nav className="navbar">
-                   <li><NavLink to="/" className="nav-links products-desktop">Product Categories</NavLink></li> 
-                    <li><NavLink to="/Wishlist" className="nav-links products-desktop">Wish List</NavLink></li>
+                <nav className="my-navbar">
+                   <li><NavLink to="/" className="my-nav-links products-desktop">Product Categories</NavLink></li> 
+                    <li><NavLink to="/Wishlist" className="my-nav-links products-desktop">Wish List</NavLink></li>
 
                     <ul className="main-nav" id="js-menu">
                         <div className="dropdown">
                             <button className="dropbtn">hello {props.currentUser.attributes.username}! <FontAwesomeIcon icon={faCaretDown}/></button>
                             <div className="dropdown-content">
 
-                                <li><NavLink to="/" className="nav-links products-mobile">Product Categories</NavLink></li> 
-                                <li><NavLink to="/Wishlist" className="nav-links products-mobile">Wish List</NavLink></li>
+                                <li><NavLink to="/" className="my-nav-links products-mobile">Product Categories</NavLink></li> 
+                                <li><NavLink to="/Wishlist" className="my-nav-links products-mobile">Wish List</NavLink></li>
                            
-                                <li><NavLink to="/businesses" className="nav-links">Existing Business</NavLink></li> 
-                                <li><NavLink to="/businesses/new" className="nav-links">New Business</NavLink></li>
+                                <li><NavLink to="/businesses" className="my-nav-links">Existing Business</NavLink></li> 
+                                <li><NavLink to="/businesses/new" className="my-nav-links">New Business</NavLink></li>
                                 <li><button onClick={props.logOut}  className="nav-button">Logout</button></li>
                             </div>
                         </div>

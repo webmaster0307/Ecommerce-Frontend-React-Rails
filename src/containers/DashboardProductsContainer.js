@@ -5,7 +5,7 @@ import { fetchSubcategories } from "../actions/subcategory.js"
 import { fetchProducts } from "../actions/product.js"
 import Categories from '../components/categories/Categories.js'
 import Carosel from '../components/dashboard/Carosel.js';
-
+import ControlledCarousel from '../components/dashboard/ControlledCarousel.js'
 
 class DashboardProductsContainer extends Component {
 
@@ -24,7 +24,8 @@ class DashboardProductsContainer extends Component {
         return ( 
           <div className="main">
             <Categories categoriesList={this.props} />
-            <Carosel />
+            {/* <Carosel /> */}
+            <ControlledCarousel/>
           </div>
          );
       }

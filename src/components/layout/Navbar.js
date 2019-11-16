@@ -1,44 +1,35 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import SignInLinks from './SignInLinks'
-import SignOutLinks from './SignOutLinks'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/Navbar'
 
+import Button from 'react-bootstrap/Navbar'
 
-class NavBar extends Component {
-
-    handleOnClick = (e) => {
-        e.preventDefault();
-        let mainNav= document.getElementById('js-menu')
-        mainNav.classList.toggle('active')
-    }
-
+class Narbar extends Component {
+    state = {  }
     render() { 
-        const { loggedIn } = this.props
-        const links = loggedIn ? <SignInLinks /> : <SignOutLinks />;
-        
         return ( 
-            <nav className="navbar">
-                <span className="navbar-toggle" id="js-navbar-toggle">
-                    <FontAwesomeIcon icon={faBars} onClick={this.handleOnClick} />
-                </span>
-                <Link to="/" className="logo">E-Comm Site</Link>
-                { links }
-                
-             </nav>
+<Navbar bg="" expand="">
+  <Navbar.Brand href="/">E_Comm Site</Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="#link">Link</Nav.Link>
+      <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+      </NavDropdown>
+    </Nav>
+
+  </Navbar.Collapse>
+</Navbar>
          );
     }
 }
-
-const mapStateToProps = ({ currentUser }) => {
-    return {
-      currentUser,
-      loggedIn: !!currentUser
-    }
-  }
-   
-  export default (connect(mapStateToProps)(NavBar));
-  
+ 
+export default Navbar;
 

@@ -30,7 +30,7 @@ h1, p {
   padding-bottom: 10px;
 }
 
-.container {
+.first-container {
   display: flex;
   flex-direction: column;
   margin-top: 30px;

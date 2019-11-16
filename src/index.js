@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './stylesheets/index.css';
 import './stylesheets/nav.css';
+import './stylesheets/nav2.css';
 import './stylesheets/form.css';
 import './stylesheets/products.css';
 import './stylesheets/product.css';
 import './stylesheets/categories.css';
 import './stylesheets/businesses.css';
 import './stylesheets/footer.css';
-import './stylesheets/carosel.css';
+// import './stylesheets/carosel.css';
+
 
 import App from './App';
 import { BrowserRouter } from 'react-router-dom'

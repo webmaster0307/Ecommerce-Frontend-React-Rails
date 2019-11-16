@@ -6,6 +6,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import About from './components/About'
 import Wishlist from './components/Wishlist'
+import Navbar1 from './components/layout/Navbar1'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import BusinessNew from './components/businesses/BusinessNew'
@@ -41,7 +42,8 @@ class App extends Component {
 
     return ( 
       <div className="App">
-        <Navbar />
+  
+        <Navbar1 />
         {/* <Search /> */} 
         
         <Switch>           
