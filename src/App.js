@@ -4,10 +4,12 @@ import {Route, Switch } from 'react-router-dom'
 import DashboardProductsContainer from './containers/DashboardProductsContainer'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
-import About from './components/About'
+import About from './components/footer/About'
+import Shipping from './components/footer/Shipping'
+import Policies from './components/footer/Policies'
 import Wishlist from './components/Wishlist'
 import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
+import Footer from './components/footer/Footer'
 import BusinessNew from './components/businesses/BusinessNew'
 import BusinessProducts from './components/businesses/BusinessProducts'
 import BusinessProduct from './components/businesses/BusinessProduct'
@@ -48,6 +50,8 @@ class App extends Component {
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Register} />
           <Route path='/about' component={About} />
+          <Route path='/shipping' component={Shipping} />
+          <Route path='/policies' component={Policies} />
           <Route path='/wishlist' component={Wishlist} />
           <Route exact path='/category/:id/products' component={CategoryProducts} />
           <Route exact path='/category/:id/products/:id' component={CategoryProduct} />
