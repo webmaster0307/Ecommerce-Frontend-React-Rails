@@ -13,7 +13,7 @@ const ControlledCarousel = () => {
                 alt="First slide"
               />
               <Carousel.Caption>
-                <h3>One Stop Shop!</h3>
+                <h3>One Stop Shopping.</h3>
                 {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
               </Carousel.Caption>
             </Carousel.Item>
@@ -25,7 +25,7 @@ const ControlledCarousel = () => {
               />
 
               <Carousel.Caption>
-                <h3>TThe latest trends in technology.</h3>
+                <h3>The latest trends in technology.</h3>
                 {/* <p>The latest trends.</p> */}
               </Carousel.Caption>
             </Carousel.Item>
