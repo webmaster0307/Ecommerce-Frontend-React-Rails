@@ -10,7 +10,7 @@ class BusinessProduct extends Component {
     constructor(props){
         super(props);
 
-    console.log("BusinessProduct", this.props);
+    // console.log("BusinessProduct", this.props);
     }
 
     componentDidMount() {
@@ -25,7 +25,7 @@ class BusinessProduct extends Component {
     }
 
     handleColorDelete = (colorId) => {
-        console.log("bp colorId", colorId)
+        // console.log("bp colorId", colorId)
         let productId = this.props.product.id
         let businessId = this.props.business.id;
         this.props.deleteColor(productId, colorId);
@@ -40,7 +40,7 @@ class BusinessProduct extends Component {
         if (!loggedIn) return <Redirect to='/' />
 
         let productForColor = this.props.products.products.filter(product => product.id === this.props.match.params.id)[0]
-        console.log("product", productForColor)
+        // console.log("product", productForColor)
 
 
         let productColors = productForColor ? productForColor.attributes.colors.map(color => 
