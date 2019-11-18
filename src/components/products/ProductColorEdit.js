@@ -7,12 +7,12 @@ class ProductColorEdit extends Component {
     constructor(props){
         super(props);
 
-        console.log("color edit", props)
+        // console.log("color edit", props)
         let colorId = props ? props.match.params.id : null
         let colorIdInt = parseInt(colorId)
         // console.log("colorId", colorId)
         let product_color = props.productId ? props.productId.attributes.colors.filter(color => colorIdInt === color.color_id)[0] : null
-        console.log("product_color", product_color)
+        // console.log("product_color", product_color)
 
         this.state = { 
             color_name: `${this.props.productId ? product_color.color_name : ""}` ,

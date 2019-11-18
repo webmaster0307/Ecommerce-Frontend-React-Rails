@@ -21,7 +21,7 @@ const CategoryProducts = (props) => {
     //  console.log("sortedProducts", sortedProducts)
     
 
-    let categoryProducts = productList ? sortedProducts.map(product => 
+    let categoryProducts = sortedProducts ? sortedProducts.map(product => 
         <div key={product.id}>
             <Link to={`/category/${CategoryId}/products/${product.id}` }>
             <li className="products-image"> <img src={ product.image } alt="product" ></img></li>

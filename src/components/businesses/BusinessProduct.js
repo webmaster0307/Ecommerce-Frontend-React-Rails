@@ -10,16 +10,15 @@ class BusinessProduct extends Component {
     constructor(props){
         super(props);
 
-    // console.log("BusinessProduct", this.props);
+    console.log("BusinessProduct", this.props);
     }
 
     componentDidMount() {
         this.props.fetchProducts()
-        // this.props.fetchColors()
       }
 
     handleDelete = (productId) => {
-        let businessId = this.props.business.id;
+        let businessId = this.props.product.business_id;
         this.props.deleteProduct(productId, businessId);
         this.props.history.push(`/businesses/${businessId}`);
     }
@@ -27,7 +26,7 @@ class BusinessProduct extends Component {
     handleColorDelete = (colorId) => {
         // console.log("bp colorId", colorId)
         let productId = this.props.product.id
-        let businessId = this.props.business.id;
+        let businessId = this.props.product.business_id;
         this.props.deleteColor(productId, colorId);
         this.props.history.push(`/businesses/${businessId}/products/${productId}`);
     }
@@ -53,9 +52,9 @@ class BusinessProduct extends Component {
             </div>
         ) : null
     
-        let editLink =  this.props.product ? <Link to={`/businesses/${this.props.business.id}/products/${this.props.product.id}/edit`} className="edit-link">Edit Product</Link> : null
+        let editLink =  this.props.product ? <Link to={`/businesses/${this.props.product.business_id}/products/${this.props.product.id}/edit`} className="edit-link">Edit Product</Link> : null
 
-        let linkBusiness =  this.props.product ? <Link to={`/businesses/${this.props.business.id}`} className="edit-link">Link Back to Products</Link> : null
+        let linkBusiness =  this.props.product ? <Link to={`/businesses/${this.props.product.business_id}`} className="edit-link">Link Back to Products</Link> : null
         
         let linkColorNew = this.props.product ?  <Link to={`/products/${this.props.product.id}/colors/new`} className="edit-link">Add New Color</Link> : null
 
