@@ -14,7 +14,7 @@ import { withRouter } from 'react-router'
             return (
                 <nav className="my-navbar">
                    <li><NavLink to="/" className="my-nav-links products-desktop">Product Categories</NavLink></li> 
-                    <li><NavLink to="/Wishlist" className="my-nav-links products-desktop">Wish List</NavLink></li>
+                    {/* <li><NavLink to="/Wishlist" className="my-nav-links products-desktop">Wish List</NavLink></li> */}
 
                     <ul className="main-nav" id="js-menu">
                         <div className="dropdown">
@@ -22,7 +22,7 @@ import { withRouter } from 'react-router'
                             <div className="dropdown-content">
 
                                 <li><NavLink to="/" className="my-nav-links products-mobile">Product Categories</NavLink></li> 
-                                <li><NavLink to="/Wishlist" className="my-nav-links products-mobile">Wish List</NavLink></li>
+                                {/* <li><NavLink to="/Wishlist" className="my-nav-links products-mobile">Wish List</NavLink></li> */}
                            
                                 <li><NavLink to="/businesses" className="my-nav-links">Existing Business</NavLink></li> 
                                 <li><NavLink to="/businesses/new" className="my-nav-links">New Business</NavLink></li>

@@ -75,7 +75,7 @@ class BusinessProduct extends Component {
                         <br></br>
                         {linkColorNew}
                         <br></br>
-
+                        <h3>Product Details</h3>
                         <li className="product-text"> <b className="titlespacing">Category Name:</b> {this.props.product ? this.props.product.category_name : null}</li>
                         <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {this.props.product ? this.props.product.subcategory_name : null}</li>
                         <li className="product-text"> <b className="titlespacing">Product Name:</b> {this.props.product ? this.props.product.name : null}</li>
