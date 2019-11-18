@@ -7,8 +7,8 @@ const BusinessProducts = (props) => {
 
     // console.log("BusinessProducts", props)
  
-    // const { loggedIn } = this.props;
-    // if (!loggedIn) return <Redirect to='/' />
+    const { loggedIn } = props;
+    if (!loggedIn) return <Redirect to='/' />
 
     const businessId =  props.business ? props.business.attributes.id : null
 
