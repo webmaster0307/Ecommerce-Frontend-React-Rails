@@ -7,8 +7,24 @@ const Categories = (props) => {
     // console.log("categories props", props)
     // console.log("categoriesList.categories.categories is", props.categoriesList.categories.categories)
     
+    let sortedCategories = props.categoriesList ? props.categoriesList.categories.categories.sort(function(a, b) {
+        var nameA = a.attributes.name.toUpperCase(); // ignore upper and lowercase
+        var nameB = b.attributes.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+      
+        // names must be equal
+        return 0;
+      }) : null 
+    
 
-    let categories = props.categoriesList.categories.categories ? props.categoriesList.categories.categories.map(category => 
+    //   console.log("sortedCategories", sortedCategories)
+
+    let categories = sortedCategories ? sortedCategories.map(category => 
         <div key={category.id}>
         <Link to={`/category/${category.id}/products` }>
             <li className="categories-text">{ category.attributes.name } </li>
@@ -19,8 +35,7 @@ const Categories = (props) => {
         : null
 
         // console.log(categories)
-        // let subcategories = categories ? categories.attributes.subcategories.map(subcategory => subcategory.subcategory_name) : null
-        // console.log("subcategories is", subcategories)
+
     
     return (
         <div className="categories">
