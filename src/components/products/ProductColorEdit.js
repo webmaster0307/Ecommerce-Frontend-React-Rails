@@ -7,16 +7,11 @@ class ProductColorEdit extends Component {
     constructor(props){
         super(props);
 
-        // console.log("color edit", props)
-        let colorId = props ? props.match.params.id : null
-        let colorIdInt = parseInt(colorId)
-        // console.log("colorId", colorId)
-        let product_color = props.productId ? props.productId.attributes.colors.filter(color => colorIdInt === color.color_id)[0] : null
-        // console.log("product_color", product_color)
+        console.log("color edit", props)
 
         this.state = { 
-            color_name: `${this.props.productId ? product_color.color_name : ""}` ,
-            available_qty: `${this.props.productId ? product_color.available_qty : ""}` ,
+            color_name: `${this.props.color ? this.props.color.color_name : ""}` ,
+            available_qty: `${this.props.color ? this.props.color.available_qty : ""}` ,
          }
     }
 
@@ -29,9 +24,21 @@ class ProductColorEdit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let product_id = this.props.productId.attributes.id
-        let businessId = this.props.productId.attributes.business_id
-        let color_id = parseInt(this.props.match.params.id)
+
+        console.log("submit", this.props)
+        debugger;
+        let paramsId = parseInt(this.props.match.params.id)
+        let currentColor = this.props.colors ? this.props.colors.colors.filter(color => color.id === paramsId)[0] : null
+        console.log("currentColor", currentColor)
+        let product_id = currentColor.product_id
+        let color_id = this.props.color.color_id
+        console.log("product_id" , product_id)
+        console.log("color_id", color_id)
+
+        let product = this.props.products ? this.props.products.products.filter(product => product.id == product_id)[0] : null
+        console.log("product" , product)
+        let businessId = product.attributes.business_id
+        console.log("businessId", businessId)
 
         let color = {...this.state, color_id, product_id}
         console.log("color" , color)
@@ -90,6 +97,8 @@ const mapStateToProps = state => {
     return {
       loggedIn: !!state.currentUser,
       businesses: state.businessReducer,
+      products: state.productReducer,
+      colors: state.colorReducer
     };    
 }
 

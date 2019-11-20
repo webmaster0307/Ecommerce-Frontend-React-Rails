@@ -28,7 +28,7 @@ class BusinessEdit extends Component {
         // console.log("state is" , business)
         this.props.editBusiness(business);
         
-        this.props.history.push('/businesses');
+        this.props.history.push(`/businesses/${this.props.business.id}`);
             this.setState({
                 name: "",
                 tax_id: "",

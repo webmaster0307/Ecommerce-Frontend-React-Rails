@@ -7,14 +7,18 @@ export default (state = { businesses: [] }, action) => {
           return {...state, businesses: [...state.businesses, action.business]}
      
           case 'EDIT_BUSINESS':
-          let business = state.businesses.map(business => {
+            // console.log(state.businesses)
+            // debugger;
+             let businessFive = state.businesses.map(business => {
               if (business.id === action.business.id) {
               return action.business
                } else {
                 return business
               }
             })
-           return {...state, businesses: business}
+            console.log("businessFive", businessFive)
+           return {...state, businesses: businessFive}
+
 
          case 'DELETE_BUSINESS':
             const businesses = state.businesses.filter(business => business.id !== action.businessId);
@@ -29,8 +33,8 @@ export default (state = { businesses: [] }, action) => {
                 }
               })
     
-              return {...state, businesses: businessTwo}
-
+              return {...state, businesses: businessTwo } 
+              
           case 'EDIT_PRODUCT':
               let businessThree = state.businesses.map(business => {
                 if (business.id === action.business.id) {

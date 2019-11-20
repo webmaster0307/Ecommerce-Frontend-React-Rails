@@ -30,6 +30,7 @@ const BusinessProducts = (props) => {
                 <div className="businesses">
                     <li className="business-name"><b className="titlespacing">Business Name:</b> {props.business ? props.business.attributes.name :null}</li>       
                     <li className="business-id"><b className="titlespacing">Business Tax ID:</b>  {props.business ? props.business.attributes.tax_id: null}</li>
+                    <Link to={`/businesses/${props.business.attributes.id}/edit`} className="edit-link">Edit Business</Link>
                     <br></br>
                     <br></br>
                     <h2>Products</h2>
