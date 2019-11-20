@@ -21,6 +21,7 @@ import BusinessesContainer from './containers/BusinessesContainer'
 import ProductNew from './components/products/ProductNew'
 import ProductEdit from './components/products/ProductEdit'
 import ProductColorNew from './components/products/ProductColorNew'
+import Colors from './components/products/Colors'
 import ProductColorEdit from './components/products/ProductColorEdit'
 
 
@@ -33,12 +34,7 @@ class App extends Component {
 
   render() {
     const { businesses } = this.props;
-    // console.log("app businesses", businesses)
-
     const { products } = this.props;
-    const { colors } = this.props;
-    // console.log("app products", products)
-
     
 
     return ( 
@@ -59,14 +55,13 @@ class App extends Component {
           <Route exact path='/businesses' component={BusinessesContainer} />
           <Route exact path='/businesses/:id' render={props => {
             const business = businesses.businesses.find(business => business.id === props.match.params.id)
-            console.log("app business props", business)
+            // console.log("app business props", business)
             return <BusinessProducts business={business} {...props} />
            }
           }/>
 
           <Route exact path='/businesses/:id/edit' render={props => {
             const business = businesses.businesses.find(business => business.id === props.match.params.id)
-            // console.log("business props", business)
             return <BusinessEdit business={business} {...props} />
            }
           }/>
@@ -74,21 +69,22 @@ class App extends Component {
           <Route exact path ='/businesses/:id/products/new' component={ProductNew} />
         
           <Route exact path ='/businesses/:id/products/:id' render={props => {
-            const businessId = props.match.url[12] + props.match.url[13]
-            const business = businesses.businesses.find(business => business.id === businessId )        
-            const product = business ? business.attributes.products.filter(product => product.id === parseInt(props.match.params.id) )[0] : null
+            const products = businesses.businesses.map(business => business.attributes.products).flat()  
+            const product = products ? products.filter(product => product.id === parseInt(props.match.params.id))[0] : null
             return <BusinessProduct product={product} {...props} />
            }
           } /> 
 
 
           <Route exact path ='/businesses/:id/products/:id/edit' render={props => {
-            const businessId = props.match.url[12] + props.match.url[13]
-            const business = businesses.businesses.find(business => business.id === businessId )        
-            const product = business ? business.attributes.products.filter(product => product.id === parseInt(props.match.params.id) )[0] : null
+            const products = businesses.businesses.map(business => business.attributes.products).flat()  
+            const product = products ? products.filter(product => product.id === parseInt(props.match.params.id))[0] : null
             return <ProductEdit product={product} {...props} />
            }
           } /> 
+
+
+          <Route exact path ='/products/:id/colors' component={Colors} />
 
           <Route exact path='/products/:id/colors/new' render={props => {
             const product = products.products.find(product => product.id === props.match.params.id)
@@ -97,9 +93,10 @@ class App extends Component {
           }/>
           
           <Route exact path='/products/:id/colors/:id/edit' render={props => {
-            const productId = props.match.url[10] + props.match.url[11]
-            const product = products.products.find(product => product.id === productId)
-            return <ProductColorEdit productId={product} {...props} />
+            // debugger;
+            const colors = products.products.map(product => product.attributes.colors).flat()
+            const color = colors? colors.filter(p => p.color_id === parseInt(props.match.params.id))[0] :null
+            return <ProductColorEdit color={color} {...props} />
            }
           }/>
 
@@ -116,7 +113,6 @@ const mapStateToProps = state => {
   return {
     businesses: state.businessReducer,
     products: state.productReducer,
-    colors: state.colorReducer,
   };    
 }
  
