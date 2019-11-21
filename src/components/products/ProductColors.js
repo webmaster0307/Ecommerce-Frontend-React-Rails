@@ -9,8 +9,6 @@ class ProductColors extends Component {
         super(props);
 
     console.log("Colors props", this.props);
-
-   
     }
 
         handleColorDelete = (colorId) => {
