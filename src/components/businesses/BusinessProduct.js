@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { deleteProduct, fetchProducts } from '../../actions/product'
+import {  fetchColors} from '../../actions/color'
 import { Redirect } from 'react-router-dom'
-import Colors from '../products/Colors.js'
+import ProductColors from '../products/ProductColors.js'
+import ProductsContainer from '../../containers/ProductsContainer'
 
 
 class BusinessProduct extends Component {
@@ -14,9 +16,10 @@ class BusinessProduct extends Component {
     }
 
 
-    componentDidMount() {
-        this.props.fetchProducts()
-      }
+    // componentDidMount() {
+    //     this.props.fetchProducts()
+    //     // this.props.fetchColors()
+    //   }
 
 
 
@@ -50,9 +53,7 @@ class BusinessProduct extends Component {
                     <div className="product-info col-7">
                         {linkBusiness}
                         <br></br>
-                        {editLink}
-                        <br></br>
-                        <br></br>
+                    
                         <h3>Product Details</h3>
                         <li className="product-text"> <b className="titlespacing">Category Name:</b> {this.props.product ? this.props.product.category_name : null}</li>
                         <li className="product-text"> <b className="titlespacing">Subcategory Name:</b> {this.props.product ? this.props.product.subcategory_name : null}</li>
@@ -60,15 +61,15 @@ class BusinessProduct extends Component {
                         <li className="product-text"><b className="titlespacing">Description:</b> {this.props.product ? this.props.product.description : null}</li>
                         <li className="product-text"><b className="titlespacing">Item Number:</b> {this.props.product ? this.props.product.item_number : null}</li>
                         <li className="product-text"><b className="titlespacing" >Price:</b> ${this.props.product ? this.props.product.price : null}</li>
+                        {editLink}
 
                         <br></br>
                         <button onClick={() => this.handleDelete(`${this.props.product.id}`)} className="product-delete-button">Delete Product</button>
                         <br></br>
                         <br></br>
 
-                        <li className="product-text"><b className="titlespacing">Colors:</b> </li>
-
-                        <Colors product={this.props} />
+                        <h3>Color Section</h3>
+                        <ProductsContainer product={this.props} />
                         
                         <br></br>
                         <br></br>
@@ -87,4 +88,4 @@ const mapStateToProps = state => {
     };    
 }
 
-export default connect(mapStateToProps, { fetchProducts, deleteProduct })(BusinessProduct);
+export default connect(mapStateToProps, { fetchProducts, fetchColors, deleteProduct })(BusinessProduct);

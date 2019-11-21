@@ -4,34 +4,35 @@ import { Link } from 'react-router-dom'
 import { deleteColor } from '../../actions/product'
 
 
-class Colors extends Component {
+class ProductColors extends Component {
     constructor(props){
         super(props);
 
-    console.log("Colors", this.props);
+    console.log("Colors props", this.props);
 
    
     }
 
         handleColorDelete = (colorId) => {
-        console.log("colorId", colorId)
-        let productId = this.props.product.match.params.id
-        let businessId = this.props.product.product.business_id
-        console.log("productId", productId)
-        console.log("businessId" ,businessId)
+        // console.log("colorId", colorId)
+        let productId = this.props.products.product.match.params.id
+        let businessId = this.props.products.product.product.business_id
+        // console.log("productId", productId)
+        // console.log("businessId" ,businessId)
         this.props.deleteColor(productId, colorId);
-        this.props.product.history.push(`/businesses/${businessId}/products/${productId}`);
+        // debugger;
+        this.props.products.product.history.push(`/businesses/${businessId}/products/${productId}`);
     }
 
 
 
     render() { 
 
-    let currentProductId = this.props.product.match.params.id
-    let filteredProduct = this.props.products ? this.props.products.products.filter(product => product.id === currentProductId )[0] : null
-    console.log("filteredProduct", filteredProduct)
+    let currentProductId = this.props.products.product.match.params.id
+    let filteredProduct = this.props.products ? this.props.products.products.products.filter(product => product.id === currentProductId )[0] : null
+    // console.log("filteredProduct", filteredProduct)
 
-    let linkColorNew = this.props.product ?  <Link to={`/products/${currentProductId}/colors/new`} className="edit-link">Add New Color</Link> : null
+    let linkColorNew = this.props.products.product ?  <Link to={`/products/${currentProductId}/colors/new`} className="edit-link">Add New Color</Link> : null
 
 
     let productColors =  filteredProduct ? filteredProduct.attributes.colors.map(color => 
@@ -46,8 +47,7 @@ class Colors extends Component {
 
         return ( 
             <div>
-                { linkColorNew }
-                <br></br>
+                {linkColorNew}
                 { productColors }
             </div> 
         );
@@ -57,10 +57,8 @@ class Colors extends Component {
 const mapStateToProps = state => {
     return {
       loggedIn: !!state.currentUser,
-      businesses: state.businessReducer,
-      products: state.productReducer,
     };    
 }
 
  
-export default connect(mapStateToProps, { deleteColor })(Colors);
+export default connect(mapStateToProps, { deleteColor })(ProductColors);

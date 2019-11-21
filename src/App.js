@@ -21,7 +21,7 @@ import BusinessesContainer from './containers/BusinessesContainer'
 import ProductNew from './components/products/ProductNew'
 import ProductEdit from './components/products/ProductEdit'
 import ProductColorNew from './components/products/ProductColorNew'
-import Colors from './components/products/Colors'
+import ProductColors from './components/products/ProductColors'
 import ProductColorEdit from './components/products/ProductColorEdit'
 
 
@@ -83,8 +83,6 @@ class App extends Component {
            }
           } /> 
 
-
-          <Route exact path ='/products/:id/colors' component={Colors} />
 
           <Route exact path='/products/:id/colors/new' render={props => {
             const product = products.products.find(product => product.id === props.match.params.id)

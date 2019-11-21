@@ -9,7 +9,7 @@ class BusinessesContainer extends Component {
 
     componentDidMount() {
         this.props.fetchBusinesses()
-        this.props.fetchColors()
+        // this.props.fetchColors()
       }
 
     render() { 
