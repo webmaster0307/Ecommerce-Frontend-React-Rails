@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+class CategoryProduct extends Component {
+    constructor(props){
+        super(props);
+        
+        this.state = { 
+          votes: 0
+         }
 
-const CategoryProduct = (props) => {
+        //  console.log("product", this.props)
+    }
 
-    // console.log("product props", props);
-    // console.log(props.match.params.id[0])
+   handleProductUpVote = (productId) => {
+       console.log(productId)
+        this.setState ({
+            votes: this.state.votes +1
+        })
+       
+   }
 
-    let product = props.products.products.filter(product => product.id === props.match.params.id)[0]
-    // console.log("product is", product)
+    render() { 
+
+    let product = this.props.products.products.filter(product => product.attributes.id === this.props.id)[0]
+    console.log("product is", product)
 
     let productColors = product ? product.attributes.colors.map(color => 
         <div key={color.color_id}>
@@ -18,34 +33,40 @@ const CategoryProduct = (props) => {
         
 
     return(
-        <div className="main">
+        <div className="">
             <div className="product-main">
                 <div className="product-flex">
                     <div className="product col-5">
-                        <li className="product-image">{product ? <img src={ product.attributes.image } alt="product" ></img> : null}</li>
+                        <li className="product-image">{<img src={ this.props.image } alt="product" ></img>}</li>
                     </div>
                 </div>
 
                 <div className="product-info col-7">
-                    <li className="product-text"> <b className="titlespacing">Product Name:</b> {product ? product.attributes.name : null}</li>
-                    <li className="product-text"><b className="titlespacing">Description:</b> {product ? product.attributes.description : null}</li>
-                    <li className="product-text"><b className="titlespacing">Item Number:</b> {product ? product.attributes.item_number : null}</li>
+                    <li className="product-text"> <b className="titlespacing">Product Name:</b> { this.props.name }</li>
+                    <li className="product-text"><b className="titlespacing">Description:</b> {this.props.description}</li>
+                    <li className="product-text"><b className="titlespacing">Item Number:</b> {this.props.item_number}</li>
 
                     <br></br>
                     <li className="product-text"><b className="titlespacing">Colors:</b> </li>
-                    { productColors }
+                    { productColors } 
                     
                     <br></br>
-                    <li className="product-text"><b className="titlespacing" >Price:</b> ${product ? product.attributes.price : null}</li>
+                    <li className="product-text"><b className="titlespacing" >Price:</b> ${this.props.price}</li>
 
-                    <br></br>
-                    <br></br>
+                    <button onClick={() => this.handleProductUpVote(`${this.props.id}`)} className="button">Vote</button>
+
+    
+                    <li className="products-price"> Votes: { this.state.votes }</li>
+
+
                 </div>     
             </div>
         </div>
     )
-}
 
+    }
+}
+ 
 const mapStateToProps = state => {
     return {
       products: state.productReducer,
@@ -53,3 +74,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(CategoryProduct);
+
+

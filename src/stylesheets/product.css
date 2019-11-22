@@ -32,8 +32,8 @@
 }
 
 .product-image img {
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     border: white solid .5px;
     background-color: #f2f2f2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -42,8 +42,8 @@
 @media screen and (min-width: 800px) {
 
     .product-image img {
-        height: 300px;
-        width: 300px;
+        height: 200px;
+        width: 200px;
     }
 
     .product-main {

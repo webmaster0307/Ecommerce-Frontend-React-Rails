@@ -51,8 +51,8 @@ export const setMyBusinesses = businesses => {
     }
   }
 
-
-export const createBusiness = (data) => {
+// The promise of a burger party - blog post
+export const createBusiness = (data) => { 
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/businesses", {
       credentials: "include",
@@ -66,12 +66,13 @@ export const createBusiness = (data) => {
       .then(response => {
         // console.log("Response" , response);
         if (response.error) {
+          //throw new Error(response.error)
           alert(response.error)
         } else {
           dispatch(addBusiness(response.data))
         }
       })
-      .catch(console.log)
+      .catch(error => alert(error))
   }
 }
 
